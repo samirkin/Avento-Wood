@@ -114,7 +114,14 @@ img{max-width:100%;display:block}
 /* min-height, а не height + overflow:hidden: на вузьких екранах текст росіянською займає
    більше ніж 230px, і фіксована висота відрізала верх заголовка. На широких вміст
    ≤222px, тож блок не росте і стрибків при завантаженні шрифтів немає. */
-.opener{position:relative;min-height:230px;display:flex;align-items:flex-end}
+.opener{position:relative;min-height:230px;display:flex;align-items:flex-end;overflow:hidden}
+/* Зум фону при наведенні. Фон лежить на самому .opener разом із текстом, тож окремий шар
+   ::before бере те саме зображення через inherit і масштабується під текстом та затемненням.
+   overflow:hidden обрізає виступ. Висота блоку лишається min-height, тож текст не клипається. */
+.opener::before{content:"";position:absolute;inset:0;background:inherit;transform:scale(1);transition:transform 1.4s cubic-bezier(.22,.61,.36,1);will-change:transform}
+@media(hover:hover) and (pointer:fine){
+  .opener:hover::before{transform:scale(1.07)}
+}
 /* Затемнення під текстом розділу. Основне — знизу вгору, бо текст притиснутий до низу.
    Друга, слабша вуаль зліва направо підстраховує початок рядків; праворуч угорі фото
    лишається чистим. Горизонтальний градієнт окремо не годиться: рядки лід-абзацу
@@ -328,6 +335,7 @@ img{max-width:100%;display:block}
    сім карток не вміщаються в один рядок, і висоти залежать від вмісту. */
 @media(min-width:1280px){
   .sect{height:990px;display:flex;flex-direction:column}
+  .sect .opener{flex:0 0 auto}
   /* Розділи 2 і 6 мають лише по два фото, тож кожне розтягується на пів екрана і
      обрізається найсильніше. Їм свідомо дано +100px: це єдине виняткове місце,
      де висоти розділів не збігаються з рештою. */
@@ -452,6 +460,8 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
   .hero-bg{background-image:url("img/hero-poster.webp");background-size:cover;background-position:center}
   .gal img{transition:none}
   .gal figure:hover img,.gal figure:focus-within img{transform:none}
+  .opener::before{transition:none}
+  .opener:hover::before{transform:none}
 }
 </style>
 <style>
