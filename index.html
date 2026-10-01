@@ -1210,6 +1210,16 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
       grid.__revStep = 80;
       observer.observe(grid);
     }
+
+    // Рядки напрямків: та сама хвиля, що в картках, але швидша (60мс), бо це навігація.
+    // Тригером слугує перший рядок, а не вся секція: заголовок і вступ мають свою появу.
+    var dirRows = document.querySelectorAll(".summary > .dir-row");
+    if (dirRows.length && dirRows[0].getBoundingClientRect().top >= window.innerHeight){
+      for (var d = 0; d < dirRows.length; d++){ dirRows[d].classList.add("irev"); }
+      dirRows[0].__revItems = Array.prototype.slice.call(dirRows);
+      dirRows[0].__revStep = 60;
+      observer.observe(dirRows[0]);
+    }
   }
 
   function syncButtons(){
