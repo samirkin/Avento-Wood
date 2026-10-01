@@ -448,8 +448,21 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
   .burger{width:38px;height:38px}
 }
 
+/* Поява тексту в героєві: заголовок, потім кожен рядок опису, потім кнопка. Чиста CSS-анімація
+   при завантаженні: не залежить від скрипта й спостерігача. Без обрізання (clip/mask), лише
+   прозорість і зсув на 14px; текст стоїть далеко від меж героя, тож нічого не зрізається. */
+@keyframes heroIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero h1,.hero .lede p,.hero .acts{animation:heroIn .9s cubic-bezier(.22,.61,.36,1) both}
+.hero h1{animation-delay:.15s}
+.hero .lede p:nth-child(1){animation-delay:.55s}
+.hero .lede p:nth-child(2){animation-delay:.70s}
+.hero .lede p:nth-child(3){animation-delay:.85s}
+.hero .lede p:nth-child(4){animation-delay:1.00s}
+.hero .acts{animation-delay:1.25s}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .hero h1,.hero .lede p,.hero .acts{animation:none}
   .burger,.burger-ico i,.mmenu,.mmenu.open{transition:none}
   .frev,.frev.in{opacity:1;transition:none}
   .irev,.irev.in{opacity:1;transition:none}
