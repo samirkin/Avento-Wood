@@ -9,30 +9,41 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<!-- Open Graph. УВАГА: og:image (і og:url, якщо додаси) мусять бути АБСОЛЮТНИМИ адресами з доменом,
-     наприклад https://твій-домен/og-image.jpg. Фейсбук, Telegram, LinkedIn та інші
-     сканери не розкривають відносні шляхи, тож із "og-image.jpg" прев'ю не з'явиться.
-     Заміни на справжню адресу, коли буде домен. -->
+<!-- TODO (КРИТИЧНО перед деплоєм): замінити https://TODO-YOUR-DOMAIN на справжній домен
+     у ТРЬОХ місцях: canonical, og:url, og:image. og:image та og:url мають бути повними
+     адресами з https://, бо Facebook, Telegram і LinkedIn не розкривають відносні шляхи.
+     Файл og-image.jpg (1200x630) лежить поруч з index.html. -->
+<link rel="canonical" href="https://TODO-YOUR-DOMAIN/">
+<meta property="og:url" content="https://TODO-YOUR-DOMAIN/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Avento Wood">
 <meta property="og:title" content="Avento Wood — Furniture &amp; Interior">
 <meta property="og:description" content="Masiv ağacdan mebel və dülgərlik: sizin ölçülərinizə uyğun. Palıd, dişbudaq, fıstıq, ekzotik ağac növləri. Mətbəx, pilləkən, qapı, tezgah, oyma pano.">
-<meta property="og:image" content="og-image.jpg">
+<meta property="og:image" content="https://TODO-YOUR-DOMAIN/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Avento Wood — Furniture &amp; Interior: темна кухня з масивною стільницею з горіха">
+<meta property="og:image:alt" content="Avento Wood — Furniture &amp; Interior: tünd mətbəx və qoz ağacından masiv tezgah">
 <meta property="og:locale" content="az_AZ">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<title>Avento Wood</title>
+<title>Avento Wood — Masiv ağacdan mebel və dülgərlik</title>
+<link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!-- GA4: вставити тег тут (Google tag, G-XXXXXXXXXX) -->
+<!-- Meta Pixel: вставити тут -->
 <style>
 :root{
   --bar-h:calc(clamp(44px,7vw,72px) + 25px);   /* логотип + padding 12+12 + рамка 1px */
   --ink:#141210; --panel:#1B1713;
   --accent:#7E6A4F; --accent-hi:#A8906B;
   --fg:#E6E1D8; --fg-dim:#9A9287; --fg-faint:#6F6961;
+  --fg-muted:#868078;   /* допоміжний ТЕКСТ: 4.56-4.78:1 (--fg-faint 3.44:1 лишається для ліній і декору) */
+  --accent-btn:#937D5D; /* фон кнопок: текст #17130E на ньому >=4.5:1 (на --accent було 3.58:1) */
   --line:rgba(230,225,216,.13); --line-soft:rgba(230,225,216,.07);
   --sans:"IBM Plex Sans",system-ui,sans-serif;
   --serif:"Playfair Display",Georgia,serif;
@@ -46,6 +57,8 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar-h) + 12px)}
 body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 :focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px}
 img{max-width:100%;display:block}
+/* Візуально прихований, але доступний читачам екрана й пошуковикам текст */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--accent-hi);text-transform:uppercase}
 .ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#241D16}
 
@@ -95,7 +108,7 @@ img{max-width:100%;display:block}
 .summary .lede{margin:16px 0 26px;max-width:62ch;color:var(--fg-dim);font-size:15px;line-height:1.68}
 .dir-row{display:grid;grid-template-columns:48px minmax(0,1fr) minmax(0,1.25fr);gap:16px;align-items:baseline;padding:15px 0;border-top:1px solid var(--line-soft);color:var(--fg);text-decoration:none}
 .dir-row:last-of-type{border-bottom:1px solid var(--line-soft)}
-.dir-row .n{font-family:var(--mono);font-size:13px;color:var(--fg-faint)}
+.dir-row .n{font-family:var(--mono);font-size:13px;color:var(--fg-muted)}
 .dir-row .t{font-size:15.5px;font-weight:400}
 .dir-row .d{font-size:13.5px;color:var(--fg-dim);line-height:1.5}
 .dir-row:hover{background:rgba(126,106,79,.14)}
@@ -146,7 +159,7 @@ img{max-width:100%;display:block}
 .items article{background:var(--ink);padding:20px 22px 24px}
 .items h3{margin:0;font-weight:500;font-size:15.5px}
 .items p{margin:7px 0 0;font-size:13.5px;color:var(--fg-dim);line-height:1.55}
-.items .no{font-family:var(--mono);font-size:11px;color:var(--fg-faint);display:block;margin-bottom:9px}
+.items .no{font-family:var(--mono);font-size:11px;color:var(--fg-muted);display:block;margin-bottom:9px}
 
 .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line-soft)}
 .gal figure{margin:0;background:var(--panel);display:flex;flex-direction:column}
@@ -190,13 +203,13 @@ img{max-width:100%;display:block}
 .reviews .rev-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}
 .reviews .stars{display:flex;gap:3px;color:var(--accent-hi);padding-top:9px}
 .reviews .stars svg{width:14px;height:14px;display:block;flex:none}
-.reviews .stars .off{color:var(--fg-faint)}
+.reviews .stars .off{color:var(--fg-muted)}
 .reviews .initials{flex:none;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:3px;background:rgba(126,106,79,.16);font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--accent-hi)}
 .reviews blockquote{margin:0;font-size:14.5px;color:var(--fg-dim);line-height:1.62;flex:1}
 .reviews cite{display:block;margin-top:18px;font-style:normal;font-size:13px;color:var(--fg)}
 .reviews cite .who{font-weight:400;display:block}
-.reviews cite span{display:block;margin-top:2px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--fg-faint)}
-.btn{display:inline-block;background:var(--accent);color:#17130E;text-decoration:none;font-family:var(--sans);font-size:14.5px;font-weight:500;padding:13px 22px;border-radius:3px}
+.reviews cite span{display:block;margin-top:2px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--fg-muted)}
+.btn{display:inline-block;background:var(--accent-btn);color:#17130E;text-decoration:none;font-family:var(--sans);font-size:14.5px;font-weight:500;padding:13px 22px;border-radius:3px}
 
 .hero .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:28px}
 .sect-cta{padding:20px var(--gut) 0}
@@ -214,7 +227,7 @@ img{max-width:100%;display:block}
 .cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,4vw,40px);margin:12px 0 0;max-width:22ch;line-height:1.14;text-wrap:balance}
 .cta .lede{margin:16px 0 0;max-width:50ch;color:#C2BBB0;font-size:15px;line-height:1.65}
 .cinfo{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px 30px;margin-top:32px}
-.cinfo h4{margin:0 0 7px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent-hi);text-transform:uppercase;font-weight:400}
+.cinfo h3{margin:0 0 7px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent-hi);text-transform:uppercase;font-weight:400}
 .cinfo p{margin:0;font-size:13.5px;color:var(--fg-dim);line-height:1.6}
 .cinfo-link{color:var(--fg);text-decoration:none;border-bottom:1px solid rgba(168,144,107,.45);padding-bottom:2px;transition:color .2s ease,border-color .2s ease}
 .cinfo-link:hover{color:var(--accent-hi);border-bottom-color:var(--accent-hi)}
@@ -233,11 +246,13 @@ img{max-width:100%;display:block}
 .fcard input:-webkit-autofill,.fcard input:-webkit-autofill:focus{-webkit-text-fill-color:var(--fg);-webkit-box-shadow:0 0 0 1000px #1B1713 inset;box-shadow:0 0 0 1000px #1B1713 inset,0 1px 0 0 var(--accent-hi)}
 .fcard select option{background:#1B1713;color:#E6E1D8}
 .fcard textarea{min-height:74px;resize:vertical;line-height:1.55}
-.fcard ::placeholder{color:var(--fg-faint)}
-.submit{width:100%;background:var(--accent);color:#17130E;border:0;border-radius:3px;padding:14px;font-family:var(--sans);font-size:14.5px;font-weight:500;cursor:pointer}
+.fcard ::placeholder{color:var(--fg-muted)}
+.submit{width:100%;background:var(--accent-btn);color:#17130E;border:0;border-radius:3px;padding:14px;font-family:var(--sans);font-size:14.5px;font-weight:500;cursor:pointer}
 
 .done h3{margin:0 0 10px}
 .done p{margin:0;font-size:14px;color:var(--fg-dim);line-height:1.6}
+.form-error{margin:14px 0 0;font-size:13.5px;line-height:1.55;color:var(--accent-hi)}
+.form-error[hidden]{display:none}
 .done .tick{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent-hi);text-transform:uppercase;margin-bottom:14px}
 
 .totop{position:fixed;right:clamp(16px,3vw,30px);bottom:calc(clamp(16px,3vw,30px) + env(safe-area-inset-bottom,0px));z-index:30;width:48px;height:48px;display:grid;place-items:center;padding:0;background:rgba(20,18,16,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--accent);border-radius:3px;color:var(--accent-hi);cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s ease,background .2s ease,color .2s ease}
@@ -247,7 +262,7 @@ img{max-width:100%;display:block}
 .totop:hover svg,.totop:focus-visible svg{animation:none;transform:translateY(-3px)}
 @keyframes totopNudge{0%,55%,100%{transform:translateY(0)}25%{transform:translateY(-4px)}}
 
-.foot{padding:34px var(--gut) 52px;margin-top:56px;border-top:1px solid var(--line);color:var(--fg-faint);font-size:12.5px;line-height:1.7;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;justify-content:space-between}
+.foot{padding:34px var(--gut) 52px;margin-top:56px;border-top:1px solid var(--line);color:var(--fg-muted);font-size:12.5px;line-height:1.7;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;justify-content:space-between}
 .foot img{height:clamp(76px,10vw,104px);width:auto;flex:none}
 .foot .txt{display:grid;gap:4px}
 .foot-social{display:flex;gap:16px;align-items:center}
@@ -394,7 +409,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
   .tsl-rail button:hover{color:var(--fg-dim);background:transparent}
   .dir-row:hover{background:none}
   .dir-row:hover .n,.dir-row:hover .t{color:inherit}
-  .dir-row:hover .n{color:var(--fg-faint)}
+  .dir-row:hover .n{color:var(--fg-muted)}
   .lang-menu button:hover{background:transparent;color:var(--fg-dim)}
   .nav-cta:hover{background:transparent;color:var(--accent-hi)}
 }
@@ -491,7 +506,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 
 <body>
 <header class="bar">
-  <img src="img/logo.webp" alt="Avento Wood">
+  <img src="img/logo.webp" alt="Avento Wood" width="400" height="373">
   <div class="right">
     <nav class="nav-links">
       <a href="#directions" data-ua="Напрямки" data-az="İstiqamətlər" data-ru="Направления" data-en="Production lines">İstiqamətlər</a>
@@ -584,10 +599,10 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     <article><span class="no">07</span><h3 data-ua="Вбудовані меблі" data-az="Quraşdırılmış mebel" data-ru="Встроенная мебель" data-en="Built-in furniture">Quraşdırılmış mebel</h3><p data-ua="Ніші, гардеробні системи, вбудовані шафи" data-az="Nişlər, paltar otağı sistemləri, quraşdırılmış şkaflar" data-ru="Ниши, гардеробные системы, встроенные шкафы" data-en="Niches, wardrobe systems, built-in cupboards">Nişlər, paltar otağı sistemləri, quraşdırılmış şkaflar</p></article>
   </div>
   <div class="gal">
-    <figure><div class="shot"><img src="img/wardrobe-sliding.webp" alt=""></div><figcaption data-ua="Шафа-купе" data-az="Kupe şkaf" data-ru="Шкаф-купе" data-en="Sliding-door wardrobe">Kupe şkaf</figcaption></figure>
-    <figure><div class="shot"><img src="img/dressing-room.webp" alt=""></div><figcaption data-ua="Гардеробна кімната" data-az="Paltar otağı" data-ru="Гардеробная комната" data-en="Walk-in closet">Paltar otağı</figcaption></figure>
-    <figure><div class="shot"><img src="img/built-in-study.webp" alt=""></div><figcaption data-ua="Вбудовані меблі" data-az="Quraşdırılmış mebel" data-ru="Встроенная мебель" data-en="Built-in furniture">Quraşdırılmış mebel</figcaption></figure>
-    <figure><div class="shot"><img src="img/restaurant.webp" alt=""></div><figcaption data-ua="Комерційні меблі" data-az="Kommersiya mebeli" data-ru="Коммерческая мебель" data-en="Commercial furniture">Kommersiya mebeli</figcaption></figure>
+    <figure><div class="shot"><img src="img/wardrobe-sliding.webp" alt="Kupe şkaf" width="739" height="730" loading="lazy" decoding="async"></div><figcaption data-ua="Шафа-купе" data-az="Kupe şkaf" data-ru="Шкаф-купе" data-en="Sliding-door wardrobe">Kupe şkaf</figcaption></figure>
+    <figure><div class="shot"><img src="img/dressing-room.webp" alt="Paltar otağı" width="618" height="914" loading="lazy" decoding="async"></div><figcaption data-ua="Гардеробна кімната" data-az="Paltar otağı" data-ru="Гардеробная комната" data-en="Walk-in closet">Paltar otağı</figcaption></figure>
+    <figure><div class="shot"><img src="img/built-in-study.webp" alt="Quraşdırılmış mebel" width="693" height="928" loading="lazy" decoding="async"></div><figcaption data-ua="Вбудовані меблі" data-az="Quraşdırılmış mebel" data-ru="Встроенная мебель" data-en="Built-in furniture">Quraşdırılmış mebel</figcaption></figure>
+    <figure><div class="shot"><img src="img/restaurant.webp" alt="Kommersiya mebeli" width="622" height="901" loading="lazy" decoding="async"></div><figcaption data-ua="Комерційні меблі" data-az="Kommersiya mebeli" data-ru="Коммерческая мебель" data-en="Commercial furniture">Kommersiya mebeli</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="1" data-ua="Заявка на меблі" data-az="Mebel üçün sifariş" data-ru="Заявка на мебель" data-en="Furniture enquiry">Mebel üçün sifariş</a></div>
 </section>
@@ -605,8 +620,8 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     <article><span class="no">02</span><h3 data-ua="Сходи, поручні та балюстради" data-az="Pilləkənlər, məhəccərlər və balüstradalar" data-ru="Лестницы, поручни и балюстрады" data-en="Staircases, handrails and balustrades">Pilləkənlər, məhəccərlər və balüstradalar</h3></article>
   </div>
   <div class="gal">
-    <figure><div class="shot"><img src="img/window-portal.webp" alt=""></div><figcaption data-ua="Віконний портал" data-az="Pəncərə portalı" data-ru="Оконный портал" data-en="Window surround">Pəncərə portalı</figcaption></figure>
-    <figure><div class="shot"><img src="img/shutters-arched.webp" alt=""></div><figcaption data-ua="Віконниці" data-az="Pəncərə qapaqları" data-ru="Ставни" data-en="Shutters">Pəncərə qapaqları</figcaption></figure>
+    <figure><div class="shot"><img src="img/window-portal.webp" alt="Pəncərə portalı" width="1051" height="1496" loading="lazy" decoding="async"></div><figcaption data-ua="Віконний портал" data-az="Pəncərə portalı" data-ru="Оконный портал" data-en="Window surround">Pəncərə portalı</figcaption></figure>
+    <figure><div class="shot"><img src="img/shutters-arched.webp" alt="Pəncərə qapaqları" width="956" height="1645" loading="lazy" decoding="async"></div><figcaption data-ua="Віконниці" data-az="Pəncərə qapaqları" data-ru="Ставни" data-en="Shutters">Pəncərə qapaqları</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="2" data-ua="Заявка на двері або сходи" data-az="Qapı və ya pilləkən üçün sifariş" data-ru="Заявка на двери или лестницу" data-en="Doors or staircase enquiry">Qapı və ya pilləkən üçün sifariş</a></div>
 </section>
@@ -626,10 +641,10 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     <article><span class="no">04</span><h3 data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</h3><p data-ua="Облицювання стін масивом дерева та шпоном" data-az="Divarların masiv ağac və şponla üzlənməsi" data-ru="Облицовка стен массивом дерева и шпоном" data-en="Wall cladding in solid wood and veneer">Divarların masiv ağac və şponla üzlənməsi</p></article>
   </div>
   <div class="gal">
-    <figure><div class="shot"><img src="img/tv-panel-walnut.webp" alt=""></div><figcaption data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</figcaption></figure>
-    <figure><div class="shot"><img src="img/divider-shelving.webp" alt=""></div><figcaption data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</figcaption></figure>
-    <figure><div class="shot"><img src="img/divider-branches.webp" alt=""></div><figcaption data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</figcaption></figure>
-    <figure><div class="shot"><img src="img/slat-wall-shelves.webp" alt=""></div><figcaption data-ua="Рейкові панелі" data-az="Reyka panellər" data-ru="Реечные панели" data-en="Slatted panels">Reyka panellər</figcaption></figure>
+    <figure><div class="shot"><img src="img/tv-panel-walnut.webp" alt="Divar panelləri" width="520" height="882" loading="lazy" decoding="async"></div><figcaption data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</figcaption></figure>
+    <figure><div class="shot"><img src="img/divider-shelving.webp" alt="Arakəsmələr" width="556" height="866" loading="lazy" decoding="async"></div><figcaption data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</figcaption></figure>
+    <figure><div class="shot"><img src="img/divider-branches.webp" alt="Arakəsmələr" width="522" height="868" loading="lazy" decoding="async"></div><figcaption data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</figcaption></figure>
+    <figure><div class="shot"><img src="img/slat-wall-shelves.webp" alt="Reyka panellər" width="615" height="847" loading="lazy" decoding="async"></div><figcaption data-ua="Рейкові панелі" data-az="Reyka panellər" data-ru="Реечные панели" data-en="Slatted panels">Reyka panellər</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="3" data-ua="Заявка на панелі" data-az="Panellər üçün sifariş" data-ru="Заявка на панели" data-en="Panels enquiry">Panellər üçün sifariş</a></div>
 </section>
@@ -651,10 +666,10 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
   </div>
   <!-- Тимчасові фото зі stock.unsplash.com: house-facade, sauna-cabin, wood-facade-gable. Заміни на свої. -->
   <div class="gal">
-    <figure><div class="shot"><img src="img/pergola-swing.webp" alt=""></div><figcaption data-ua="Пергола" data-az="Perqola" data-ru="Пергола" data-en="Pergola">Perqola</figcaption></figure>
-    <figure><div class="shot"><img src="img/house-facade.webp" alt=""></div><figcaption data-ua="Будинки" data-az="Evlər" data-ru="Дома" data-en="Houses">Evlər</figcaption></figure>
-    <figure><div class="shot"><img src="img/sauna-cabin.webp" alt=""></div><figcaption data-ua="Лазні" data-az="Hamamlar" data-ru="Бани" data-en="Saunas">Hamamlar</figcaption></figure>
-    <figure><div class="shot"><img src="img/wood-facade-gable.webp" alt=""></div><figcaption data-ua="Фасади" data-az="Fasadlar" data-ru="Фасады" data-en="Facades">Fasadlar</figcaption></figure>
+    <figure><div class="shot"><img src="img/pergola-swing.webp" alt="Perqola" width="621" height="843" loading="lazy" decoding="async"></div><figcaption data-ua="Пергола" data-az="Perqola" data-ru="Пергола" data-en="Pergola">Perqola</figcaption></figure>
+    <figure><div class="shot"><img src="img/house-facade.webp" alt="Evlər" width="1024" height="1536" loading="lazy" decoding="async"></div><figcaption data-ua="Будинки" data-az="Evlər" data-ru="Дома" data-en="Houses">Evlər</figcaption></figure>
+    <figure><div class="shot"><img src="img/sauna-cabin.webp" alt="Hamamlar" width="1121" height="1403" loading="lazy" decoding="async"></div><figcaption data-ua="Лазні" data-az="Hamamlar" data-ru="Бани" data-en="Saunas">Hamamlar</figcaption></figure>
+    <figure><div class="shot"><img src="img/wood-facade-gable.webp" alt="Fasadlar" width="1111" height="1416" loading="lazy" decoding="async"></div><figcaption data-ua="Фасади" data-az="Fasadlar" data-ru="Фасады" data-en="Facades">Fasadlar</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="4" data-ua="Заявка на будівництво" data-az="Tikinti üçün sifariş" data-ru="Заявка на строительство" data-en="Construction enquiry">Tikinti üçün sifariş</a></div>
 </section>
@@ -676,9 +691,9 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     <article><span class="no">06</span><h3 data-ua="Аксесуари" data-az="Aksesuarlar" data-ru="Аксессуары" data-en="Accessories">Aksesuarlar</h3><p data-ua="Вироби з дерева для інтер’єру та побуту" data-az="İnteryer və məişət üçün ağac məmulatları" data-ru="Изделия из дерева для интерьера и быта" data-en="Wooden pieces for the home and interior">İnteryer və məişət üçün ağac məmulatları</p></article>
   </div>
   <div class="gal">
-    <figure><div class="shot"><img src="img/table-walnut.webp" alt=""></div><figcaption data-ua="Стільниці" data-az="Tezgahlar" data-ru="Столешницы" data-en="Worktops">Tezgahlar</figcaption></figure>
-    <figure><div class="shot"><img src="img/wine-cabinet.webp" alt=""></div><figcaption data-ua="Винні шафи" data-az="Şərab şkafları" data-ru="Винные шкафы" data-en="Wine cabinets">Şərab şkafları</figcaption></figure>
-    <figure><div class="shot"><img src="img/sideboard-carved.webp" alt=""></div><figcaption data-ua="Слеби" data-az="Slablar" data-ru="Слэбы" data-en="Slabs">Slablar</figcaption></figure>
+    <figure><div class="shot"><img src="img/table-walnut.webp" alt="Tezgahlar" width="1021" height="1540" loading="lazy" decoding="async"></div><figcaption data-ua="Стільниці" data-az="Tezgahlar" data-ru="Столешницы" data-en="Worktops">Tezgahlar</figcaption></figure>
+    <figure><div class="shot"><img src="img/wine-cabinet.webp" alt="Şərab şkafları" width="1024" height="1536" loading="lazy" decoding="async"></div><figcaption data-ua="Винні шафи" data-az="Şərab şkafları" data-ru="Винные шкафы" data-en="Wine cabinets">Şərab şkafları</figcaption></figure>
+    <figure><div class="shot"><img src="img/sideboard-carved.webp" alt="Slablar" width="1498" height="1050" loading="lazy" decoding="async"></div><figcaption data-ua="Слеби" data-az="Slablar" data-ru="Слэбы" data-en="Slabs">Slablar</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="5" data-ua="Заявка на стільницю" data-az="Tezgah üçün sifariş" data-ru="Заявка на столешницу" data-en="Worktop enquiry">Tezgah üçün sifariş</a></div>
 </section>
@@ -698,8 +713,8 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     <article><span class="no">04</span><h3 data-ua="Твори мистецтва" data-az="Sənət əsərləri" data-ru="Произведения искусства" data-en="Works of art">Sənət əsərləri</h3><p data-ua="Релігійні вироби та авторські художні роботи" data-az="Dini məmulatlar və müəllif bədii işləri" data-ru="Религиозные изделия и авторские художественные работы" data-en="Religious pieces and signature artistic works">Dini məmulatlar və müəllif bədii işləri</p></article>
   </div>
   <div class="gal">
-    <figure><div class="shot"><img src="img/shelf-carved.webp" alt=""></div><figcaption data-ua="Різьба по дереву" data-az="Ağac oyması" data-ru="Резьба по дереву" data-en="Wood carving">Ağac oyması</figcaption></figure>
-    <figure><div class="shot"><img src="img/accessories-author.webp" alt=""></div><figcaption data-ua="Аксесуари" data-az="Aksesuarlar" data-ru="Аксессуары" data-en="Accessories">Aksesuarlar</figcaption></figure>
+    <figure><div class="shot"><img src="img/shelf-carved.webp" alt="Ağac oyması" width="1402" height="1122" loading="lazy" decoding="async"></div><figcaption data-ua="Різьба по дереву" data-az="Ağac oyması" data-ru="Резьба по дереву" data-en="Wood carving">Ağac oyması</figcaption></figure>
+    <figure><div class="shot"><img src="img/accessories-author.webp" alt="Aksesuarlar" width="946" height="1662" loading="lazy" decoding="async"></div><figcaption data-ua="Аксесуари" data-az="Aksesuarlar" data-ru="Аксессуары" data-en="Accessories">Aksesuarlar</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="6" data-ua="Заявка на художню роботу" data-az="Bədii iş üçün sifariş" data-ru="Заявка на художественную работу" data-en="Artistic work enquiry">Bədii iş üçün sifariş</a></div>
 </section>
@@ -719,10 +734,10 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     <article><span class="no">04</span><h3 data-ua="Листи" data-az="Lövhələr" data-ru="Листы" data-en="Sheet materials">Lövhələr</h3></article>
   </div>
   <div class="gal">
-    <figure><div class="shot"><img src="img/parkuet.webp" alt=""></div><figcaption data-ua="Паркет" data-az="Parket" data-ru="Паркет" data-en="Parquet">Parket</figcaption></figure>
-    <figure><div class="shot"><img src="img/wood.webp" alt=""></div><figcaption data-ua="Дошка" data-az="Taxta" data-ru="Доска" data-en="Boards">Taxta</figcaption></figure>
-    <figure><div class="shot"><img src="img/bedroom-oak-panel.webp" alt=""></div><figcaption data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</figcaption></figure>
-    <figure><div class="shot"><img src="img/plyta.webp" alt=""></div><figcaption data-ua="Листи" data-az="Lövhələr" data-ru="Листы" data-en="Sheet materials">Lövhələr</figcaption></figure>
+    <figure><div class="shot"><img src="img/parkuet.webp" alt="Parket" width="667" height="1000" loading="lazy" decoding="async"></div><figcaption data-ua="Паркет" data-az="Parket" data-ru="Паркет" data-en="Parquet">Parket</figcaption></figure>
+    <figure><div class="shot"><img src="img/wood.webp" alt="Taxta" width="1000" height="667" loading="lazy" decoding="async"></div><figcaption data-ua="Дошка" data-az="Taxta" data-ru="Доска" data-en="Boards">Taxta</figcaption></figure>
+    <figure><div class="shot"><img src="img/bedroom-oak-panel.webp" alt="Divar panelləri" width="731" height="728" loading="lazy" decoding="async"></div><figcaption data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</figcaption></figure>
+    <figure><div class="shot"><img src="img/plyta.webp" alt="Lövhələr" width="1024" height="1536" loading="lazy" decoding="async"></div><figcaption data-ua="Листи" data-az="Lövhələr" data-ru="Листы" data-en="Sheet materials">Lövhələr</figcaption></figure>
   </div>
   <div class="sect-cta"><a href="#contact" data-dir="7" data-ua="Заявка на облицювання" data-az="Üzlük üçün sifariş" data-ru="Заявка на облицовку" data-en="Cladding enquiry">Üzlük üçün sifariş</a></div>
 </section>
@@ -801,6 +816,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
      свідомо показують роботу, про яку йдеться, а не обличчя: портретів клієнтів
      у нас немає, а ставити чуже обличчя під вигаданий відгук — підробка людини. -->
 <section class="tsl" id="reviews">
+  <h2 class="sr-only" data-ua="Відгуки клієнтів" data-az="Müştəri rəyləri" data-ru="Отзывы клиентов" data-en="Client reviews">Müştəri rəyləri</h2>
   <div class="tsl-rail">
     <button type="button" id="tsl-next" data-ua="Наступний" data-az="Növbəti" data-ru="Следующий" data-en="Next">Növbəti</button>
     <button type="button" id="tsl-prev" data-ua="Попередній" data-az="Əvvəlki" data-ru="Предыдущий" data-en="Previous">Əvvəlki</button>
@@ -840,25 +856,28 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
       <h2 data-ua="Ми працюємо з приватними замовниками, інтер’єрними дизайнерами, будівельниками та комерційними клієнтами" data-az="Fərdi sifarişçilər, interyer dizaynerləri, tikinticilər və kommersiya müştəriləri ilə işləyirik" data-ru="Мы работаем с частными заказчиками, интерьерными дизайнерами, строителями и коммерческими клиентами" data-en="We work with private clients, interior designers, builders and commercial customers">Fərdi sifarişçilər, interyer dizaynerləri, tikinticilər və kommersiya müştəriləri ilə işləyirik</h2>
       <p class="lede" data-ua="— від одного виробу до комплексного оснащення об’єктів." data-az="— bir məmulatdan obyektlərin kompleks təchizatına qədər." data-ru="— от одного изделия до комплексного оснащения объектов." data-en="— from a single piece to the complete fit-out of a property.">— bir məmulatdan obyektlərin kompleks təchizatına qədər.</p>
       <div class="cinfo">
-        <div><h4 data-ua="Телефон" data-az="Telefon" data-ru="Телефон" data-en="Phone">Telefon</h4><p>———</p></div>
-        <div><h4 data-ua="Пошта" data-az="E-poçt" data-ru="Почта" data-en="Email">E-poçt</h4><p>———</p></div>
-        <div><h4 data-ua="Адреса" data-az="Ünvan" data-ru="Адрес" data-en="Address">Ünvan</h4><p>———</p></div>
-        <div><h4 data-ua="Соцмережі" data-az="Sosial şəbəkələr" data-ru="Соцсети" data-en="Social">Sosial şəbəkələr</h4><p><a class="cinfo-link" href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener">Instagram</a></p></div>
+        <div><h3 data-ua="Телефон" data-az="Telefon" data-ru="Телефон" data-en="Phone">Telefon</h3><p>———</p></div>
+        <div><h3 data-ua="Пошта" data-az="E-poçt" data-ru="Почта" data-en="Email">E-poçt</h3><p>———</p></div>
+        <div><h3 data-ua="Адреса" data-az="Ünvan" data-ru="Адрес" data-en="Address">Ünvan</h3><p>———</p></div>
+        <div><h3 data-ua="Соцмережі" data-az="Sosial şəbəkələr" data-ru="Соцсети" data-en="Social">Sosial şəbəkələr</h3><p><a class="cinfo-link" href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener noreferrer">Instagram</a></p></div>
       </div>
     </div>
 
     <div class="fcard">
       <div id="form-wrap">
         <h3 data-ua="Залишити заявку" data-az="Sifariş buraxın" data-ru="Оставить заявку" data-en="Request a quote">Sifariş buraxın</h3>
-        <form id="lead-form">
+        <!-- TODO (КРИТИЧНО): форма не має бекенду. Впиши адресу сервісу в data-endpoint, наприклад
+             Formspree: data-endpoint="https://formspree.io/f/XXXXXXXX". Поки поле порожнє, заявки
+             нікуди не відправляються, а відвідувач бачить підтвердження: це лише демо. -->
+        <form id="lead-form" method="post" action="" data-endpoint="">
           <div class="row2">
             <div class="field">
               <label for="f-name" data-ua="Ім’я" data-az="Ad" data-ru="Имя" data-en="Name">Ad</label>
-              <input id="f-name" name="name" type="text" required>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
             </div>
             <div class="field">
               <label for="f-phone" data-ua="Телефон" data-az="Telefon" data-ru="Телефон" data-en="Phone">Telefon</label>
-              <input id="f-phone" name="phone" type="tel" required>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
             </div>
           </div>
           <div class="field">
@@ -879,6 +898,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
             <textarea id="f-msg" name="message"></textarea>
           </div>
           <button class="submit btn-slide" type="submit" data-ua="Надіслати" data-az="Göndər" data-ru="Отправить" data-en="Send">Göndər</button>
+          <p class="form-error" id="form-error" role="alert" hidden data-ua="Не вдалося надіслати заявку. Спробуйте ще раз." data-az="Sifariş göndərilmədi. Yenidən cəhd edin." data-ru="Не удалось отправить заявку. Попробуйте ещё раз." data-en="We could not send your request. Please try again."></p>
         </form>
       </div>
       <div class="done" id="form-done" hidden>
@@ -891,7 +911,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
 </section>
 
 <footer class="foot">
-  <img src="img/logo.webp" alt="">
+  <img src="img/logo.webp" alt="" width="400" height="373" loading="lazy" decoding="async">
   <nav class="foot-nav">
     <a href="#directions" data-ua="Напрямки" data-az="İstiqamətlər" data-ru="Направления" data-en="Production lines">İstiqamətlər</a>
     <a href="#about" data-ua="Чому нас обирають" data-az="Niyə bizi seçirlər" data-ru="Почему нас выбирают" data-en="Why clients choose us">Niyə bizi seçirlər</a>
@@ -899,7 +919,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
   </nav>
   <!-- ЗАГЛУШКА: Facebook і WhatsApp досі href="#" — постав реальні посилання або прибери ці дві іконки -->
   <div class="foot-social">
-    <a href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
+    <a href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
     <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8.5h-2c-.9 0-1.5.6-1.5 1.5v2h3.3l-.4 3h-2.9V21h-3v-6h-2v-3h2v-2.3C8.5 7.4 10 6 12.4 6H15v2.5z"></path></svg></a>
     <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 17.5 4.5 20l2.6-.7A8 8 0 1 0 4 12a8 8 0 0 0 2.5 5.5Z"></path><path d="M9.2 9.8c.2 2 2.8 4.6 4.8 4.8.8.1 1.4-.5 1.4-1.2v-.6l-2-.9-.5.9c-1-.5-1.9-1.4-2.4-2.4l.9-.5-.9-2h-.6c-.7 0-1.3.6-1.2 1.4Z"></path></svg></a>
   </div>
@@ -908,7 +928,7 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
   </div>
 </footer>
 
-<div class="dir-peek" id="dir-peek" aria-hidden="true"><img alt=""></div>
+<div class="dir-peek" id="dir-peek" aria-hidden="true"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
 <button class="totop" id="totop" type="button" data-ua-lbl="Нагору" data-az-lbl="Yuxarı" data-ru-lbl="Наверх" data-en-lbl="Back to top" aria-label="Yuxarı">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.5V4.5" fill="none"></path><path d="M5.5 11L12 4.5L18.5 11" fill="none"></path></svg>
 </button>
@@ -1376,20 +1396,48 @@ a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-co
     });
   }
 
-  // Форма нічого не надсилає: у неї немає ні action, ні бекенду.
-  // Підключіть сервіс (Formspree тощо) або власний endpoint через
-  // action + method="POST" і приберіть цей обробник.
+  // Відправка форми. Якщо в data-endpoint вписано адресу (наприклад Formspree), заявка
+  // летить туди через fetch; успіх показуємо лише коли сервер відповів 2xx, інакше
+  // виводимо помилку й лишаємо форму з уже введеними даними. Порожній data-endpoint:
+  // демо-режим (підтвердження без відправки) з попередженням у консолі.
   var form = document.getElementById("lead-form");
   if (form) {
     form.addEventListener("submit", function(e){
       e.preventDefault();
       var wrap = document.getElementById("form-wrap");
       var done = document.getElementById("form-done");
+      var err = document.getElementById("form-error");
+      var btn = form.querySelector('button[type="submit"]');
       if (!wrap || !done) { return; }
-      wrap.hidden = true;
-      done.hidden = false;
-      done.setAttribute("tabindex", "-1");
-      done.focus();
+      if (err) { err.hidden = true; }
+
+      function showDone(){
+        wrap.hidden = true;
+        done.hidden = false;
+        done.setAttribute("tabindex", "-1");
+        done.focus();
+      }
+
+      var endpoint = (form.getAttribute("data-endpoint") || "").trim();
+      if (!endpoint) {
+        if (window.console && console.warn) { console.warn("[Avento] data-endpoint порожній: заявка НЕ відправлена (демо)."); }
+        showDone();
+        return;
+      }
+
+      if (btn) { btn.disabled = true; form.setAttribute("aria-busy", "true"); }
+      fetch(endpoint, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+        .then(function(res){
+          if (!res.ok) { throw new Error("HTTP " + res.status); }
+          form.reset();
+          showDone();
+        })
+        .catch(function(){
+          if (err) { err.hidden = false; }
+        })
+        .then(function(){
+          if (btn) { btn.disabled = false; form.removeAttribute("aria-busy"); }
+        });
     });
   }
 })();
