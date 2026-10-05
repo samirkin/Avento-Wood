@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F5F4">
+<!-- ЧЕРНЕТКА ДЛЯ ПОГОДЖЕННЯ З КЛІЄНТОМ: закриває сайт від пошуковиків, щоб Google не проіндексував
+     сторінку з тестовими відгуками й прочерками замість контактів. ПЕРЕД ФІНАЛЬНИМ ЗАПУСКОМ ВИДАЛИТИ
+     наступний рядок, інакше сайт не зʼявиться в пошуку. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Masiv ağacdan mebel və dülgərlik: sizin ölçülərinizə uyğun. Palıd, dişbudaq, fıstıq, ekzotik ağac növləri. Mətbəx, pilləkən, qapı, tezgah, oyma pano.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<!-- TODO (КРИТИЧНО перед деплоєм): замінити https://TODO-YOUR-DOMAIN на справжній домен
+     у ТРЬОХ місцях: canonical, og:url, og:image. og:image та og:url мають бути повними
+     адресами з https://, бо Facebook, Telegram і LinkedIn не розкривають відносні шляхи.
+     Файл og-image.jpg (1200x630) лежить поруч з index.html. -->
+<link rel="canonical" href="https://TODO-YOUR-DOMAIN/">
+<meta property="og:url" content="https://TODO-YOUR-DOMAIN/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Avento Wood">
+<meta property="og:title" content="Avento Wood — Furniture &amp; Interior">
+<meta property="og:description" content="Masiv ağacdan mebel və dülgərlik: sizin ölçülərinizə uyğun. Palıd, dişbudaq, fıstıq, ekzotik ağac növləri. Mətbəx, pilləkən, qapı, tezgah, oyma pano.">
+<meta property="og:image" content="https://TODO-YOUR-DOMAIN/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Avento Wood — Furniture &amp; Interior: tünd mətbəx və qoz ağacından masiv tezgah">
+<meta property="og:locale" content="az_AZ">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<title>Avento Wood — Masiv ağacdan mebel və dülgərlik</title>
+<link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+<!-- GA4: вставити тег тут (Google tag, G-XXXXXXXXXX) -->
+<!-- Meta Pixel: вставити тут -->
+<style>
+:root{
+  --bar-h:calc(clamp(44px,7vw,72px) + 25px);   /* логотип + padding 12+12 + рамка 1px */
+  --ink:#141210; --panel:#1B1713;
+  --accent:#7E6A4F; --accent-hi:#A8906B;
+  --fg:#E6E1D8; --fg-dim:#9A9287; --fg-faint:#6F6961;
+  --fg-muted:#868078;   /* допоміжний ТЕКСТ: 4.56-4.78:1 (--fg-faint 3.44:1 лишається для ліній і декору) */
+  --accent-btn:#937D5D; /* фон кнопок: текст #17130E на ньому >=4.5:1 (на --accent було 3.58:1) */
+  --line:rgba(230,225,216,.13); --line-soft:rgba(230,225,216,.07);
+  --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --serif:"Playfair Display",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar-h) + 12px)}
+/* scroll-padding на html замість scroll-margin на кожному розділі: висота липкої шапки
+   міняється разом з логотипом, і окремі відступи щоразу відставали, закриваючи заголовок. */
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px}
+img{max-width:100%;display:block}
+/* Візуально прихований, але доступний читачам екрана й пошуковикам текст */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--accent-hi);text-transform:uppercase}
+.ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#241D16}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--gut);background:rgba(20,18,16,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar img{height:clamp(44px,7vw,72px);width:auto}
+.bar .right{display:flex;align-items:center;gap:clamp(12px,2vw,26px)}
+.nav-links{display:flex;gap:clamp(16px,2.2vw,28px)}
+.nav-links a{color:var(--fg-dim);text-decoration:none;font-size:13.5px;white-space:nowrap}
+.nav-links a:hover{color:var(--fg)}
+.nav-cta{font-size:13px;padding:9px 17px;border:1px solid var(--accent);color:var(--accent-hi);text-decoration:none;border-radius:3px;white-space:nowrap}
+.nav-cta:hover{color:var(--accent-hi)}
+.langs{position:relative;flex:none}
+.lang-toggle{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:7px 10px;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:3px;cursor:pointer}
+.lang-toggle:hover{border-color:var(--accent-hi)}
+.lang-toggle svg{width:9px;height:6px;display:block;transition:transform .18s ease}
+.lang-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:40;display:grid;min-width:100%;background:var(--panel);border:1px solid var(--line);border-radius:3px;overflow:hidden;box-shadow:0 14px 32px rgba(0,0,0,.5)}
+.lang-menu button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:9px 16px;background:transparent;color:var(--fg-dim);border:0;cursor:pointer;text-align:left}
+.lang-menu button+button{border-top:1px solid var(--line-soft)}
+.lang-menu button:hover{background:rgba(126,106,79,.24);color:var(--fg)}
+.lang-menu[hidden]{display:none}
+.lang-menu button[aria-pressed="true"]{color:var(--accent-hi)}
+
+.hero{position:relative;min-height:clamp(520px,80vh,820px);display:flex;align-items:center;overflow:hidden;background:#241D16}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-video{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,18,16,.34) 0%,rgba(20,18,16,.52) 42%,rgba(20,18,16,.96) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;padding:56px var(--gut)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,6vw,72px);line-height:1.06;margin:18px 0 0;max-width:20ch;text-wrap:balance}
+.hero .lede{margin:22px 0 0;max-width:62ch;color:#C6BFB4;font-size:clamp(15px,1.6vw,18px);line-height:1.68}
+.hero .lede p{margin:0}
+
+/* Вступний блок після героя: заголовок ліворуч, текст праворуч. Двома колонками
+   він читається як розворот, а не як ще один довгий абзац на всю ширину. */
+.intro{padding:0 var(--gut);margin-top:76px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(26px,4.5vw,72px);align-items:start}
+.intro h2{font-family:var(--serif);font-weight:400;font-size:clamp(25px,3.5vw,40px);line-height:1.16;margin:0;max-width:19ch;text-wrap:balance}
+.intro-text{display:grid;gap:16px;max-width:64ch}
+.intro-text p{margin:0;font-size:15.5px;line-height:1.72;color:var(--fg-dim)}
+.intro-text p:first-child{color:var(--fg)}
+@media(max-width:940px){.intro{grid-template-columns:1fr;gap:20px}}
+.summary{padding:0 var(--gut);margin-top:70px}
+/* Волосяна лінія між вступом і напрямками. Псевдоелемент, а не border-top:
+   як блоковий нащадок він лягає всередину бічних полів і вирівнюється з текстом,
+   а не тягнеться від краю до краю екрана. */
+.summary::before{content:"";display:block;height:1px;background:var(--line);margin:0 0 32px}
+.summary h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.8vw,38px);margin:12px 0 0;max-width:24ch;text-wrap:balance}
+.summary .lede{margin:16px 0 26px;max-width:62ch;color:var(--fg-dim);font-size:15px;line-height:1.68}
+.dir-row{display:grid;grid-template-columns:48px minmax(0,1fr) minmax(0,1.25fr);gap:16px;align-items:baseline;padding:15px 0;border-top:1px solid var(--line-soft);color:var(--fg);text-decoration:none}
+.dir-row:last-of-type{border-bottom:1px solid var(--line-soft)}
+.dir-row .n{font-family:var(--mono);font-size:13px;color:var(--fg-muted)}
+.dir-row .t{font-size:15.5px;font-weight:400}
+.dir-row .d{font-size:13.5px;color:var(--fg-dim);line-height:1.5}
+.dir-row:hover{background:rgba(126,106,79,.14)}
+.dir-row:hover .n,.dir-row:hover .t{color:var(--accent-hi)}
+.dir-row.flat{cursor:default}
+.dir-row.flat:hover{background:none}
+.dir-row.flat:hover .n,.dir-row.flat:hover .t{color:inherit}
+.dir-peek{position:fixed;top:0;left:0;z-index:25;width:clamp(150px,15vw,200px);aspect-ratio:4/3;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .2s ease;border:1px solid var(--line);background:var(--panel);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.dir-peek.on{opacity:1}
+.dir-peek img{width:100%;height:100%;object-fit:cover}
+@media (hover:none),(max-width:760px){.dir-peek{display:none}}
+
+.sect{margin-top:72px}
+/* Фіксовані 230px, а не 30vh: прив'язка до висоти вікна означала, що той самий
+   розділ на більшому моніторі ставав вищим, а вмісту в ньому лише ~207px. */
+/* min-height, а не height + overflow:hidden: на вузьких екранах текст росіянською займає
+   більше ніж 230px, і фіксована висота відрізала верх заголовка. На широких вміст
+   ≤222px, тож блок не росте і стрибків при завантаженні шрифтів немає. */
+.opener{position:relative;min-height:230px;display:flex;align-items:flex-end;overflow:hidden}
+/* Зум фону при наведенні. Фон лежить на самому .opener разом із текстом, тож окремий шар
+   ::before бере те саме зображення через inherit і масштабується під текстом та затемненням.
+   overflow:hidden обрізає виступ. Висота блоку лишається min-height, тож текст не клипається. */
+.opener::before{content:"";position:absolute;inset:0;background:inherit;transform:scale(1);transition:transform 1.4s cubic-bezier(.22,.61,.36,1);will-change:transform}
+@media(hover:hover) and (pointer:fine){
+  .opener:hover::before{transform:scale(1.07)}
+}
+/* Затемнення під текстом розділу. Основне — знизу вгору, бо текст притиснутий до низу.
+   Друга, слабша вуаль зліва направо підстраховує початок рядків; праворуч угорі фото
+   лишається чистим. Горизонтальний градієнт окремо не годиться: рядки лід-абзацу
+   тягнуться до 62ch і їхні хвости виходять у світлу зону.
+   Значення підібрані заміром: по всіх семи розділах найгірший контраст тексту
+   до фото 4.7:1 при потрібних 4.5:1. Не послаблювати, не перевіривши наново. */
+.opener::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(20,18,16,.93) 0%, rgba(20,18,16,.84) 40%, rgba(20,18,16,.62) 70%, rgba(20,18,16,.18) 100%),linear-gradient(to right, rgba(20,18,16,.42) 0%, rgba(20,18,16,.14) 50%, rgba(20,18,16,0) 80%)}
+.opener .in{position:relative;z-index:1;padding:28px var(--gut) 22px;width:100%}
+.opener h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.1;margin:12px 0 0;max-width:20ch;text-wrap:balance}
+.opener .lede{margin:14px 0 0;max-width:80ch;color:var(--fg);font-size:15px;line-height:1.65}
+
+/* 180px замість 240: сім позицій вміщаються в один рядок, тож перелік ніде
+   не переноситься на другий і всі розділи однакової висоти. */
+.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line-soft);border-bottom:1px solid var(--line-soft)}
+/* Спільна нижня межа картки: без неї рядок підлаштовується під найдовший опис
+   і розділи з дворядковими описами виростали на 50px. */
+/* Бічні відступи 22px, а не --gut: у семи колонках поле сторінки з'їдало
+   половину ширини картки, і описи переносились на вп'ятеро більше рядків. */
+/* Перелік на всю ширину, як фото й галереї. Усі картки з однаковим відступом 22px.
+   Висоти карток не вирівнюємо між розділами: рівність розділів тримає фіксована
+   висота .sect нижче, а вільне місце забирає галерея. */
+.items article{background:var(--ink);padding:20px 22px 24px}
+.items h3{margin:0;font-weight:500;font-size:15.5px}
+.items p{margin:7px 0 0;font-size:13.5px;color:var(--fg-dim);line-height:1.55}
+.items .no{font-family:var(--mono);font-size:11px;color:var(--fg-muted);display:block;margin-bottom:9px}
+
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line-soft)}
+.gal figure{margin:0;background:var(--panel);display:flex;flex-direction:column}
+/* Стеля висоти плитки. Без неї галерея з двох фото розтягувала кожне на пів екрана
+   і давала 949px замість 474: пропорція 3:4 множить ширину колонки. 474 — це рівень
+   розділу з чотирма фото, тож усі галереї тепер однакової висоти незалежно від їх числа. */
+.gal .shot{aspect-ratio:3/4;max-width:100%;max-height:474px;overflow:hidden}
+#s2 .gal .shot,#s6 .gal .shot{max-height:574px}
+.gal img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+/* Зум лише там, де є справжнє наведення: на тачскрині :hover залипає після тапа. */
+@media(hover:hover) and (pointer:fine){
+  .gal figure:hover img,.gal figure:focus-within img{transform:scale(1.07)}
+}
+.gal figcaption{padding:12px 16px 16px;font-size:12.5px;color:var(--fg-dim);line-height:1.5}
+
+.stats{margin-top:76px;padding:0 var(--gut)}
+.stats .hd{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.6vw,34px);margin:0 0 22px;max-width:22ch}
+.stats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(26px,4.5vw,60px);border-top:1px solid var(--fg-faint);border-bottom:1px solid var(--line-soft)}
+.stats .row div{padding:22px 0 24px}
+.stats .v{font-family:var(--mono);font-size:clamp(26px,4vw,38px);line-height:1;font-variant-numeric:tabular-nums}
+.stats .k{font-size:14px;color:var(--fg-dim);margin-top:10px;line-height:1.5;max-width:22ch}
+.stats .note{margin:20px 0 0;max-width:62ch;font-size:14px;color:var(--fg-dim);line-height:1.62}
+.reviews{margin-top:76px;padding:0 var(--gut)}
+.reviews .hd{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.6vw,34px);margin:12px 0 26px;max-width:22ch}
+.reviews .row{--per:3;display:flex;gap:1px;background:var(--line-soft);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain}
+.reviews .row::-webkit-scrollbar{display:none}
+.reviews .row:focus-visible{outline:2px solid var(--accent-hi);outline-offset:2px}
+.reviews .review{flex:0 0 calc((100% - (var(--per) - 1) * 1px) / var(--per));min-width:0;scroll-snap-align:start;background:var(--ink);padding:24px 26px 26px;display:flex;flex-direction:column}
+.reviews .rev-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px}
+.reviews .rev-nav[hidden]{display:none}
+.reviews .dots{display:flex;gap:7px}
+.reviews .dots button{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:var(--fg-faint);cursor:pointer;transition:background .2s ease,transform .2s ease}
+.reviews .dots button[aria-current="true"]{background:var(--accent-hi);transform:scale(1.35)}
+.reviews .arrows{display:flex;gap:8px}
+.reviews .arrows button{width:40px;height:40px;display:grid;place-items:center;padding:0;background:transparent;border:1px solid var(--line);border-radius:3px;color:var(--fg-dim);cursor:pointer;transition:border-color .2s ease,color .2s ease,background .2s ease}
+.reviews .arrows button:hover:not(:disabled){border-color:var(--accent-hi);color:var(--fg);background:rgba(126,106,79,.18)}
+.reviews .arrows button:disabled{opacity:.35;cursor:default}
+.reviews .arrows svg{width:16px;height:16px;display:block}
+@media(max-width:940px){.reviews .row{--per:2}}
+@media(max-width:640px){.reviews .row{--per:1}}
+.reviews .rev-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}
+.reviews .stars{display:flex;gap:3px;color:var(--accent-hi);padding-top:9px}
+.reviews .stars svg{width:14px;height:14px;display:block;flex:none}
+.reviews .stars .off{color:var(--fg-muted)}
+.reviews .initials{flex:none;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:3px;background:rgba(126,106,79,.16);font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--accent-hi)}
+.reviews blockquote{margin:0;font-size:14.5px;color:var(--fg-dim);line-height:1.62;flex:1}
+.reviews cite{display:block;margin-top:18px;font-style:normal;font-size:13px;color:var(--fg)}
+.reviews cite .who{font-weight:400;display:block}
+.reviews cite span{display:block;margin-top:2px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--fg-muted)}
+.btn{display:inline-block;background:var(--accent-btn);color:#17130E;text-decoration:none;font-family:var(--sans);font-size:14.5px;font-weight:500;padding:13px 22px;border-radius:3px}
+
+.hero .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:28px}
+.sect-cta{padding:20px var(--gut) 0}
+.summary .sect-cta{padding-left:0;padding-right:0}
+.sect-cta a{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-hi);text-decoration:none;border-bottom:1px solid rgba(168,144,107,.42);padding-bottom:4px}
+.sect-cta a:hover{color:var(--fg);border-bottom-color:var(--fg)}
+
+.cta{margin-top:76px;position:relative}
+/* Два шари: перший розчиняє фото у фон сторінки зверху й знизу, другий
+   затемнює ліву частину під текст. Верхній у списку лежить вище. */
+.cta::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(to bottom,#141210 0%,rgba(20,18,16,0) 16%,rgba(20,18,16,0) 84%,#141210 100%),
+  linear-gradient(105deg,rgba(20,18,16,.96) 42%,rgba(20,18,16,.62))}
+.cta .in{position:relative;z-index:1;padding:56px var(--gut) 60px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,68px);align-items:start}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,4vw,40px);margin:12px 0 0;max-width:22ch;line-height:1.14;text-wrap:balance}
+.cta .lede{margin:16px 0 0;max-width:50ch;color:#C2BBB0;font-size:15px;line-height:1.65}
+.cinfo{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px 30px;margin-top:32px}
+.cinfo h3{margin:0 0 7px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent-hi);text-transform:uppercase;font-weight:400}
+.cinfo p{margin:0;font-size:13.5px;color:var(--fg-dim);line-height:1.6}
+.cinfo-link{color:var(--fg);text-decoration:none;border-bottom:1px solid rgba(168,144,107,.45);padding-bottom:2px;transition:color .2s ease,border-color .2s ease}
+.cinfo-link:hover{color:var(--accent-hi);border-bottom-color:var(--accent-hi)}
+
+.fcard{background:rgba(20,18,16,.84);border:1px solid var(--line);border-radius:6px;padding:clamp(22px,3vw,32px);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.fcard h3{margin:0 0 18px;font-family:var(--serif);font-weight:400;font-size:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.field{display:grid;gap:5px;margin-bottom:22px}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim);text-transform:uppercase}
+/* Поля — тільки волосяна лінія знизу, без коробки й заливки. */
+.fcard input,.fcard select,.fcard textarea{font-family:var(--sans);font-size:15px;font-weight:300;color:var(--fg);background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:8px 0 9px;width:100%}
+.fcard select{-webkit-appearance:none;appearance:none;padding-right:20px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%239A9287' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.8 6 6.2 11 1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1px center;background-size:11px 7px}
+/* Фокус потовщує лінію тінню, а не бордером: бордер зсунув би поле на піксель. */
+.fcard input:focus,.fcard select:focus,.fcard textarea:focus{outline:none;border-bottom-color:var(--accent-hi);box-shadow:0 1px 0 0 var(--accent-hi)}
+/* Chrome заливає автозаповнені поля білим — глушимо внутрішньою тінню. */
+.fcard input:-webkit-autofill,.fcard input:-webkit-autofill:focus{-webkit-text-fill-color:var(--fg);-webkit-box-shadow:0 0 0 1000px #1B1713 inset;box-shadow:0 0 0 1000px #1B1713 inset,0 1px 0 0 var(--accent-hi)}
+.fcard select option{background:#1B1713;color:#E6E1D8}
+.fcard textarea{min-height:74px;resize:vertical;line-height:1.55}
+.fcard ::placeholder{color:var(--fg-muted)}
+.submit{width:100%;background:var(--accent-btn);color:#17130E;border:0;border-radius:3px;padding:14px;font-family:var(--sans);font-size:14.5px;font-weight:500;cursor:pointer}
+
+.done h3{margin:0 0 10px}
+.done p{margin:0;font-size:14px;color:var(--fg-dim);line-height:1.6}
+.form-error{margin:14px 0 0;font-size:13.5px;line-height:1.55;color:var(--accent-hi)}
+.form-error[hidden]{display:none}
+.done .tick{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent-hi);text-transform:uppercase;margin-bottom:14px}
+
+.totop{position:fixed;right:clamp(16px,3vw,30px);bottom:calc(clamp(16px,3vw,30px) + env(safe-area-inset-bottom,0px));z-index:30;width:48px;height:48px;display:grid;place-items:center;padding:0;background:rgba(20,18,16,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--accent);border-radius:3px;color:var(--accent-hi);cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s ease,background .2s ease,color .2s ease}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover,.totop:focus-visible{border-color:var(--accent-hi);background:rgba(126,106,79,.34);color:var(--fg);box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.totop svg{width:18px;height:18px;display:block;animation:totopNudge 2.6s cubic-bezier(.4,0,.2,1) infinite;transition:transform .2s ease}
+.totop:hover svg,.totop:focus-visible svg{animation:none;transform:translateY(-3px)}
+@keyframes totopNudge{0%,55%,100%{transform:translateY(0)}25%{transform:translateY(-4px)}}
+
+.foot{padding:34px var(--gut) 52px;margin-top:56px;border-top:1px solid var(--line);color:var(--fg-muted);font-size:12.5px;line-height:1.7;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;justify-content:space-between}
+.foot img{height:clamp(76px,10vw,104px);width:auto;flex:none}
+.foot .txt{display:grid;gap:4px}
+.foot-social{display:flex;gap:16px;align-items:center}
+.foot-social a{color:var(--fg-dim);display:flex}
+.foot-social a:hover{color:var(--accent-hi)}
+.foot-social svg{width:18px;height:18px;display:block}
+.foot-nav{display:flex;flex-wrap:wrap;gap:12px 26px}
+.foot-nav a{color:var(--fg-dim);text-decoration:none;font-size:12.5px}
+.foot-nav a:hover{color:var(--fg)}
+@media(max-width:640px){.foot-nav{width:100%;order:2}.foot .txt{order:3}}
+
+@media(max-width:940px){
+  .nav-links{display:none}
+  .cta .in{grid-template-columns:1fr}
+  .cta::after{background:
+    linear-gradient(to bottom,#141210 0%,rgba(20,18,16,0) 16%,rgba(20,18,16,0) 84%,#141210 100%),
+    linear-gradient(180deg,rgba(20,18,16,.72),rgba(20,18,16,.96) 40%)}
+}
+@media(max-width:760px){
+  .dir-row{grid-template-columns:40px minmax(0,1fr);gap:10px}
+  .dir-row .d{grid-column:2;margin-top:2px}
+}
+@media(max-width:700px){
+  .stats .row{grid-template-columns:1fr}
+  .stats .row div{border-bottom:1px solid var(--line-soft)}
+  .stats .row div:last-child{border-bottom:0}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .row2{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .bar .right{gap:9px}
+  .nav-cta{padding:8px 11px;font-size:12px}
+  .lang-toggle{padding:7px 9px}
+}
+/* Ховер кнопок: заливка виїжджає знизу, напис прокручується вгору й міняється
+   на другий, уже в кольорі під заливку. Другий напис будує скрипт із першого,
+   тож переклад лишається в одному місці, а дублікат схований від читачів екрана. */
+.btn-slide{position:relative;overflow:hidden;isolation:isolate}
+.btn-bg{position:absolute;left:0;bottom:0;width:100%;height:100%;z-index:0;transform:translate3d(0,110%,0);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.btn-slide:hover .btn-bg,.btn-slide:focus-visible .btn-bg{transform:translate3d(0,0,0)}
+.btn-wrap{position:relative;z-index:1;display:flex;flex-direction:column;pointer-events:none}
+.btn-t,.btn-t2{display:block;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .5s cubic-bezier(.4,0,.2,1)}
+.btn-t2{position:absolute;top:110%;left:0;width:100%;opacity:0}
+.btn-slide:hover .btn-t,.btn-slide:focus-visible .btn-t{transform:translate3d(0,-110%,0);opacity:0}
+.btn-slide:hover .btn-t2,.btn-slide:focus-visible .btn-t2{transform:translate3d(0,-110%,0);opacity:1}
+.nav-cta .btn-bg{background:var(--accent)}
+.nav-cta .btn-t2{color:#17130E}
+.btn .btn-bg,.submit .btn-bg{background:var(--fg)}
+.btn .btn-t2,.submit .btn-t2{color:var(--ink)}
+
+
+/* Відгуки слайдером: вертикальні кнопки на краю, фото роботи, велике ім'я, цитата. */
+.tsl{position:relative;display:grid;grid-template-columns:58px minmax(0,1fr);margin-top:76px;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-height:clamp(420px,52vh,560px)}
+.tsl-rail{display:grid;grid-template-rows:1fr 1fr;border-right:1px solid var(--line)}
+.tsl-rail button{writing-mode:vertical-rl;transform:rotate(180deg);background:transparent;border:0;color:var(--fg-dim);font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding:18px 0;transition:color .2s ease,background .2s ease}
+.tsl-rail button+button{border-bottom:1px solid var(--line)}
+.tsl-rail button:hover{color:var(--accent-hi);background:rgba(126,106,79,.14)}
+.tsl-stage{position:relative}
+.tsl-slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,.95fr) minmax(0,1.2fr);opacity:0;visibility:hidden;transition:opacity .55s ease}
+.tsl-slide.on{opacity:1;visibility:visible}
+.tsl-photo{background-size:cover;background-position:center;border-right:1px solid var(--line)}
+.tsl-name{display:flex;align-items:center;padding:clamp(22px,3vw,44px);border-right:1px solid var(--line)}
+.tsl-name h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.2vw,54px);line-height:1.04}
+/* Ім'я й прізвище завжди на окремих рядках. width:min-content стискає заголовок до
+   найдовшого слова, тож кожне слово падає на свій рядок — незалежно від довжини імені
+   й мови. Лише в трьох колонках; на телефоні, де ім'я і так влазить, лишається як було. */
+@media(min-width:901px){.tsl-name h3{width:min-content}}
+.tsl-quote{display:flex;flex-direction:column;justify-content:center;gap:16px;padding:clamp(22px,3vw,44px)}
+.tsl-quote blockquote{margin:0;font-style:italic;font-size:clamp(15px,1.3vw,17px);line-height:1.66;color:var(--fg)}
+.tsl-quote .role{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-hi)}
+@media(max-width:900px){
+  .tsl{grid-template-columns:1fr;min-height:0}
+  .tsl-rail{grid-template-rows:none;grid-template-columns:1fr 1fr;border-right:0;border-top:1px solid var(--line);order:2}
+  .tsl-rail button{writing-mode:horizontal-tb;transform:none;padding:15px 0}
+  .tsl-rail button+button{border-bottom:0;border-left:1px solid var(--line)}
+  .tsl-stage{position:static}
+  .tsl-slide{position:static;display:none;grid-template-columns:1fr;opacity:1;visibility:visible}
+  .tsl-slide.on{display:grid}
+  .tsl-photo{aspect-ratio:4/3;border-right:0;border-bottom:1px solid var(--line)}
+  .tsl-name{border-right:0;padding-bottom:0}
+}
+
+/* На широкому екрані розділ має фіксовану висоту, а галерея розтягується на залишок.
+   Де картки короткі, фото вищі; де довгі, нижчі. Сума завжди 990px. Нижче 1280px
+   сім карток не вміщаються в один рядок, і висоти залежать від вмісту. */
+@media(min-width:1280px){
+  .sect{height:990px;display:flex;flex-direction:column}
+  .sect .opener{flex:0 0 auto}
+  /* Розділи 2 і 6 мають лише по два фото, тож кожне розтягується на пів екрана і
+     обрізається найсильніше. Їм свідомо дано +100px: це єдине виняткове місце,
+     де висоти розділів не збігаються з рештою. */
+  #s2,#s6{height:1090px}
+  #s2 .gal .shot,#s6 .gal .shot{max-height:none}   /* id-селектор нижче перебив би стелю */
+  .sect .gal{flex:1 1 auto;min-height:0}
+  .sect .gal figure{min-height:0}
+  .sect .gal .shot{flex:1 1 auto;min-height:0;aspect-ratio:auto;max-height:none}
+}
+
+/* Галерея-стрічка. За замовчуванням (телефон, планшет, без JS, зменшена анімація) це
+   звичайний ряд із прокруткою вбік. Клас .is-pinned ставить скрипт на екранах від 861px:
+   розділ липне до шапки, а вертикальний скрол рухає стрічку вбік. Картка по центру
+   збільшена, сусідні притемнені. */
+.reel{margin-top:76px}
+.reel-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:0 var(--gut) 22px}
+.reel-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.6vw,34px);margin:0;line-height:1.1}
+.reel-count{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--fg-muted);display:none}
+.reel-count b{font-weight:400;color:var(--accent-hi)}
+.reel-view{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:0 var(--gut)}
+.reel-view::-webkit-scrollbar{display:none}
+.reel-track{display:flex;gap:14px;width:max-content}
+.reel-card{margin:0;flex:0 0 auto;width:clamp(180px,56vw,260px);scroll-snap-align:center}
+.reel-media{aspect-ratio:3/4;overflow:hidden;background:var(--panel)}
+.reel-media img{width:100%;height:100%;object-fit:cover}
+.reel-card figcaption{padding-top:12px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim)}
+.reel-prog{display:none}
+
+@media(min-width:861px){
+  .reel.is-pinned{--cw:clamp(170px,min(21vw,calc((100svh - var(--bar-h) - 210px) / 1.5)),320px)}
+  .reel.is-pinned .reel-pin{position:sticky;top:var(--bar-h);height:calc(100svh - var(--bar-h));overflow:hidden;display:flex;flex-direction:column}
+  .reel.is-pinned .reel-head{padding-top:28px;flex:0 0 auto}
+  .reel.is-pinned .reel-count{display:block}
+  .reel.is-pinned .reel-view{flex:1 1 0;min-height:0;position:relative;overflow:hidden;scroll-snap-type:none;padding:0}
+  .reel.is-pinned .reel-track{position:absolute;left:0;top:50%;gap:clamp(14px,1.8vw,26px);will-change:transform;transform:translate3d(0,-50%,0)}
+  .reel.is-pinned .reel-card{width:var(--cw);opacity:.4;transform:scale(.78);transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .55s cubic-bezier(.16,1,.3,1);cursor:pointer}
+  .reel.is-pinned .reel-card.on{opacity:1;transform:scale(1);cursor:default}
+  .reel.is-pinned .reel-card:not(.on):hover{opacity:.62;transform:scale(.82)}
+  .reel.is-pinned .reel-media{aspect-ratio:2/3;position:relative}
+  .reel.is-pinned .reel-media::after{content:"";position:absolute;inset:12px;border:1px solid rgba(230,225,216,.3);opacity:0;transition:opacity .55s ease;pointer-events:none}
+  .reel.is-pinned .reel-card.on .reel-media::after{opacity:1}
+  .reel.is-pinned .reel-prog{display:block;flex:0 0 auto;height:1px;margin:0 var(--gut) 26px;background:var(--line);position:relative}
+  .reel.is-pinned .reel-prog i{position:absolute;inset:0;background:var(--accent-hi);transform:scaleX(0);transform-origin:left}
+}
+
+/* Поява тексту розділів. Заголовки навмисно статичні: і маска, і clip-path ріжуть
+   рівно по межах блоку, а у Playfair при line-height 1.1 верхівки літер виходять
+   за неї — літери обрізало зверху. Рухаються лише надзаголовок і вступний абзац. */
+.frev{opacity:0}
+.frev.in{opacity:1;transition:opacity .9s ease}
+/* Картки переліку проявляються по черзі зліва направо. Тільки прозорість:
+   зсув посунув би непрозоре тло картки й оголив лінію сітки під нею. */
+.irev{opacity:0}
+.irev.in{opacity:1;transition:opacity .6s ease}
+
+/* Бургер-меню: з'являється там, де ховаються текстові посилання (<=940px). */
+.burger,.mmenu{display:none}
+@media(max-width:940px){
+  .burger{display:grid;place-items:center;flex:none;width:40px;height:40px;padding:0;background:transparent;border:1px solid var(--line);border-radius:3px;color:var(--fg);cursor:pointer;transition:border-color .2s ease,background .2s ease}
+  .burger:hover,.burger:focus-visible,.burger[aria-expanded="true"]{border-color:var(--accent-hi)}
+  .burger-ico{position:relative;display:block;width:18px;height:12px}
+  .burger-ico i{position:absolute;left:0;width:100%;height:1.5px;border-radius:1px;background:currentColor;transition:top .26s ease,transform .26s ease,opacity .18s ease}
+  .burger-ico i:nth-child(1){top:0}
+  .burger-ico i:nth-child(2){top:5px}
+  .burger-ico i:nth-child(3){top:10px}
+  .burger[aria-expanded="true"] .burger-ico i:nth-child(1){top:5px;transform:rotate(45deg)}
+  .burger[aria-expanded="true"] .burger-ico i:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] .burger-ico i:nth-child(3){top:5px;transform:rotate(-45deg)}
+
+  .mmenu{display:block;position:absolute;top:100%;left:0;right:0;padding:4px var(--gut) 10px;background:rgba(20,18,16,.985);border-bottom:1px solid var(--line);box-shadow:0 18px 32px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .22s ease,transform .26s ease,visibility 0s linear .26s}
+  .mmenu.open{opacity:1;visibility:visible;transform:none;transition:opacity .22s ease,transform .26s ease,visibility 0s}
+  .mmenu a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:54px;color:var(--fg);text-decoration:none;font-size:16px;border-bottom:1px solid var(--line-soft)}
+  .mmenu a:last-child{border-bottom:0}
+  .mmenu a::after{content:"";flex:none;width:7px;height:7px;margin-right:4px;border-top:1.5px solid var(--accent-hi);border-right:1.5px solid var(--accent-hi);transform:rotate(45deg)}
+  .mmenu a:hover,.mmenu a:focus-visible{color:var(--accent-hi)}
+}
+@media(hover:none){.burger:hover{border-color:var(--line)} .burger[aria-expanded="true"]:hover{border-color:var(--accent-hi)} .mmenu a:hover{color:var(--fg)}}
+
+/* ===== Мобільна адаптація ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:clip}
+a,button,label,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(168,144,107,.18)}
+.hero{min-height:clamp(520px,80vh,820px);min-height:clamp(520px,80svh,820px)}
+
+/* На дотикових екранах :hover залипає після тапу — знімаємо його ефекти.
+   Клавіатурний фокус лишається: він живе на окремих селекторах. */
+@media(hover:none){
+  .btn-slide:hover .btn-bg{transform:translate3d(0,110%,0)}
+  .btn-slide:hover .btn-t{transform:none;opacity:1}
+  .btn-slide:hover .btn-t2{transform:none;opacity:0}
+  .tsl-rail button:hover{color:var(--fg-dim);background:transparent}
+  .dir-row:hover{background:none}
+  .dir-row:hover .n,.dir-row:hover .t{color:inherit}
+  .dir-row:hover .n{color:var(--fg-muted)}
+  .lang-menu button:hover{background:transparent;color:var(--fg-dim)}
+  .nav-cta:hover{background:transparent;color:var(--accent-hi)}
+}
+
+@media(max-width:760px){
+  /* Шапка нижча, площі дотику не менше 40-44px */
+  .bar{padding-block:10px}
+  .nav-cta{display:inline-flex;align-items:center;min-height:40px;padding:0 14px}
+  .lang-toggle{min-height:40px;padding-inline:12px}
+  .lang-menu button{padding:13px 16px}
+
+  /* Посилання, які були 21-24px заввишки */
+  .sect-cta a{display:inline-flex;align-items:center;min-height:44px;padding-bottom:0}
+  .foot-nav{gap:0 22px}
+  .foot-nav a{display:inline-flex;align-items:center;min-height:44px}
+  .foot-social{gap:0}
+  .foot-social a{width:44px;height:44px;align-items:center;justify-content:center}
+  .foot-social a:last-child{margin-right:-13px}
+  .cinfo-link{display:inline-block;padding:12px 0}
+
+  /* Форма: 16px забороняє iOS збільшувати сторінку при фокусі в поле */
+  .fcard input,.fcard select,.fcard textarea{font-size:16px;min-height:46px}
+  .fcard textarea{min-height:96px}
+  .fcard{padding:22px 18px}
+  .submit{min-height:50px}
+
+  /* Цифри: descendant-селектор .stats .row div чіпляв ще й вкладені блоки числа й підпису,
+     через що між ними з'являлась зайва лінія й 46px порожнечі. */
+  .stats .row > div > div{padding:0;border:0}
+  .stats .row > div{padding:22px 0}
+  .stats .k{margin-top:8px}
+
+  /* Непарна остання картка займає обидві колонки: інакше поруч лишається порожня
+     клітинка, через яку проглядає фон сітки. */
+  .items article:last-child:nth-child(odd){grid-column:1/-1}
+
+  /* Гортання відгуків — зручніші кнопки */
+  .tsl-rail button{min-height:52px}
+}
+
+@media(max-width:380px){
+  .hero h1{font-size:clamp(28px,8.4vw,32px)}
+  .nav-cta{padding:0 11px;font-size:11.5px}
+  .bar .right{gap:8px}
+}
+/* Зовсім вузькі екрани (320px): три елементи шапки разом із логотипом не вміщались у поле 20px. */
+@media(max-width:340px){
+  .bar .right{gap:6px}
+  .nav-cta{padding:0 9px;font-size:11px}
+  .lang-toggle{padding-inline:9px}
+  .burger{width:38px;height:38px}
+}
+
+/* Поява тексту в героєві: заголовок, потім кожен рядок опису, потім кнопка. Чиста CSS-анімація
+   при завантаженні: не залежить від скрипта й спостерігача. Без обрізання (clip/mask), лише
+   прозорість і зсув на 14px; текст стоїть далеко від меж героя, тож нічого не зрізається. */
+@keyframes heroIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero h1,.hero .lede p,.hero .acts{animation:heroIn .9s cubic-bezier(.22,.61,.36,1) both}
+.hero h1{animation-delay:.15s}
+.hero .lede p:nth-child(1){animation-delay:.55s}
+.hero .lede p:nth-child(2){animation-delay:.70s}
+.hero .lede p:nth-child(3){animation-delay:.85s}
+.hero .lede p:nth-child(4){animation-delay:1.00s}
+.hero .acts{animation-delay:1.25s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1,.hero .lede p,.hero .acts{animation:none}
+  .burger,.burger-ico i,.mmenu,.mmenu.open{transition:none}
+  .frev,.frev.in{opacity:1;transition:none}
+  .irev,.irev.in{opacity:1;transition:none}
+  .reel-card,.reel-media::after{transition:none}
+  .btn-bg,.btn-t,.btn-t2{transition:none}
+  .totop{transition:none}
+  .totop svg{animation:none;transition:none}
+  .hero-video{display:none}
+  .hero-bg{background-image:url("img/hero-poster.webp");background-size:cover;background-position:center}
+  .gal img{transition:none}
+  .gal figure:hover img,.gal figure:focus-within img{transform:none}
+  .opener::before{transition:none}
+  .opener:hover::before{transform:none}
+}
+</style>
+<style>
+.op1{background-image:url("img/kitchen-green.webp")}
+.op2{background-image:url("img/doors-french.webp")}
+.op3{background-image:url("img/ceiling-wood.webp")}
+.op5{background-image:url("img/kitchen-dark-worktop.webp")}
+.op6{background-image:url("img/wall-art-carved.webp")}
+.op4{background-image:url("img/terrace-furniture.webp")}
+.op7{background-image:url("img/corridor-slats.webp")}
+.cta{background-image:url("img/cabinet-live-edge.webp")}
+</style>
+<style id="dsgn-theme">
+/* ===== Тема за мотивами dsgninterior.se: світлий теплий фон, коричневий текст, коралові акценти,
+   геометричний гротеск, великі щільні заголовки білим на повноекранних фото, прозора шапка. ===== */
+:root{
+  --bar-h:56px;
+  --ink:#F6F5F4; --panel:#ECE8E4;
+  --accent:#E68762; --accent-hi:#B5532F; --accent-btn:#594037;
+  --fg:#594037; --fg-dim:#7A625A; --fg-muted:#7A625A; --fg-faint:#A8968D;
+  --line:rgba(89,64,55,.28); --line-soft:rgba(89,64,55,.14);
+  --sans:"Manrope",system-ui,sans-serif; --serif:"Manrope",system-ui,sans-serif; --mono:"Manrope",system-ui,sans-serif;
+  --gut:clamp(18px,3.4vw,40px); --gap:clamp(12px,.8vw + 8px,18px);
+}
+body{font-weight:400;letter-spacing:-.01em}
+.eyebrow{font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;font-weight:500}
+html{scroll-padding-top:calc(var(--bar-h) + 8px)}
+::selection{background:#E68762;color:#fff}
+:focus-visible{outline-color:var(--accent)}
+
+/* Шапка: прозора над героєм, світла після прокрутки (клас .solid ставить скрипт). */
+.bar{position:fixed;left:0;right:0;top:0;height:var(--bar-h);padding:0 var(--gut);border:0;
+  --fg:#F6F5F4;--fg-dim:#F6F5F4;--line:rgba(246,245,244,.5);--bar-inv:#594037;
+  background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background .35s ease,color .35s ease}
+.bar.solid{--fg:#594037;--fg-dim:#594037;--line:rgba(89,64,55,.35);--bar-inv:#F6F5F4;
+  background:rgba(246,245,244,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(89,64,55,.12)}
+.bar .logo{font-size:19px;letter-spacing:-.03em;font-weight:400;color:var(--fg);text-decoration:none;white-space:nowrap}
+.bar .logo{display:flex;align-items:center}
+.bar .logo img{height:50px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(66,46,38,.35));transition:filter .35s ease}
+.bar.solid .logo img{filter:none}
+.nav-links a{color:var(--fg);font-size:15px;font-weight:500;letter-spacing:-.02em;position:relative}
+.nav-links a:hover{color:var(--fg);opacity:.7}
+.nav-cta{font-size:14px;font-weight:500;color:var(--fg);border:1px solid var(--fg);border-radius:2px;background:transparent}
+.nav-cta:hover{color:var(--fg)}
+.nav-cta .btn-bg{background:var(--fg)}
+.nav-cta .btn-t2{color:var(--bar-inv)}
+.lang-toggle{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:0;border-color:transparent;padding:7px 4px}
+.lang-toggle:hover{border-color:transparent;opacity:.7}
+.lang-menu{--fg:#594037;--fg-dim:#7A625A;--accent-hi:#B5532F;--line-soft:rgba(89,64,55,.14);background:#F6F5F4;border-color:rgba(89,64,55,.18);box-shadow:0 14px 32px rgba(89,64,55,.18);border-radius:2px}
+.lang-menu button{font-family:var(--sans);font-size:14px;letter-spacing:0;font-weight:500}
+.lang-menu button:hover{background:rgba(230,135,98,.16)}
+.burger{border-color:transparent;color:var(--fg)}
+@media(max-width:940px){
+  .mmenu{--fg:#594037;--accent-hi:#B5532F;--line-soft:rgba(89,64,55,.14);background:#F6F5F4;border-bottom:1px solid rgba(89,64,55,.18);box-shadow:0 18px 32px rgba(89,64,55,.16)}
+  .mmenu a{font-weight:500}
+}
+
+/* Герой: повноекранне відео, заголовок по центру, опис знизу ліворуч, «Scroll to explore» знизу праворуч. */
+.hero,.opener,.cta{--fg:#F6F5F4;--fg-dim:#F1ECE8;--fg-muted:#E7DFD9;--accent-hi:#F6C2AB;--line:rgba(246,245,244,.4);--line-soft:rgba(246,245,244,.25)}
+.hero{min-height:100vh;min-height:100svh;align-items:center;justify-content:center;background:#594037}
+.hero::after{background:linear-gradient(180deg,rgba(66,46,38,.28) 0%,rgba(66,46,38,.22) 45%,rgba(66,46,38,.5) 100%)}
+.hero .in{position:static;padding:calc(var(--bar-h) + 24px) var(--gut) 150px;text-align:center}
+.hero h1{margin:0 auto;max-width:14ch;font-weight:500;font-size:clamp(36px,7vw,108px);line-height:.94;letter-spacing:-.052em;color:#F6F5F4}
+.hero .lede{position:absolute;left:var(--gut);bottom:30px;max-width:34ch;margin:0;text-align:left;color:#F6F5F4;font-size:13px;line-height:1.5;font-weight:500;letter-spacing:-.005em}
+.hero .lede p+p{margin-top:4px}
+.hero .acts{justify-content:center;margin-top:32px}
+.hero .btn{background:#F6F5F4;color:#594037;border-radius:2px}
+.hero .btn .btn-bg{background:var(--accent)}
+.hero .btn .btn-t2{color:#3B2A24}
+@keyframes wheel{0%{transform:translateY(0);opacity:1}70%{transform:translateY(5px);opacity:0}100%{opacity:0}}
+@media(max-width:760px){
+  .hero .in{padding-bottom:40px}
+  .hero{align-items:center;flex-direction:column;justify-content:center}
+  .hero .lede{position:static;margin:26px auto 0;text-align:center;max-width:34ch}
+  .hero .lede p:nth-child(n+3){display:none}
+  }
+/* Вступ і напрямки: великий щільний шрифт без засічок. */
+.intro{margin-top:clamp(70px,10vw,140px);align-items:start}
+.intro h2{font-weight:500;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.045em;max-width:16ch}
+.intro-text p{font-size:17px;line-height:1.5;letter-spacing:-.015em;font-weight:500}
+.summary{margin-top:clamp(70px,9vw,130px)}
+.summary::before{background:var(--fg);margin-bottom:28px}
+.summary h2{font-weight:500;font-size:clamp(30px,4.2vw,56px);line-height:1;letter-spacing:-.045em;margin-top:6px}
+.summary .lede{font-size:17px;font-weight:500}
+.dir-row{padding:18px 0;border-top:1px solid var(--line)}
+.dir-row:last-of-type{border-bottom:1px solid var(--line)}
+.dir-row .n{font-family:var(--sans);font-size:14px;font-weight:500}
+.dir-row .t{font-size:clamp(18px,1.9vw,26px);font-weight:500;letter-spacing:-.03em}
+.dir-row .d{font-size:15px;font-weight:500}
+.dir-row:hover{background:rgba(230,135,98,.13)}
+.dir-peek{box-shadow:0 18px 44px rgba(89,64,55,.28)}
+
+/* Розділи: повноекранний банер із величезним білим заголовком по центру. */
+.sect{margin-top:clamp(60px,8vw,110px)}
+.opener{min-height:min(100vh,860px);min-height:min(100svh,860px);align-items:center;justify-content:center;text-align:center}
+.opener::after{background:linear-gradient(180deg,rgba(66,46,38,.34),rgba(66,46,38,.42))}
+.opener .in{padding:clamp(80px,12vw,150px) var(--gut)}
+.opener h2{margin:14px auto 0;max-width:13ch;font-weight:500;font-size:clamp(32px,7.4vw,112px);line-height:.94;letter-spacing:-.052em;overflow-wrap:anywhere;hyphens:auto;color:#F6F5F4}
+.opener .lede{margin:28px auto 0;max-width:56ch;font-size:clamp(15px,1.3vw,18px);font-weight:500;line-height:1.5;color:#F6F5F4}
+.opener .eyebrow{color:#F6F5F4;opacity:.9}
+@media(min-width:1280px){
+  .sect,#s2,#s6{height:auto}
+}
+/* Перелік позицій: тонкі лінії, як таблиця параметрів проєкту. */
+.items{background:transparent;border:0;gap:0 var(--gap);padding:clamp(28px,4vw,56px) var(--pad,var(--gut)) 8px;padding-inline:var(--gut)}
+.items article{background:transparent;padding:12px 0 22px;border-top:1px solid var(--fg)}
+.items h3{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.items p{font-size:14.5px;font-weight:500;line-height:1.45}
+.items .no{font-family:var(--sans);font-size:12px;font-weight:500;margin-bottom:14px}
+/* Галерея: відступи між фото, без підкладки. */
+.gal{background:transparent;gap:var(--gap);padding:var(--gap) var(--gut) 0}
+.gal figure{background:transparent}
+.sect .gal .shot,#s2 .gal .shot,#s6 .gal .shot{flex:none;aspect-ratio:3/4;max-height:none}
+.gal figcaption{padding:10px 0 4px;font-size:13.5px;font-weight:500;color:var(--fg)}
+.sect-cta{padding-top:24px}
+.sect-cta a{font-family:var(--sans);font-size:17px;font-weight:500;letter-spacing:-.02em;text-transform:none;color:var(--fg);border-bottom:1px solid var(--fg);padding-bottom:2px}
+.sect-cta a:hover{color:var(--accent-hi);border-bottom-color:var(--accent-hi)}
+
+.stats{margin-top:clamp(70px,9vw,130px)}
+.stats .hd,.reviews .hd,.reel-head h2{font-weight:500;font-size:clamp(30px,4.2vw,56px);line-height:1;letter-spacing:-.045em;max-width:18ch}
+.stats .row{border-top:1px solid var(--fg);border-bottom:1px solid var(--line)}
+.stats .v{font-family:var(--sans);font-weight:500;letter-spacing:-.05em;font-size:clamp(40px,6vw,88px)}
+.stats .k{font-size:15px;font-weight:500}
+.reviews{margin-top:clamp(70px,9vw,130px)}
+.reviews .initials{font-family:var(--sans);font-weight:700;border-radius:2px}
+.reviews cite span,.tsl-quote .role{font-family:var(--sans);font-size:12.5px;letter-spacing:0;text-transform:none;font-weight:500}
+.reviews .stars{color:var(--accent)}
+.tsl{margin-top:clamp(70px,9vw,130px);background:#ECE8E4}
+.tsl-rail button{font-family:var(--sans);font-size:13px;letter-spacing:.06em;font-weight:500}
+.tsl-name h3{font-weight:500;letter-spacing:-.05em;line-height:.96}
+.tsl-quote blockquote{font-style:normal;font-weight:500}
+.tsl-rail button:hover,.dir-row:hover{color:var(--accent-hi)}
+
+/* Кнопки */
+.btn,.submit{background:#594037;color:#F6F5F4;border-radius:2px;font-weight:500}
+.btn .btn-bg,.submit .btn-bg{background:var(--accent)}
+.btn .btn-t2,.submit .btn-t2{color:#3B2A24}
+
+/* Контакти: фото під коричневою вуаллю, світла форма. */
+.cta{margin-top:clamp(70px,9vw,130px)}
+.cta::after{background:linear-gradient(105deg,rgba(66,46,38,.9) 40%,rgba(66,46,38,.55))}
+.cta h2{font-weight:500;font-size:clamp(32px,5vw,72px);line-height:.96;letter-spacing:-.05em;max-width:14ch;color:#F6F5F4}
+.cta .lede{color:#F6F5F4;font-weight:500}
+/* Заголовок угорі лівої колонки на одному рівні з верхнім краєм форми: без верхнього відступу, плюс компенсація порожнього місця над літерами. */
+.cta h2{margin-top:-.1em}
+.cinfo h3{font-family:var(--sans);letter-spacing:0;text-transform:none;font-size:13px;font-weight:700;color:#F6C2AB}
+.cinfo p{font-weight:500}
+@media(max-width:940px){.cta::after{background:linear-gradient(180deg,rgba(66,46,38,.82),rgba(66,46,38,.94) 40%)}}
+.fcard{--fg:#594037;--fg-dim:#7A625A;--fg-muted:#7A625A;--accent-hi:#B5532F;--line:rgba(89,64,55,.35);background:#F6F5F4;color:#594037;border:0;border-radius:2px;-webkit-backdrop-filter:none;backdrop-filter:none}
+.fcard h3{font-weight:500;font-size:26px;letter-spacing:-.04em}
+.field label{font-family:var(--sans);letter-spacing:0;text-transform:none;font-size:13px;font-weight:700}
+.fcard input,.fcard select,.fcard textarea{font-weight:500}
+.fcard select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%23594037' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.8 6 6.2 11 1.8'/%3E%3C/svg%3E")}
+.fcard input:-webkit-autofill,.fcard input:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 1000px #F6F5F4 inset;box-shadow:0 0 0 1000px #F6F5F4 inset,0 1px 0 0 #B5532F}
+.fcard select option{background:#F6F5F4;color:#594037}
+.fcard input:focus,.fcard select:focus,.fcard textarea:focus{border-bottom-color:var(--accent);box-shadow:0 1px 0 0 var(--accent)}
+.done .tick{font-family:var(--sans);letter-spacing:0;text-transform:none;font-weight:700}
+
+.totop{background:#594037;border:0;color:#F6F5F4;border-radius:2px;box-shadow:0 6px 18px rgba(89,64,55,.35)}
+.totop:hover,.totop:focus-visible{background:var(--accent);color:#3B2A24;box-shadow:0 6px 20px rgba(89,64,55,.4)}
+.foot{border-top:1px solid var(--line);margin-top:clamp(56px,7vw,100px);font-weight:500}
+.foot-nav a,.foot-social a{color:var(--fg)}
+.foot-nav a:hover,.foot-social a:hover{color:var(--accent-hi)}
+
+/* Паралакс шарами, як на dsgninterior.se: фон повільніший за сторінку, заголовок рухається з іншою
+   швидкістю, фото в галереї збільшені на 12% і плавають усередині рамки. Значення --py/--ty ставить
+   скрипт; властивість translate лягає поверх animation/transform, тож нічого не конфліктує. */
+.hero-bg{inset:-30% 0;translate:0 var(--py,0px);will-change:translate}
+.hero h1,.hero .acts{translate:0 var(--ty,0px)}
+.opener::before{inset:-45% 0;translate:0 var(--py,0px);will-change:translate}
+.opener .in{translate:0 var(--ty,0px)}
+.gal img{scale:1.12;translate:0 var(--py,0%);will-change:translate}
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.hero h1,.hero .acts,.opener::before,.opener .in,.gal img{translate:none}
+  .gal img{scale:1}
+}
+
+/* ===== Структура як на dsgninterior.se: головна це стрічка повноекранних банерів, що перемикаються
+   прокруткою; кожен напрямок відкривається власною сторінкою. Вид вибирає хеш адреси (див. скрипт). ===== */
+body[data-v]:not([data-v="home"]) [data-view="home"]{display:none!important}
+body[data-v]:not([data-v="directions"]) [data-view="directions"]{display:none!important}
+body[data-v]:not([data-v="about"]) [data-view="about"]{display:none!important}
+body[data-v]:not([data-v="contact"]) [data-view="contact"]{display:none!important}
+body[data-v]:not([data-v="s1"]) [data-view="s1"]{display:none!important}
+body[data-v]:not([data-v="s2"]) [data-view="s2"]{display:none!important}
+body[data-v]:not([data-v="s3"]) [data-view="s3"]{display:none!important}
+body[data-v]:not([data-v="s4"]) [data-view="s4"]{display:none!important}
+body[data-v]:not([data-v="s5"]) [data-view="s5"]{display:none!important}
+body[data-v]:not([data-v="s6"]) [data-view="s6"]{display:none!important}
+body[data-v]:not([data-v="s7"]) [data-view="s7"]{display:none!important}
+.hero,.banner{position:sticky;top:0}
+/* Банери лежать стопкою: зсув фону завжди ховається під наступним банером або за краєм екрана, тож запас не потрібен. */
+.hero-bg,.banner::before{inset:0}
+.banner{height:100vh;height:100svh;min-height:0;color:#F6F5F4}
+.foot{position:relative;z-index:2;background:var(--ink)}
+/* Без відступу над футером: крізь нього проглядав закріплений останній банер. Простір дає нижній відступ блоку. */
+body[data-v="home"] .foot{margin-top:0}
+.more .sect:last-child{padding-bottom:clamp(40px,5vw,70px)}
+/* Посилання «Заявка на…» під галереєю: відступ від фото й вигляд кнопки-посилання зі стрілкою. */
+.sect .sect-cta{padding:clamp(36px,4.5vw,64px) var(--gut) clamp(48px,6vw,90px)}
+.sect .sect-cta a{display:inline-flex;align-items:center;gap:14px;padding:15px 24px;border:1px solid var(--fg);border-radius:2px;font-size:16px;font-weight:500;letter-spacing:-.01em;color:var(--fg);transition:background .25s ease,color .25s ease,border-color .25s ease}
+.sect .sect-cta a::after{content:"→";font-size:19px;line-height:1;transition:transform .25s ease}
+.sect .sect-cta a:hover,.sect .sect-cta a:focus-visible{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.sect .sect-cta a:hover::after,.sect .sect-cta a:focus-visible::after{transform:translateX(5px)}
+@media(hover:none){.sect .sect-cta a:hover{background:transparent;color:var(--fg)}.sect .sect-cta a:hover::after{transform:none}}
+/* Те саме посилання під списком категорій: відступ від рядків і вигляд кнопки-посилання. */
+.summary .sect-cta{padding:clamp(28px,3.5vw,48px) 0 clamp(80px,9vw,140px)}
+.summary .sect-cta a{display:inline-flex;align-items:center;gap:14px;padding:15px 24px;border:1px solid var(--fg);border-radius:2px;font-size:16px;font-weight:500;letter-spacing:-.01em;color:var(--fg);transition:background .25s ease,color .25s ease,border-color .25s ease}
+.summary .sect-cta a::after{content:"→";font-size:19px;line-height:1;transition:transform .25s ease}
+.summary .sect-cta a:hover,.summary .sect-cta a:focus-visible{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.summary .sect-cta a:hover::after,.summary .sect-cta a:focus-visible::after{transform:translateX(5px)}
+@media(hover:none){.summary .sect-cta a:hover{background:transparent;color:var(--fg)}.summary .sect-cta a:hover::after{transform:none}}
+.corner{position:fixed;right:var(--gut);bottom:30px;z-index:15;display:flex;align-items:center;gap:10px;color:#F6F5F4;text-decoration:none;font-size:14px;font-weight:500;padding:8px 0;transition:opacity .3s ease}
+.corner svg{width:16px;height:24px;flex:none}
+.corner .c-arrow{width:22px;height:22px;display:none}
+.corner .c-b{display:none}
+.corner.is-ready .c-mouse,.corner.is-ready .c-a{display:none}
+.corner.is-ready .c-arrow,.corner.is-ready .c-b{display:block}
+.corner.is-ready{background:#F6F5F4;color:#594037;padding:12px 18px;border-radius:999px;animation:glow 1.7s ease-out infinite}
+.corner.is-ready:hover .c-arrow{transform:translateX(4px)}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(230,135,98,.75),0 0 18px 2px rgba(255,214,190,.55)}70%,100%{box-shadow:0 0 0 18px rgba(230,135,98,0),0 0 18px 2px rgba(255,214,190,.55)}}
+@keyframes rise{from{opacity:0;transform:translateY(70px)}to{opacity:1;transform:none}}
+body[data-v="directions"] .intro,body[data-v="directions"] .summary{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
+@media(prefers-reduced-motion:reduce){.corner.is-ready{animation:none}body[data-v="directions"] .intro,body[data-v="directions"] .summary{animation:none}}
+.corner .c-arrow{transition:transform .25s ease}
+.corner.on-light{color:#594037}
+.corner.off{opacity:0;visibility:hidden;pointer-events:none;animation:none}
+/* Внизу ліворуч на банерах: Instagram і телефон, як контакти на референсі. */
+.corner-info{position:fixed;left:var(--gut);bottom:30px;z-index:15;display:grid;gap:2px;color:#F6F5F4;font-size:14px;font-weight:500;line-height:1.45;transition:opacity .3s ease;animation:fadeIn .9s ease 1.35s both}
+.corner-info a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;width:fit-content;transition:border-color .2s ease}
+.corner-info a:hover,.corner-info a:focus-visible{border-bottom-color:rgba(246,245,244,.8)}
+.corner-info.off{opacity:0;visibility:hidden;pointer-events:none;animation:none}
+@media(max-width:760px){
+  .corner-info{bottom:12px;font-size:13px;gap:0;transition:opacity .3s ease,bottom .4s cubic-bezier(.16,1,.3,1)}
+  .corner-info a{padding:11px 0}
+  /* Коли права кнопка світиться широкою пігулкою, контакти піднімаємо над нею: інакше вони впираються. */
+  body:has(.corner.is-ready) .corner-info{bottom:80px}
+}
+@media(prefers-reduced-motion:reduce){.corner-info{animation:none}}
+body[data-v="home"] .totop{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.corner .wheel{animation:wheel 1.8s ease-in-out infinite}
+@media(max-width:760px){.corner{bottom:22px}.hero .lede{display:none}}
+@media(prefers-reduced-motion:reduce){.corner .wheel{animation:none}}
+.sect .opener{min-height:72vh;min-height:72svh}
+.sect{margin-top:0}
+.intro{margin-top:calc(var(--bar-h) + clamp(50px,7vw,100px))}
+.summary{margin-top:clamp(70px,9vw,130px)}
+.more .stats{margin-top:clamp(40px,6vw,90px)}
+/* Блок «про нас і напрямки» розкривається на головній під останнім банером. */
+.more{display:none;position:relative;z-index:2;background:var(--ink);padding-bottom:clamp(30px,5vw,60px)}
+/* Поки блок закритий, під останнім банером нічого немає: прокрутка зупиняється на ньому. */
+body[data-v="home"] .more:not(.open) ~ .foot{display:none}
+.more.open{display:block;animation:fadeIn .7s ease both}
+.more .intro{margin-top:0;padding-top:calc(var(--bar-h) + clamp(50px,7vw,100px))}
+@media(prefers-reduced-motion:reduce){.more.open{animation:none}}
+/* Текст «про нас» вспливає знизу вгору: заголовок і абзаци по черзі, з м'яким уповільненням. */
+.intro .frev{translate:0 38px}
+.intro .frev.in{translate:0 0;transition:opacity 1.2s ease,translate 1.5s cubic-bezier(.16,1,.3,1)}
+@media(prefers-reduced-motion:reduce){.intro .frev,.intro .frev.in{translate:none;transition:none}}
+
+.cta{margin-top:0;min-height:100vh;min-height:100svh;display:flex;align-items:center}
+.cta .in{width:100%;padding-top:calc(var(--bar-h) + 40px)}
+
+/* ===== Меню на весь екран, як на dsgninterior.se: коричнева сторінка, величезні посилання між тонкими
+   лініями, мова знизу. Діє там, де текстове меню згортається (<=940px). ===== */
+@media(max-width:940px){
+  html:has(.mmenu.open){overflow:hidden}
+  .bar:has(.mmenu.open){--fg:#F6F5F4;--fg-dim:#F6F5F4;--line:rgba(246,245,244,.4);background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .bar:has(.mmenu.open) .logo img{filter:brightness(0) invert(1)}
+  .bar .logo,.bar .right{position:relative;z-index:3}
+  .mmenu{position:fixed;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:calc(var(--bar-h) + 8px) var(--gut) calc(26px + env(safe-area-inset-bottom,0px));background:#594037;border:0;box-shadow:none;--fg:#F6F5F4;--accent-hi:#F6C2AB;opacity:0;visibility:hidden;transform:none;transition:opacity .45s cubic-bezier(.16,1,.3,1),visibility 0s linear .45s}
+  .mmenu.open{opacity:1;visibility:visible;transition:opacity .45s cubic-bezier(.16,1,.3,1),visibility 0s}
+  .mmenu a{display:block;min-height:0;padding:10px 0 12px;border-top:1px solid rgba(246,245,244,.4);border-bottom:0;font-size:clamp(34px,10.5vw,64px);font-weight:400;letter-spacing:-.045em;line-height:1.08;color:#F6F5F4;opacity:0;translate:0 22px;transition:opacity .6s ease,translate .7s cubic-bezier(.16,1,.3,1)}
+  .mmenu a:last-of-type{border-bottom:1px solid rgba(246,245,244,.4)}
+  .mmenu a::after{display:none}
+  .mmenu.open a{opacity:1;translate:0 0}
+  .mmenu.open a:nth-of-type(1){transition-delay:.12s}
+  .mmenu.open a:nth-of-type(2){transition-delay:.2s}
+  .mmenu.open a:nth-of-type(3){transition-delay:.28s}
+  .mmenu a:hover,.mmenu a:focus-visible{color:#F6C2AB}
+  .mm-langs{display:flex;gap:22px;margin-top:auto;padding-top:28px;opacity:0;transition:opacity .6s ease .35s}
+  .mmenu.open .mm-langs{opacity:1}
+  .mm-langs button{padding:6px 0;background:transparent;border:0;color:#F6F5F4;font:inherit;font-size:17px;font-weight:500;cursor:pointer;opacity:.6}
+  .mm-langs button[aria-current="true"]{opacity:1;border-bottom:1px solid #F6F5F4}
+}
+@media(min-width:941px){.mm-langs{display:none}}
+@media(prefers-reduced-motion:reduce){.mmenu,.mmenu.open,.mmenu a,.mm-langs{transition:none}.mmenu a{translate:none;opacity:1}}
+
+/* ===== Завантаження, як на референсі: спершу тло, потім фото проявляється, далі заголовок і шапка. ===== */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes heroRise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.hero-bg{animation:fadeIn 1.4s ease .05s both}
+.hero h1{animation:heroRise 1.4s cubic-bezier(.16,1,.3,1) .5s both}
+.hero .acts{animation:heroRise 1.2s cubic-bezier(.16,1,.3,1) 1.05s both}
+.bar{animation:fadeIn .9s ease .85s both}
+.corner{animation:fadeIn .9s ease 1.35s both}
+.corner.is-ready{animation:glow 1.7s ease-out infinite}
+@media(prefers-reduced-motion:reduce){.hero-bg,.hero h1,.hero .acts,.bar,.corner{animation:none}}
+
+/* ===== Список напрямків: каскад появи, ефект наведення, легкий паралакс колонки з описами. ===== */
+.dir-row{position:relative;isolation:isolate}
+.dir-row::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(230,135,98,.14);transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.16,1,.3,1)}
+.dir-row .n,.dir-row .t,.dir-row .d{transition:color .3s ease,translate .5s cubic-bezier(.16,1,.3,1)}
+.dir-row .d{translate:var(--dx,0px) 0}
+.summary{overflow-x:clip}
+@media(max-width:760px){.dir-row .d{translate:none}}
+.dir-row .t::after{content:"→";display:inline-block;margin-left:14px;opacity:0;translate:-10px 0;transition:opacity .35s ease,translate .5s cubic-bezier(.16,1,.3,1);color:var(--accent-hi)}
+.summary.anim .dir-row.rv:not(.in){opacity:0}
+.summary.anim .dir-row.rv.in{animation:rowIn .9s cubic-bezier(.16,1,.3,1) calc(var(--i, 0) * 70ms) backwards}
+@keyframes rowIn{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+@media(hover:hover) and (pointer:fine){
+  .dir-row:hover{background:none}
+  .dir-row:hover::before{transform:scaleX(1)}
+  .dir-row:hover .t{translate:16px 0}
+  .dir-row:hover .t::after{opacity:1;translate:0 0}
+  .dir-row .n,.dir-row,.dir-row .t{transition-property:color,translate,opacity,background}
+  .summary:has(.dir-row:hover) .dir-row:not(:hover){opacity:.38;transition:opacity .35s ease}
+  .dir-row{transition:opacity .35s ease}
+}
+@media(prefers-reduced-motion:reduce){
+  .summary.anim .dir-row.rv:not(.in){opacity:1}
+  .summary.anim .dir-row.rv.in{animation:none}
+  .dir-row .d{translate:none}
+  .dir-row::before,.dir-row .t,.dir-row .t::after{transition:none}
+  .summary:has(.dir-row:hover) .dir-row:not(:hover){opacity:1}
+}
+
+/* ===== Картки позицій у розділах вспливають знизу вгору по одній. ===== */
+.items.drop-on article.drop:not(.in){opacity:0}
+.items.drop-on article.drop.in{animation:dropIn 1.15s cubic-bezier(.16,1,.3,1) calc(var(--i, 0) * 90ms) backwards}
+@keyframes dropIn{
+  0%{opacity:0;translate:0 44px}
+  100%{opacity:1;translate:0 0}
+}
+@media(prefers-reduced-motion:reduce){.items.drop-on article.drop:not(.in){opacity:1}.items.drop-on article.drop.in{animation:none}}
+
+/* ===== Галерея: спокійніший зум, приглушення сусідніх фото, лінія під підписом при наведенні. ===== */
+.gal img{transition:transform 1.3s cubic-bezier(.16,1,.3,1)}
+.gal figure{transition:opacity .45s ease}
+.gal figcaption{width:fit-content}
+.gal figcaption::after{content:"";display:block;height:1px;margin-top:4px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+@media(hover:hover) and (pointer:fine){
+  .gal figure:hover img,.gal figure:focus-within img{transform:scale(1.045)}
+  .gal:has(figure:hover) figure:not(:hover){opacity:.7}
+  .gal figure:hover figcaption::after,.gal figure:focus-within figcaption::after{transform:scaleX(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .gal img,.gal figure,.gal figcaption::after{transition:none}
+  .gal:has(figure:hover) figure:not(:hover){opacity:1}
+}
+
+/* ===== Пульсуюче коло за курсором (лише там, де є миша; звичайний курсор лишається). ===== */
+.cursor-dot{position:fixed;left:0;top:0;z-index:9999;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .3s ease,width .35s cubic-bezier(.16,1,.3,1),height .35s cubic-bezier(.16,1,.3,1),margin .35s cubic-bezier(.16,1,.3,1);will-change:transform;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M96.7 50.0L96.2 53.2L95.4 56.4L94.4 59.4L93.2 62.4L91.9 65.3L90.6 68.1L89.2 70.9L87.8 73.6L86.3 76.4L84.5 79.0L82.6 81.4L80.3 83.7L77.8 85.6L75.2 87.3L72.4 88.7L69.5 90.0L66.6 91.1L63.7 92.2L60.8 93.2L57.8 94.1L54.7 95.0L51.6 95.6L48.4 96.0L45.2 96.1L41.9 95.9L38.7 95.4L35.5 94.5L32.4 93.5L29.4 92.2L26.5 90.7L23.7 89.0L21.1 87.0L18.7 84.7L16.7 82.2L14.9 79.4L13.5 76.5L12.3 73.6L11.2 70.6L10.2 67.7L9.3 64.8L8.3 62.0L7.3 59.1L6.3 56.1L5.5 53.1L4.9 50.0L4.7 46.8L4.8 43.6L5.2 40.5L6.0 37.4L7.0 34.3L8.2 31.4L9.5 28.5L11.0 25.6L12.7 22.9L14.5 20.2L16.6 17.8L18.9 15.5L21.4 13.4L24.1 11.6L26.9 10.1L29.8 8.7L32.8 7.4L35.8 6.3L38.9 5.4L42.0 4.6L45.2 4.2L48.4 4.1L51.6 4.3L54.7 5.0L57.8 5.9L60.7 7.1L63.5 8.4L66.3 9.8L69.0 11.1L71.7 12.4L74.5 13.7L77.3 15.1L80.0 16.7L82.7 18.4L85.2 20.5L87.4 22.8L89.5 25.3L91.2 28.1L92.8 31.0L94.1 34.0L95.2 37.1L96.0 40.2L96.5 43.5L96.8 46.7Z' fill='%23F4E7D1' stroke='%234B2F1B' stroke-width='3.4' stroke-linejoin='round'/%3E%3Cpath d='M58.0 50.0L58.1 50.7L58.1 51.4L58.0 52.1L57.8 52.8L57.5 53.5L57.1 54.1L56.7 54.7L56.2 55.2L55.7 55.7L55.2 56.2L54.6 56.6L54.0 56.9L53.3 57.2L52.7 57.4L52.0 57.6L51.4 57.7L50.7 57.9L50.0 57.9L49.3 57.9L48.6 57.8L47.9 57.7L47.3 57.4L46.7 57.1L46.1 56.8L45.5 56.5L44.9 56.1L44.3 55.7L43.8 55.2L43.3 54.7L42.8 54.1L42.5 53.5L42.3 52.8L42.1 52.1L42.0 51.4L42.0 50.7L42.0 50.0L42.1 49.3L42.2 48.6L42.4 48.0L42.7 47.3L43.0 46.7L43.3 46.1L43.6 45.5L44.0 45.0L44.4 44.4L44.8 43.8L45.4 43.4L45.9 43.0L46.6 42.6L47.2 42.4L47.9 42.2L48.6 42.1L49.3 42.0L50.0 41.9L50.7 41.9L51.4 42.0L52.1 42.1L52.8 42.4L53.4 42.7L54.0 43.0L54.6 43.4L55.1 43.9L55.6 44.4L56.1 44.9L56.4 45.5L56.8 46.1L57.0 46.7L57.3 47.4L57.5 48.0L57.7 48.6L57.8 49.3Z' fill='none' stroke='%235C3B22' stroke-width='1.9'/%3E%3Cpath d='M64.5 50.0L64.5 51.3L64.3 52.5L63.9 53.7L63.4 54.9L62.8 56.0L62.1 57.0L61.4 58.0L60.6 58.9L59.8 59.8L58.9 60.7L58.0 61.4L56.9 62.0L55.8 62.5L54.7 63.0L53.6 63.3L52.4 63.6L51.2 63.8L50.0 63.9L48.8 63.8L47.6 63.7L46.4 63.4L45.2 63.1L44.1 62.7L43.0 62.2L41.9 61.6L40.8 61.0L39.8 60.2L38.9 59.3L38.1 58.3L37.5 57.2L37.1 56.0L36.8 54.8L36.6 53.6L36.5 52.4L36.4 51.2L36.4 50.0L36.4 48.8L36.5 47.6L36.8 46.5L37.1 45.3L37.5 44.2L38.0 43.1L38.6 42.0L39.2 40.9L40.0 40.0L40.8 39.1L41.8 38.3L42.9 37.7L44.0 37.2L45.2 36.8L46.4 36.4L47.6 36.1L48.8 35.9L50.0 35.8L51.2 35.8L52.5 36.0L53.7 36.3L54.8 36.8L55.9 37.4L56.9 38.1L57.8 38.8L58.8 39.6L59.6 40.4L60.5 41.2L61.2 42.2L61.9 43.1L62.5 44.2L63.0 45.3L63.5 46.4L63.9 47.5L64.3 48.8Z' fill='none' stroke='%235C3B22' stroke-width='1.4'/%3E%3Cpath d='M70.6 50.0L70.4 51.8L69.9 53.5L69.3 55.2L68.6 56.8L67.8 58.3L67.0 59.8L66.1 61.3L65.2 62.7L64.1 64.1L62.8 65.3L61.4 66.3L59.9 67.1L58.3 67.8L56.7 68.4L55.1 68.9L53.4 69.4L51.7 69.7L50.0 70.0L48.2 70.0L46.5 69.9L44.7 69.6L43.0 69.1L41.4 68.5L39.7 67.8L38.2 66.9L36.8 65.8L35.5 64.5L34.4 63.1L33.5 61.5L32.9 59.9L32.3 58.2L31.8 56.6L31.4 55.0L31.0 53.4L30.6 51.7L30.3 50.0L30.3 48.3L30.4 46.5L30.7 44.8L31.2 43.2L31.8 41.5L32.6 39.9L33.4 38.4L34.5 37.0L35.6 35.6L36.9 34.4L38.4 33.4L39.9 32.5L41.5 31.7L43.1 31.1L44.8 30.5L46.5 30.1L48.2 29.8L50.0 29.7L51.8 29.9L53.5 30.4L55.1 31.0L56.7 31.7L58.2 32.5L59.6 33.3L61.1 34.2L62.5 35.1L63.9 36.1L65.2 37.2L66.4 38.5L67.5 39.9L68.4 41.4L69.2 43.0L69.8 44.7L70.3 46.4L70.5 48.2Z' fill='none' stroke='%235C3B22' stroke-width='1.9'/%3E%3Cpath d='M76.1 50.0L75.8 52.3L75.4 54.5L74.7 56.6L74.0 58.7L73.2 60.8L72.2 62.8L71.1 64.8L69.8 66.6L68.3 68.3L66.6 69.8L64.7 71.0L62.8 72.1L60.8 73.1L58.8 74.0L56.7 74.9L54.5 75.7L52.3 76.3L50.0 76.7L47.7 76.7L45.3 76.4L43.1 75.8L40.9 75.0L38.8 74.0L36.8 72.8L35.0 71.5L33.3 69.9L31.8 68.2L30.5 66.4L29.3 64.5L28.3 62.6L27.3 60.6L26.3 58.6L25.4 56.6L24.7 54.5L24.1 52.3L23.8 50.0L23.8 47.7L24.1 45.4L24.7 43.2L25.4 41.1L26.3 39.0L27.3 36.9L28.5 34.9L29.8 33.0L31.3 31.3L33.0 29.7L34.9 28.4L36.9 27.2L38.9 26.3L41.1 25.5L43.3 24.8L45.5 24.4L47.7 24.2L50.0 24.3L52.2 24.6L54.4 25.1L56.5 25.8L58.6 26.5L60.6 27.2L62.7 27.9L64.8 28.8L66.9 29.9L68.8 31.2L70.5 32.8L71.9 34.6L73.1 36.6L74.1 38.8L74.9 40.9L75.5 43.2L75.9 45.4L76.1 47.7Z' fill='none' stroke='%235C3B22' stroke-width='1.4'/%3E%3Cpath d='M81.8 50.0L81.6 52.8L81.1 55.5L80.4 58.2L79.6 60.8L78.6 63.3L77.4 65.8L76.0 68.2L74.3 70.4L72.4 72.4L70.4 74.3L68.2 75.9L65.9 77.5L63.5 79.0L61.1 80.4L58.5 81.6L55.7 82.5L52.9 83.1L50.0 83.2L47.1 82.8L44.3 82.1L41.7 81.1L39.1 79.9L36.7 78.6L34.3 77.2L32.0 75.6L29.9 73.9L27.9 72.1L26.1 70.0L24.4 67.9L22.9 65.7L21.4 63.3L20.1 60.9L18.9 58.3L18.1 55.6L17.6 52.8L17.4 50.0L17.7 47.2L18.2 44.4L19.0 41.7L19.8 39.0L20.8 36.4L21.9 33.8L23.3 31.3L25.0 29.0L26.9 26.9L29.1 25.1L31.6 23.7L34.1 22.4L36.6 21.4L39.3 20.5L41.9 19.8L44.6 19.2L47.3 18.9L50.0 18.8L52.7 19.0L55.4 19.2L58.1 19.6L60.9 20.2L63.6 20.8L66.3 21.7L68.9 23.0L71.3 24.6L73.4 26.6L75.2 28.8L76.7 31.3L78.0 33.8L79.0 36.5L80.0 39.1L80.8 41.8L81.4 44.5L81.7 47.2Z' fill='none' stroke='%235C3B22' stroke-width='1.9'/%3E%3Cpath d='M87.7 50.0L87.4 53.3L86.8 56.5L86.0 59.6L85.0 62.7L83.9 65.8L82.6 68.8L81.0 71.7L79.1 74.4L77.0 77.0L74.6 79.4L72.1 81.5L69.4 83.5L66.5 85.3L63.4 86.8L60.2 88.0L56.8 88.6L53.4 88.7L50.0 88.4L46.7 87.6L43.5 86.7L40.5 85.6L37.4 84.5L34.4 83.4L31.5 82.1L28.6 80.5L25.9 78.7L23.4 76.6L21.1 74.3L19.0 71.7L17.1 69.0L15.4 66.1L13.9 63.1L12.7 60.0L11.9 56.7L11.5 53.4L11.5 50.0L11.8 46.7L12.4 43.4L13.1 40.1L13.9 36.9L15.1 33.7L16.5 30.7L18.3 27.8L20.6 25.3L23.1 23.1L25.9 21.2L28.7 19.6L31.6 18.1L34.5 16.8L37.4 15.5L40.4 14.3L43.5 13.3L46.7 12.6L50.0 12.2L53.3 12.1L56.7 12.2L60.0 12.7L63.3 13.4L66.5 14.5L69.6 16.0L72.5 17.9L75.0 20.2L77.3 22.7L79.2 25.5L80.9 28.4L82.5 31.3L83.9 34.2L85.3 37.2L86.4 40.2L87.3 43.4L87.7 46.7Z' fill='none' stroke='%235C3B22' stroke-width='1.4'/%3E%3Cpath d='M60.0 56.6L64.1 59.8L69.5 60.9L74.2 63.0L77.1 68.3L81.1 71.5L87.7 70.7' fill='none' stroke='%234B2F1B' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M40.4 57.2L37.4 61.7L33.4 64.9L27.8 66.3L24.1 69.9L22.4 75.8L17.8 78.6' fill='none' stroke='%234B2F1B' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M42.6 40.6L39.6 36.3L38.3 31.0L35.0 27.0L29.6 24.5L27.3 19.7L27.6 13.3' fill='none' stroke='%234B2F1B' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='50' r='2.6' fill='%234B2F1B'/%3E%3C/svg%3E") center/100% 100% no-repeat;box-shadow:0 0 0 1.5px #F6F5F4,0 3px 9px rgba(66,40,22,.4)}
+.cursor-dot.on{opacity:1}
+.cursor-dot::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid #D9A66B;animation:cursorPulse 1.8s ease-out infinite}
+.cursor-dot.big{width:44px;height:44px;margin:-22px 0 0 -22px}
+@keyframes cursorPulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(1.7);opacity:0}}
+@media(hover:none),(pointer:coarse){.cursor-dot{display:none}}
+@media(prefers-reduced-motion:reduce){.cursor-dot::after{animation:none}}
+
+/* ===== Відгуки: ім'я, цитата й підпис вспливають знизу вгору при показі слайда. ===== */
+@keyframes floatUp{from{opacity:0;translate:0 34px}to{opacity:1;translate:0 0}}
+.tsl.seen .tsl-slide.on .tsl-name h3{animation:floatUp 1.2s cubic-bezier(.16,1,.3,1) .1s backwards}
+.tsl.seen .tsl-slide.on .tsl-quote blockquote{animation:floatUp 1.2s cubic-bezier(.16,1,.3,1) .3s backwards}
+.tsl.seen .tsl-slide.on .tsl-quote .role{animation:floatUp 1.2s cubic-bezier(.16,1,.3,1) .5s backwards}
+.tsl:not(.seen) .tsl-name h3,.tsl:not(.seen) .tsl-quote blockquote,.tsl:not(.seen) .tsl-quote .role{opacity:0}
+@media(prefers-reduced-motion:reduce){
+  .tsl.seen .tsl-slide.on .tsl-name h3,.tsl.seen .tsl-slide.on .tsl-quote blockquote,.tsl.seen .tsl-slide.on .tsl-quote .role{animation:none}
+  .tsl:not(.seen) .tsl-name h3,.tsl:not(.seen) .tsl-quote blockquote,.tsl:not(.seen) .tsl-quote .role{opacity:1}
+}
+
+/* Листочок біля краю кола, як на логотипі-прикладі: гілочка з трьома листками зверху ліворуч. */
+.cursor-dot::before{content:"";position:absolute;left:calc(14.6% - 18px);top:calc(14.6% - 18px);width:26px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.5 16.5C12.5 13.5 8 9.5 4.5 4' fill='none' stroke='%234E6B2A' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M0 0C3 -4.6 8 -4.8 12 0C8 4.8 3 4.6 0 0Z' fill='%236F8F3C' transform='translate(4.5 4.5) rotate(-122) scale(.86)'/%3E%3Cpath d='M0 0C3 -4.6 8 -4.8 12 0C8 4.8 3 4.6 0 0Z' fill='%236F8F3C' transform='translate(9.5 10.5) rotate(-168) scale(.88)'/%3E%3Cpath d='M0 0C3 -4.6 8 -4.8 12 0C8 4.8 3 4.6 0 0Z' fill='%23587A31' transform='translate(12.5 13.2) rotate(-58) scale(.9)'/%3E%3C/svg%3E") center/100% 100% no-repeat;transform-origin:69% 69%;animation:leafSway 3.2s ease-in-out infinite}
+@keyframes leafSway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.cursor-dot::before{animation:none}}
+
+/* ===== Смуга прокрутки в кольорах сайту: коричнева доріжка, світлий округлий повзунок (як на dsgninterior.se). ===== */
+html::-webkit-scrollbar{width:15px;height:15px}
+html::-webkit-scrollbar-track{background:#594037}
+html::-webkit-scrollbar-thumb{background:rgba(246,245,244,.42);border:3px solid #594037;border-radius:999px;min-height:56px}
+html::-webkit-scrollbar-thumb:hover{background:rgba(246,245,244,.7)}
+@supports (-moz-appearance:none){html{scrollbar-color:rgba(246,245,244,.5) #594037}}
+</style>
+</head>
+
+<body>
+<header class="bar">
+  <a class="logo" href="#top" aria-label="Avento Wood"><img src="img/logo.webp" alt="Avento Wood" width="400" height="373"></a>
+  <div class="right">
+    <nav class="nav-links">
+      <a href="#directions" data-ua="Напрямки" data-az="İstiqamətlər" data-ru="Направления" data-en="Production lines">İstiqamətlər</a>
+      <a href="#about" data-ua="Чому нас обирають" data-az="Niyə bizi seçirlər" data-ru="Почему нас выбирают" data-en="Why clients choose us">Niyə bizi seçirlər</a>
+      <a href="#contact" data-ua="Контакти" data-az="Əlaqə" data-ru="Контакты" data-en="Contact">Əlaqə</a>
+    </nav>
+    <a class="nav-cta btn-slide" href="#contact" data-ua="Залишити заявку" data-az="Sifariş buraxın" data-ru="Оставить заявку" data-en="Request a quote">Sifariş buraxın</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mmenu" data-ua-lbl="Меню" data-az-lbl="Menyu" data-ru-lbl="Меню" data-en-lbl="Menu" aria-label="Menyu"><span class="burger-ico" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <div class="langs">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-ua-lbl="Мова" data-az-lbl="Dil" data-ru-lbl="Язык" data-en-lbl="Language" aria-label="Dil">
+        <span id="lang-current">AZ</span>
+        <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1.8 6 6.2 11 1.8"></path></svg>
+      </button>
+      <div class="lang-menu" id="lang-menu" hidden>
+        <button id="btn-az" type="button" aria-pressed="true">AZ</button>
+        <button id="btn-en" type="button" aria-pressed="false">EN</button>
+        <button id="btn-ua" type="button" aria-pressed="false">UA</button>
+        <button id="btn-ru" type="button" aria-pressed="false">RU</button>
+      </div>
+    </div>
+  </div>
+  <nav class="mmenu" id="mmenu" data-ua-lbl="Меню" data-az-lbl="Menyu" data-ru-lbl="Меню" data-en-lbl="Menu" aria-label="Menyu">
+    <a href="#directions" data-ua="Напрямки" data-az="İstiqamətlər" data-ru="Направления" data-en="Production lines">İstiqamətlər</a>
+    <a href="#about" data-ua="Чому нас обирають" data-az="Niyə bizi seçirlər" data-ru="Почему нас выбирают" data-en="Why clients choose us">Niyə bizi seçirlər</a>
+    <a href="#contact" data-ua="Контакти" data-az="Əlaqə" data-ru="Контакты" data-en="Contact">Əlaqə</a>
+    <div class="mm-langs" role="group" aria-label="Language">
+      <button type="button" data-l="az">AZ</button><button type="button" data-l="en">EN</button><button type="button" data-l="ua">UA</button><button type="button" data-l="ru">RU</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="top" data-view="home">
+  <!-- Фон героя: відео без звуку, зациклене. Постер показується, поки воно вантажиться,
+       і замінює його повністю, якщо в системі ввімкнено зменшення анімації.
+       Щоб повернути слайдшоу з чотирьох фото, дивись резервну копію index.pre-video.bak. -->
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="img/hero-poster.webp">
+      <source src="video/hero-loop.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="in">
+    <h1 data-ua="Меблі й столярка з масиву під твої розміри" data-az="Masiv ağacdan mebel və dülgərlik: sizin ölçülərinizə uyğun" data-ru="Мебель и столярка из массива под твои размеры" data-en="Solid wood furniture and joinery, built to your dimensions">Masiv ağacdan mebel və dülgərlik: sizin ölçülərinizə uyğun</h1>
+    <div class="acts">
+      <a class="btn btn-slide" href="#contact" data-ua="Залишити заявку" data-az="Sifariş buraxın" data-ru="Оставить заявку" data-en="Request a quote">Sifariş buraxın</a>
+    </div>
+  </div>
+</section>
+
+<div class="opener banner ph op1" id="b1" data-view="home"><div class="in"><div class="eyebrow">01 / 07</div><h2 data-ua="Виробництво меблів" data-az="Mebel istehsalı" data-ru="Производство мебели" data-en="Furniture production">Mebel istehsalı</h2><p class="lede" data-ua="Корпусна, м’яка, масив, преміум, садова, комерційна, вбудована" data-az="Korpus, yumşaq, masiv, premium, bağ, kommersiya, quraşdırılmış" data-ru="Корпусная, мягкая, массив, премиум, садовая, коммерческая, встроенная" data-en="Cabinet, upholstered, solid wood, premium, garden, commercial, built-in">Korpus, yumşaq, masiv, premium, bağ, kommersiya, quraşdırılmış</p></div></div>
+<div class="opener banner ph op2" id="b2" data-view="home"><div class="in"><div class="eyebrow">02 / 07</div><h2 data-ua="Столярне виробництво" data-az="Dülgərlik istehsalı" data-ru="Столярное производство" data-en="Joinery">Dülgərlik istehsalı</h2><p class="lede" data-ua="Двері, вікна, сходи, панелі, перегородки" data-az="Qapılar, pəncərələr, pilləkənlər, panellər, arakəsmələr" data-ru="Двери, окна, лестницы, панели, перегородки" data-en="Doors, windows, staircases, panels, partitions">Qapılar, pəncərələr, pilləkənlər, panellər, arakəsmələr</p></div></div>
+<div class="opener banner ph op3" id="b3" data-view="home"><div class="in"><div class="eyebrow">03 / 07</div><h2 data-ua="Інтер’єрні вироби" data-az="İnteryer məmulatları" data-ru="Интерьерные изделия" data-en="Interior elements">İnteryer məmulatları</h2><p class="lede" data-ua="Рейкові панелі, стелі, акустика, декор" data-az="Reyka panellər, tavanlar, akustika, dekor" data-ru="Реечные панели, потолки, акустика, декор" data-en="Slatted panels, ceilings, acoustics, decor">Reyka panellər, tavanlar, akustika, dekor</p></div></div>
+<div class="opener banner ph op4" id="b4" data-view="home"><div class="in"><div class="eyebrow">04 / 07</div><h2 data-ua="Будівництво та екстер’єр" data-az="Tikinti və eksteryer" data-ru="Строительство и экстерьер" data-en="Construction and exteriors">Tikinti və eksteryer</h2><p class="lede" data-ua="Будинки, лазні, альтанки, тераси, фасади" data-az="Evlər, hamamlar, talvarlar, teraslar, fasadlar" data-ru="Дома, бани, беседки, террасы, фасады" data-en="Houses, saunas, gazebos, terraces, facades">Evlər, hamamlar, talvarlar, teraslar, fasadlar</p></div></div>
+<div class="opener banner ph op5" id="b5" data-view="home"><div class="in"><div class="eyebrow">05 / 07</div><h2 data-ua="Великогабаритні вироби з дерева" data-az="Iri ölçülü ağac məmulatları" data-ru="Крупногабаритные изделия из дерева" data-en="Large-format wooden pieces">Iri ölçülü ağac məmulatları</h2><p class="lede" data-ua="Стільниці, слеби, підвіконня, аксесуари" data-az="Tezgahlar, slablar, pəncərəaltıları, aksesuarlar" data-ru="Столешницы, слэбы, подоконники, аксессуары" data-en="Worktops, slabs, windowsills, accessories">Tezgahlar, slablar, pəncərəaltıları, aksesuarlar</p></div></div>
+<div class="opener banner ph op6" id="b6" data-view="home"><div class="in"><div class="eyebrow">06 / 07</div><h2 data-ua="Художня обробка" data-az="Bədii emal" data-ru="Художественная обработка" data-en="Artistic woodwork">Bədii emal</h2><p class="lede" data-ua="Різьба, інкрустація, реставрація, мистецтво" data-az="Oyma, inkrustasiya, bərpa, sənət" data-ru="Резьба, инкрустация, реставрация, искусство" data-en="Carving, inlay, restoration, art">Oyma, inkrustasiya, bərpa, sənət</p></div></div>
+<div class="opener banner ph op7" id="b7" data-view="home"><div class="in"><div class="eyebrow">07 / 07</div><h2 data-ua="Оздоблювальні матеріали" data-az="Üzlük materialları" data-ru="Отделочные материалы" data-en="Finishing materials">Üzlük materialları</h2><p class="lede" data-ua="Паркет, дошка, облицювання, листи" data-az="Parket, taxta, üzlük, lövhələr" data-ru="Паркет, доска, облицовка, листы" data-en="Parquet, boards, cladding, sheet materials">Parket, taxta, üzlük, lövhələr</p></div></div>
+
+<a class="corner" id="corner" href="#b1" data-view="home">
+  <svg class="c-mouse" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1" y="1" width="14" height="22" rx="7"/><circle class="wheel" cx="8" cy="7" r="1.6" fill="currentColor" stroke="none"/></svg>
+  <svg class="c-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  <span class="c-a" data-ua="Гортайте вниз" data-az="Aşağı diyirləyin" data-ru="Листайте вниз" data-en="Scroll to explore">Aşağı diyirləyin</span>
+  <span class="c-b" data-ua="Про нас і напрямки" data-az="Haqqımızda və istiqamətlər" data-ru="О нас и направления" data-en="About us &amp; categories">Haqqımızda və istiqamətlər</span>
+</a>
+
+<div class="corner-info" id="corner-info" data-view="home">
+  <a href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener">Avento Wood</a>
+  <a href="tel:+994050000000">+994 050 00 00</a>
+</div>
+
+<div class="more" id="more" data-view="home">
+<section class="intro">
+  <h2 data-ua="Меблі та столярні вироби, створені для вашого дому" data-az="Eviniz üçün yaradılmış mebel və dülgərlik məmulatları" data-ru="Мебель и столярные изделия, созданные для вашего дома" data-en="Furniture and joinery made for your home">Eviniz üçün yaradılmış mebel və dülgərlik məmulatları</h2>
+  <div class="intro-text">
+      <p data-ua="У майстерні Avento Wood ми виготовляємо меблі й столярні вироби на замовлення та втілюємо індивідуальні дизайн-проєкти. Ми уважно ставимося до ваших побажань, щоб кожна робота гармонійно доповнювала простір і була зручною в повсякденному житті." data-az="Avento Wood emalatxanasında sifarişlə mebel və dülgərlik məmulatları hazırlayır, fərdi dizayn layihələrini həyata keçiririk. Hər işin məkanı ahəngdar tamamlaması və gündəlik həyatda rahat olması üçün istəklərinizə diqqətlə yanaşırıq." data-ru="В мастерской Avento Wood мы изготавливаем мебель и столярные изделия на заказ и воплощаем индивидуальные дизайн-проекты. Мы внимательно относимся к вашим пожеланиям, чтобы каждая работа гармонично дополняла пространство и была удобной в повседневной жизни." data-en="At the Avento Wood workshop we make furniture and joinery to order and realise bespoke design projects. We listen closely to what you want, so that every piece sits naturally in the space and is comfortable to live with day to day.">Avento Wood emalatxanasında sifarişlə mebel və dülgərlik məmulatları hazırlayır, fərdi dizayn layihələrini həyata keçiririk. Hər işin məkanı ahəngdar tamamlaması və gündəlik həyatda rahat olması üçün istəklərinizə diqqətlə yanaşırıq.</p>
+      <p data-ua="Любимо дерево за його природну красу, тепло й неповторний характер. З цією любов’ю працюємо над кожним виробом — від задуму до останньої деталі. Чи це меблі, двері, сходи або декоративні елементи — у кожну роботу вкладаємо майстерність і турботу." data-az="Ağacı təbii gözəlliyinə, istiliyinə və təkrarsız xarakterinə görə sevirik. Bu sevgi ilə hər məmulat üzərində işləyirik — ideyadan son detala qədər. İstər mebel, qapı, pilləkən, istərsə də dekorativ elementlər olsun — hər işə ustalıq və qayğı qoyuruq." data-ru="Любим дерево за его природную красоту, тепло и неповторимый характер. С этой любовью работаем над каждым изделием — от замысла до последней детали. Будь то мебель, двери, лестницы или декоративные элементы — в каждую работу вкладываем мастерство и заботу." data-en="We love wood for its natural beauty, warmth and singular character. We bring that love to every piece — from the idea to the last detail. Furniture, doors, staircases or decorative elements: every job gets the same craftsmanship and care.">Ağacı təbii gözəlliyinə, istiliyinə və təkrarsız xarakterinə görə sevirik. Bu sevgi ilə hər məmulat üzərində işləyirik — ideyadan son detala qədər. İstər mebel, qapı, pilləkən, istərsə də dekorativ elementlər olsun — hər işə ustalıq və qayğı qoyuruq.</p>
+      <p data-ua="Для нас важливо створювати речі, якими ви із задоволенням користуватиметеся роками. Розкажіть, що ви уявляєте для свого дому, — ми допоможемо втілити це в дереві." data-az="Bizim üçün illərlə məmnuniyyətlə istifadə edəcəyiniz əşyalar yaratmaq vacibdir. Eviniz üçün nə təsəvvür etdiyinizi danışın — onu ağacda gerçəkləşdirməyə kömək edəcəyik." data-ru="Для нас важно создавать вещи, которыми вы с удовольствием будете пользоваться годами. Расскажите, что вы представляете для своего дома, — мы поможем воплотить это в дереве." data-en="What matters to us is making things you will enjoy using for years. Tell us what you picture for your home — we will help you realise it in wood.">Bizim üçün illərlə məmnuniyyətlə istifadə edəcəyiniz əşyalar yaratmaq vacibdir. Eviniz üçün nə təsəvvür etdiyinizi danışın — onu ağacda gerçəkləşdirməyə kömək edəcəyik.</p>
+  </div>
+</section>
+
+<section class="summary">
+  <h2 data-ua="Напрямки" data-az="İstiqamətlər" data-ru="Направления" data-en="Production lines">İstiqamətlər</h2>
+  <p class="lede" data-ua="Сім виробничих напрямків формують повний цикл роботи з деревиною: від підготовки матеріалу до фінальної обробки та монтажу." data-az="Yeddi istehsal istiqaməti ağacla işin tam dövrünü formalaşdırır: materialın hazırlanmasından son emala və quraşdırmaya qədər." data-ru="Семь производственных направлений формируют полный цикл работы с древесиной: от подготовки материала до финальной обработки и монтажа." data-en="Seven production lines form a complete cycle of work with timber: from preparing the material to final finishing and installation.">Yeddi istehsal istiqaməti ağacla işin tam dövrünü formalaşdırır: materialın hazırlanmasından son emala və quraşdırmaya qədər.</p>
+
+  <a class="dir-row" href="#s1" data-peek="img/wardrobe-sliding.webp"><span class="n">01</span><span class="t" data-ua="Виробництво меблів" data-az="Mebel istehsalı" data-ru="Производство мебели" data-en="Furniture production">Mebel istehsalı</span><span class="d" data-ua="Корпусна, м’яка, масив, преміум, садова, комерційна, вбудована" data-az="Korpus, yumşaq, masiv, premium, bağ, kommersiya, quraşdırılmış" data-ru="Корпусная, мягкая, массив, премиум, садовая, коммерческая, встроенная" data-en="Cabinet, upholstered, solid wood, premium, garden, commercial, built-in">Korpus, yumşaq, masiv, premium, bağ, kommersiya, quraşdırılmış</span></a>
+  <a class="dir-row" href="#s2" data-peek="img/window-portal.webp"><span class="n">02</span><span class="t" data-ua="Столярне виробництво" data-az="Dülgərlik istehsalı" data-ru="Столярное производство" data-en="Joinery">Dülgərlik istehsalı</span><span class="d" data-ua="Двері, вікна, сходи, панелі, перегородки" data-az="Qapılar, pəncərələr, pilləkənlər, panellər, arakəsmələr" data-ru="Двери, окна, лестницы, панели, перегородки" data-en="Doors, windows, staircases, panels, partitions">Qapılar, pəncərələr, pilləkənlər, panellər, arakəsmələr</span></a>
+  <a class="dir-row" href="#s3" data-peek="img/corridor-slats.webp"><span class="n">03</span><span class="t" data-ua="Інтер’єрні вироби" data-az="İnteryer məmulatları" data-ru="Интерьерные изделия" data-en="Interior elements">İnteryer məmulatları</span><span class="d" data-ua="Рейкові панелі, стелі, акустика, декор" data-az="Reyka panellər, tavanlar, akustika, dekor" data-ru="Реечные панели, потолки, акустика, декор" data-en="Slatted panels, ceilings, acoustics, decor">Reyka panellər, tavanlar, akustika, dekor</span></a>
+  <a class="dir-row" href="#s4" data-peek="img/terrace-furniture.webp"><span class="n">04</span><span class="t" data-ua="Будівництво та екстер’єр" data-az="Tikinti və eksteryer" data-ru="Строительство и экстерьер" data-en="Construction and exteriors">Tikinti və eksteryer</span><span class="d" data-ua="Будинки, лазні, альтанки, тераси, фасади" data-az="Evlər, hamamlar, talvarlar, teraslar, fasadlar" data-ru="Дома, бани, беседки, террасы, фасады" data-en="Houses, saunas, gazebos, terraces, facades">Evlər, hamamlar, talvarlar, teraslar, fasadlar</span></a>
+  <a class="dir-row" href="#s5" data-peek="img/table-walnut.webp"><span class="n">05</span><span class="t" data-ua="Великогабаритні вироби з дерева" data-az="Iri ölçülü ağac məmulatları" data-ru="Крупногабаритные изделия из дерева" data-en="Large-format wooden pieces">Iri ölçülü ağac məmulatları</span><span class="d" data-ua="Стільниці, слеби, підвіконня, аксесуари" data-az="Tezgahlar, slablar, pəncərəaltıları, aksesuarlar" data-ru="Столешницы, слэбы, подоконники, аксессуары" data-en="Worktops, slabs, windowsills, accessories">Tezgahlar, slablar, pəncərəaltıları, aksesuarlar</span></a>
+  <a class="dir-row" href="#s6" data-peek="img/sideboard-carved.webp"><span class="n">06</span><span class="t" data-ua="Художня обробка" data-az="Bədii emal" data-ru="Художественная обработка" data-en="Artistic woodwork">Bədii emal</span><span class="d" data-ua="Різьба, інкрустація, реставрація, мистецтво" data-az="Oyma, inkrustasiya, bərpa, sənət" data-ru="Резьба, инкрустация, реставрация, искусство" data-en="Carving, inlay, restoration, art">Oyma, inkrustasiya, bərpa, sənət</span></a>
+  <a class="dir-row" href="#s7" data-peek="img/corridor-slats.webp"><span class="n">07</span><span class="t" data-ua="Оздоблювальні матеріали" data-az="Üzlük materialları" data-ru="Отделочные материалы" data-en="Finishing materials">Üzlük materialları</span><span class="d" data-ua="Паркет, дошка, облицювання, листи" data-az="Parket, taxta, üzlük, lövhələr" data-ru="Паркет, доска, облицовка, листы" data-en="Parquet, boards, cladding, sheet materials">Parket, taxta, üzlük, lövhələr</span></a>
+  <div class="sect-cta"><a href="#contact" data-ua="Немає в списку? Зробимо за твоїм ескізом" data-az="Siyahıda yoxdur? Sizin eskizinizə görə hazırlayacağıq" data-ru="Нет в списке? Сделаем по твоему эскизу" data-en="Not on the list? We will make it from your sketch">Siyahıda yoxdur? Sizin eskizinizə görə hazırlayacağıq</a></div>
+</section>
+
+<section class="sect" id="s1">
+  <div class="opener ph op1">
+    <div class="in">
+      <div class="eyebrow" data-ua="Частина 1" data-az="1-ci hissə" data-ru="Часть 1" data-en="Part 1">1-ci hissə</div>
+      <h2 data-ua="Виробництво меблів" data-az="Mebel istehsalı" data-ru="Производство мебели" data-en="Furniture production">Mebel istehsalı</h2>
+      <p class="lede" data-ua="Повний цикл виробництва меблів — від індивідуального проєкту до серійного випуску. Усі категорії адаптуються під розміри, матеріали і стиль замовника." data-az="Mebel istehsalının tam dövrü — fərdi layihədən seriyalı buraxılışa qədər. Bütün kateqoriyalar sifarişçinin ölçülərinə, materiallarına və üslubuna uyğunlaşdırılır." data-ru="Полный цикл производства мебели — от индивидуального проекта до серийного выпуска. Все категории адаптируются под размеры, материалы и стиль заказчика." data-en="A complete furniture production cycle — from a bespoke project to series production. Every category is adapted to the client&#39;s dimensions, materials and style.">Mebel istehsalının tam dövrü — fərdi layihədən seriyalı buraxılışa qədər. Bütün kateqoriyalar sifarişçinin ölçülərinə, materiallarına və üslubuna uyğunlaşdırılır.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Корпусні меблі" data-az="Korpus mebeli" data-ru="Корпусная мебель" data-en="Cabinet furniture">Korpus mebeli</h3><p data-ua="Кухні, шафи-купе, гардеробні кімнати, передпокої та дитячі меблі" data-az="Mətbəxlər, kupe şkaflar, paltar otaqları, dəhlizlər və uşaq mebeli" data-ru="Кухни, шкафы-купе, гардеробные комнаты, прихожие и детская мебель" data-en="Kitchens, sliding-door wardrobes, walk-in closets, hallways and children&#39;s furniture">Mətbəxlər, kupe şkaflar, paltar otaqları, dəhlizlər və uşaq mebeli</p></article>
+    <article><span class="no">02</span><h3 data-ua="М’які меблі" data-az="Yumşaq mebel" data-ru="Мягкая мебель" data-en="Upholstered furniture">Yumşaq mebel</h3><p data-ua="Крісла, крісла-стільці, пуфи, ліжка з м’яким узголів’ям" data-az="Kreslolar, kreslo-stullar, pufiklər, yumşaq başlıqlı çarpayılar" data-ru="Кресла, кресла-стулья, пуфы, кровати с мягким изголовьем" data-en="Armchairs, tub chairs, ottomans, beds with upholstered headboards">Kreslolar, kreslo-stullar, pufiklər, yumşaq başlıqlı çarpayılar</p></article>
+    <article><span class="no">03</span><h3 data-ua="Масив дерева" data-az="Masiv ağac" data-ru="Массив дерева" data-en="Solid wood">Masiv ağac</h3><p data-ua="Столи, стільці, комоди, буфети з натурального дерева" data-az="Təbii ağacdan masalar, stullar, komodlar, bufetlər" data-ru="Столы, стулья, комоды, буфеты из натурального дерева" data-en="Tables, chairs, chests of drawers and sideboards in natural wood">Təbii ağacdan masalar, stullar, komodlar, bufetlər</p></article>
+    <article><span class="no">04</span><h3 data-ua="Художній дизайн" data-az="Bədii dizayn" data-ru="Художественный дизайн" data-en="Artistic design">Bədii dizayn</h3><p data-ua="Авторські роботи, ексклюзивні проєкти, індивідуальні замовлення" data-az="Müəllif işləri, eksklüziv layihələr, fərdi sifarişlər" data-ru="Авторские работы, эксклюзивные проекты, индивидуальные заказы" data-en="Signature pieces, exclusive projects, bespoke orders">Müəllif işləri, eksklüziv layihələr, fərdi sifarişlər</p></article>
+    <article><span class="no">05</span><h3 data-ua="Садові меблі" data-az="Bağ mebeli" data-ru="Садовая мебель" data-en="Garden furniture">Bağ mebeli</h3><p data-ua="Перголи, альтанки, терасні меблі, шезлонги" data-az="Perqolalar, talvarlar, teras mebeli, şezlonqlar" data-ru="Перголы, беседки, террасная мебель, шезлонги" data-en="Pergolas, gazebos, terrace furniture, sun loungers">Perqolalar, talvarlar, teras mebeli, şezlonqlar</p></article>
+    <article><span class="no">06</span><h3 data-ua="Комерційні меблі" data-az="Kommersiya mebeli" data-ru="Коммерческая мебель" data-en="Commercial furniture">Kommersiya mebeli</h3><p data-ua="Для ресторанів, готелів, магазинів, медичних центрів" data-az="Restoranlar, otellər, mağazalar, tibb mərkəzləri üçün" data-ru="Для ресторанов, отелей, магазинов, медицинских центров" data-en="For restaurants, hotels, shops and medical centres">Restoranlar, otellər, mağazalar, tibb mərkəzləri üçün</p></article>
+    <article><span class="no">07</span><h3 data-ua="Вбудовані меблі" data-az="Quraşdırılmış mebel" data-ru="Встроенная мебель" data-en="Built-in furniture">Quraşdırılmış mebel</h3><p data-ua="Ніші, гардеробні системи, вбудовані шафи" data-az="Nişlər, paltar otağı sistemləri, quraşdırılmış şkaflar" data-ru="Ниши, гардеробные системы, встроенные шкафы" data-en="Niches, wardrobe systems, built-in cupboards">Nişlər, paltar otağı sistemləri, quraşdırılmış şkaflar</p></article>
+  </div>
+  <div class="gal">
+    <figure><div class="shot"><img src="img/wardrobe-sliding.webp" alt="Kupe şkaf" width="739" height="730" loading="lazy" decoding="async"></div><figcaption data-ua="Шафа-купе" data-az="Kupe şkaf" data-ru="Шкаф-купе" data-en="Sliding-door wardrobe">Kupe şkaf</figcaption></figure>
+    <figure><div class="shot"><img src="img/dressing-room.webp" alt="Paltar otağı" width="618" height="914" loading="lazy" decoding="async"></div><figcaption data-ua="Гардеробна кімната" data-az="Paltar otağı" data-ru="Гардеробная комната" data-en="Walk-in closet">Paltar otağı</figcaption></figure>
+    <figure><div class="shot"><img src="img/built-in-study.webp" alt="Quraşdırılmış mebel" width="693" height="928" loading="lazy" decoding="async"></div><figcaption data-ua="Вбудовані меблі" data-az="Quraşdırılmış mebel" data-ru="Встроенная мебель" data-en="Built-in furniture">Quraşdırılmış mebel</figcaption></figure>
+    <figure><div class="shot"><img src="img/restaurant.webp" alt="Kommersiya mebeli" width="622" height="901" loading="lazy" decoding="async"></div><figcaption data-ua="Комерційні меблі" data-az="Kommersiya mebeli" data-ru="Коммерческая мебель" data-en="Commercial furniture">Kommersiya mebeli</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="1" data-ua="Заявка на меблі" data-az="Mebel üçün sifariş" data-ru="Заявка на мебель" data-en="Furniture enquiry">Mebel üçün sifariş</a></div>
+</section>
+
+<section class="sect" id="s2">
+  <div class="opener ph op2">
+    <div class="in">
+      <div class="eyebrow" data-ua="2-й розділ" data-az="2-ci bölmə" data-ru="2-й раздел" data-en="Section 2">2-ci bölmə</div>
+      <h2 data-ua="Столярне виробництво" data-az="Dülgərlik istehsalı" data-ru="Столярное производство" data-en="Joinery">Dülgərlik istehsalı</h2>
+      <p class="lede" data-ua="Класичні столярні роботи формують архітектурний вигляд будь-якого дерев’яного виробу. Продукція виготовляється з масиву цінних порід дерева з урахуванням вимог до міцності, тепло- та звукоізоляції." data-az="Klassik dülgərlik işləri istənilən taxta məmulatın memarlıq görünüşünü formalaşdırır. Məhsul qiymətli ağac növlərinin masivindən möhkəmlik, istilik və səs izolyasiyası tələbləri nəzərə alınmaqla hazırlanır." data-ru="Классические столярные работы формируют архитектурный облик любого деревянного изделия. Продукция изготавливается из массива ценных пород дерева с учетом требований к прочности, тепло- и звукоизоляции." data-en="Classic joinery shapes the architectural character of any wooden piece. Products are made from solid precious hardwoods, meeting requirements for strength, thermal and sound insulation.">Klassik dülgərlik işləri istənilən taxta məmulatın memarlıq görünüşünü formalaşdırır. Məhsul qiymətli ağac növlərinin masivindən möhkəmlik, istilik və səs izolyasiyası tələbləri nəzərə alınmaqla hazırlanır.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Дерев’яні двері та вікна" data-az="Taxta qapı və pəncərələr" data-ru="Деревянные двери и окна" data-en="Wooden doors and windows">Taxta qapı və pəncərələr</h3></article>
+    <article><span class="no">02</span><h3 data-ua="Сходи, поручні та балюстради" data-az="Pilləkənlər, məhəccərlər və balüstradalar" data-ru="Лестницы, поручни и балюстрады" data-en="Staircases, handrails and balustrades">Pilləkənlər, məhəccərlər və balüstradalar</h3></article>
+  </div>
+  <div class="gal">
+    <figure><div class="shot"><img src="img/window-portal.webp" alt="Pəncərə portalı" width="1051" height="1496" loading="lazy" decoding="async"></div><figcaption data-ua="Віконний портал" data-az="Pəncərə portalı" data-ru="Оконный портал" data-en="Window surround">Pəncərə portalı</figcaption></figure>
+    <figure><div class="shot"><img src="img/shutters-arched.webp" alt="Pəncərə qapaqları" width="956" height="1645" loading="lazy" decoding="async"></div><figcaption data-ua="Віконниці" data-az="Pəncərə qapaqları" data-ru="Ставни" data-en="Shutters">Pəncərə qapaqları</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="2" data-ua="Заявка на двері або сходи" data-az="Qapı və ya pilləkən üçün sifariş" data-ru="Заявка на двери или лестницу" data-en="Doors or staircase enquiry">Qapı və ya pilləkən üçün sifariş</a></div>
+</section>
+
+<section class="sect" id="s3">
+  <div class="opener ph op3">
+    <div class="in">
+      <div class="eyebrow" data-ua="Розділ 3" data-az="3-cü bölmə" data-ru="Раздел 3" data-en="Section 3">3-cü bölmə</div>
+      <h2 data-ua="Інтер’єрні вироби з дерева" data-az="İnteryer ağac məmulatları" data-ru="Интерьерные изделия из дерева" data-en="Wooden interior elements">İnteryer ağac məmulatları</h2>
+      <p class="lede" data-ua="Декоративні елементи, що визначають характер простору — від рейкових панелей до акустичних рішень." data-az="Məkanın xarakterini müəyyən edən dekorativ elementlər — reyka panellərdən akustik həllərə qədər." data-ru="Декоративные элементы, определяющие характер пространства — от реечных панелей до акустических решений." data-en="Decorative elements that define the character of a space — from slatted panels to acoustic solutions.">Məkanın xarakterini müəyyən edən dekorativ elementlər — reyka panellərdən akustik həllərə qədər.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Рейкові панелі" data-az="Reyka panellər" data-ru="Реечные панели" data-en="Slatted panels">Reyka panellər</h3><p data-ua="Настінні та стельові рішення для сучасних інтер’єрів" data-az="Müasir interyerlər üçün divar və tavan həlləri" data-ru="Настенные и потолочные решения для современных интерьеров" data-en="Wall and ceiling solutions for contemporary interiors">Müasir interyerlər üçün divar və tavan həlləri</p></article>
+    <article><span class="no">02</span><h3 data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</h3><p data-ua="Декоративні дерев’яні конструкції для зонування" data-az="Zonalaşdırma üçün dekorativ taxta konstruksiyalar" data-ru="Декоративные деревянные конструкции для зонирования" data-en="Decorative wooden structures for zoning">Zonalaşdırma üçün dekorativ taxta konstruksiyalar</p></article>
+    <article><span class="no">03</span><h3 data-ua="Стелі та балки" data-az="Tavanlar və tirlər" data-ru="Потолки и балки" data-en="Ceilings and beams">Tavanlar və tirlər</h3><p data-ua="Дерев’яні стелі та декоративні балки" data-az="Taxta tavanlar və dekorativ tirlər" data-ru="Деревянные потолки и декоративные балки" data-en="Wooden ceilings and decorative beams">Taxta tavanlar və dekorativ tirlər</p></article>
+    <article><span class="no">04</span><h3 data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</h3><p data-ua="Облицювання стін масивом дерева та шпоном" data-az="Divarların masiv ağac və şponla üzlənməsi" data-ru="Облицовка стен массивом дерева и шпоном" data-en="Wall cladding in solid wood and veneer">Divarların masiv ağac və şponla üzlənməsi</p></article>
+  </div>
+  <div class="gal">
+    <figure><div class="shot"><img src="img/tv-panel-walnut.webp" alt="Divar panelləri" width="520" height="882" loading="lazy" decoding="async"></div><figcaption data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</figcaption></figure>
+    <figure><div class="shot"><img src="img/divider-shelving.webp" alt="Arakəsmələr" width="556" height="866" loading="lazy" decoding="async"></div><figcaption data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</figcaption></figure>
+    <figure><div class="shot"><img src="img/divider-branches.webp" alt="Arakəsmələr" width="522" height="868" loading="lazy" decoding="async"></div><figcaption data-ua="Перегородки" data-az="Arakəsmələr" data-ru="Перегородки" data-en="Partitions">Arakəsmələr</figcaption></figure>
+    <figure><div class="shot"><img src="img/slat-wall-shelves.webp" alt="Reyka panellər" width="615" height="847" loading="lazy" decoding="async"></div><figcaption data-ua="Рейкові панелі" data-az="Reyka panellər" data-ru="Реечные панели" data-en="Slatted panels">Reyka panellər</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="3" data-ua="Заявка на панелі" data-az="Panellər üçün sifariş" data-ru="Заявка на панели" data-en="Panels enquiry">Panellər üçün sifariş</a></div>
+</section>
+
+<section class="sect" id="s4">
+  <div class="opener ph op4">
+    <div class="in">
+      <div class="eyebrow" data-ua="Розділ 4" data-az="4-cü bölmə" data-ru="Раздел 4" data-en="Section 4">4-cü bölmə</div>
+      <h2 data-ua="Будівництво та екстер’єр" data-az="Tikinti və eksteryer" data-ru="Строительство и экстерьер" data-en="Construction and exteriors">Tikinti və eksteryer</h2>
+      <p class="lede" data-ua="Будинки, лазні, альтанки, тераси і фасади — усе з дерева, для двору і зовнішнього вигляду об’єкта." data-az="Evlər, hamamlar, talvarlar, teraslar və fasadlar — hamısı ağacdan, həyət və obyektin zahiri görünüşü üçün." data-ru="Дома, бани, беседки, террасы и фасады — все из дерева, для двора и внешнего вида объекта." data-en="Houses, saunas, gazebos, terraces and facades — all in wood, for the grounds and the exterior of the property.">Evlər, hamamlar, talvarlar, teraslar və fasadlar — hamısı ağacdan, həyət və obyektin zahiri görünüşü üçün.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Будинки" data-az="Evlər" data-ru="Дома" data-en="Houses">Evlər</h3></article>
+    <article><span class="no">02</span><h3 data-ua="Лазні" data-az="Hamamlar" data-ru="Бани" data-en="Saunas">Hamamlar</h3></article>
+    <article><span class="no">03</span><h3 data-ua="Альтанки" data-az="Talvarlar" data-ru="Беседки" data-en="Gazebos">Talvarlar</h3></article>
+    <article><span class="no">04</span><h3 data-ua="Тераси" data-az="Teraslar" data-ru="Террасы" data-en="Terraces">Teraslar</h3></article>
+    <article><span class="no">05</span><h3 data-ua="Фасади" data-az="Fasadlar" data-ru="Фасады" data-en="Facades">Fasadlar</h3></article>
+  </div>
+  <!-- Тимчасові фото зі stock.unsplash.com: house-facade, sauna-cabin, wood-facade-gable. Заміни на свої. -->
+  <div class="gal">
+    <figure><div class="shot"><img src="img/pergola-swing.webp" alt="Perqola" width="621" height="843" loading="lazy" decoding="async"></div><figcaption data-ua="Пергола" data-az="Perqola" data-ru="Пергола" data-en="Pergola">Perqola</figcaption></figure>
+    <figure><div class="shot"><img src="img/house-facade.webp" alt="Evlər" width="1024" height="1536" loading="lazy" decoding="async"></div><figcaption data-ua="Будинки" data-az="Evlər" data-ru="Дома" data-en="Houses">Evlər</figcaption></figure>
+    <figure><div class="shot"><img src="img/sauna-cabin.webp" alt="Hamamlar" width="1121" height="1403" loading="lazy" decoding="async"></div><figcaption data-ua="Лазні" data-az="Hamamlar" data-ru="Бани" data-en="Saunas">Hamamlar</figcaption></figure>
+    <figure><div class="shot"><img src="img/wood-facade-gable.webp" alt="Fasadlar" width="1111" height="1416" loading="lazy" decoding="async"></div><figcaption data-ua="Фасади" data-az="Fasadlar" data-ru="Фасады" data-en="Facades">Fasadlar</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="4" data-ua="Заявка на будівництво" data-az="Tikinti üçün sifariş" data-ru="Заявка на строительство" data-en="Construction enquiry">Tikinti üçün sifariş</a></div>
+</section>
+
+<section class="sect" id="s5">
+  <div class="opener ph op5">
+    <div class="in">
+      <div class="eyebrow" data-ua="Розділ 5" data-az="5-ci bölmə" data-ru="Раздел 5" data-en="Section 5">5-ci bölmə</div>
+      <h2 data-ua="Вироби з масиву дерева" data-az="Masiv ağac məmulatları" data-ru="Изделия из массива дерева" data-en="Solid wood products">Masiv ağac məmulatları</h2>
+      <p class="lede" data-ua="Масив дерева — це матеріал із природною текстурою. Стільниці, підвіконня, слеби та аксесуари виготовляються з дуба, ясена, бука та екзотичних порід деревини." data-az="Masiv ağac təbii teksturaya malik materialdır. Tezgahlar, pəncərəaltıları, slablar və aksesuarlar palıd, dişbudaq, fıstıq və ekzotik ağac növlərindən hazırlanır." data-ru="Массив дерева — это материал с естественной текстурой. Столешницы, подоконники, слэбы и аксессуары изготавливаются из дуба, ясеня, бука и экзотических пород древесины." data-en="Solid wood is a material with a natural texture. Worktops, windowsills, slabs and accessories are made from oak, ash, beech and exotic timber species.">Masiv ağac təbii teksturaya malik materialdır. Tezgahlar, pəncərəaltıları, slablar və aksesuarlar palıd, dişbudaq, fıstıq və ekzotik ağac növlərindən hazırlanır.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Стільниці" data-az="Tezgahlar" data-ru="Столешницы" data-en="Worktops">Tezgahlar</h3><p data-ua="Для кухонь, барних стійок, робочих зон" data-az="Mətbəxlər, bar piştaxtaları, iş zonaları üçün" data-ru="Для кухонь, барных стоек, рабочих зон" data-en="For kitchens, bar counters and work areas">Mətbəxlər, bar piştaxtaları, iş zonaları üçün</p></article>
+    <article><span class="no">02</span><h3 data-ua="Підвіконня" data-az="Pəncərəaltıları" data-ru="Подоконники" data-en="Windowsills">Pəncərəaltıları</h3><p data-ua="З дуба, ясена, бука" data-az="Palıd, dişbudaq, fıstıqdan" data-ru="Из дуба, ясеня, бука" data-en="In oak, ash and beech">Palıd, dişbudaq, fıstıqdan</p></article>
+    <article><span class="no">03</span><h3 data-ua="Слеби" data-az="Slablar" data-ru="Слэбы" data-en="Slabs">Slablar</h3><p data-ua="Великоформатні плити для столів і декору" data-az="Masalar və dekor üçün böyük formatlı lövhələr" data-ru="Крупноформатные плиты для столов и декора" data-en="Large-format boards for tables and decor">Masalar və dekor üçün böyük formatlı lövhələr</p></article>
+    <article><span class="no">04</span><h3 data-ua="Полиці" data-az="Rəflər" data-ru="Полки" data-en="Shelves">Rəflər</h3><p data-ua="Настінні та підлогові рішення" data-az="Divar və döşəmə həlləri" data-ru="Настенные и напольные решения" data-en="Wall-mounted and floor-standing solutions">Divar və döşəmə həlləri</p></article>
+    <article><span class="no">05</span><h3 data-ua="Винні шафи" data-az="Şərab şkafları" data-ru="Винные шкафы" data-en="Wine cabinets">Şərab şkafları</h3><p data-ua="Спеціалізовані меблі для зберігання вина" data-az="Şərabın saxlanması üçün ixtisaslaşmış mebel" data-ru="Специализированная мебель для хранения вина" data-en="Specialised furniture for storing wine">Şərabın saxlanması üçün ixtisaslaşmış mebel</p></article>
+    <article><span class="no">06</span><h3 data-ua="Аксесуари" data-az="Aksesuarlar" data-ru="Аксессуары" data-en="Accessories">Aksesuarlar</h3><p data-ua="Вироби з дерева для інтер’єру та побуту" data-az="İnteryer və məişət üçün ağac məmulatları" data-ru="Изделия из дерева для интерьера и быта" data-en="Wooden pieces for the home and interior">İnteryer və məişət üçün ağac məmulatları</p></article>
+  </div>
+  <div class="gal">
+    <figure><div class="shot"><img src="img/table-walnut.webp" alt="Tezgahlar" width="1021" height="1540" loading="lazy" decoding="async"></div><figcaption data-ua="Стільниці" data-az="Tezgahlar" data-ru="Столешницы" data-en="Worktops">Tezgahlar</figcaption></figure>
+    <figure><div class="shot"><img src="img/wine-cabinet.webp" alt="Şərab şkafları" width="1024" height="1536" loading="lazy" decoding="async"></div><figcaption data-ua="Винні шафи" data-az="Şərab şkafları" data-ru="Винные шкафы" data-en="Wine cabinets">Şərab şkafları</figcaption></figure>
+    <figure><div class="shot"><img src="img/sideboard-carved.webp" alt="Slablar" width="1498" height="1050" loading="lazy" decoding="async"></div><figcaption data-ua="Слеби" data-az="Slablar" data-ru="Слэбы" data-en="Slabs">Slablar</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="5" data-ua="Заявка на стільницю" data-az="Tezgah üçün sifariş" data-ru="Заявка на столешницу" data-en="Worktop enquiry">Tezgah üçün sifariş</a></div>
+</section>
+
+<section class="sect" id="s6">
+  <div class="opener ph op6">
+    <div class="in">
+      <div class="eyebrow" data-ua="Розділ 6" data-az="6-cı bölmə" data-ru="Раздел 6" data-en="Section 6">6-cı bölmə</div>
+      <h2 data-ua="Художня обробка дерева" data-az="Bədii ağac emalı" data-ru="Художественная обработка дерева" data-en="Artistic woodworking">Bədii ağac emalı</h2>
+      <p class="lede" data-ua="Найвищий рівень майстерності — там, де дерево перетворюється на мистецтво. У кожному виробі — ручна робота, традиційні техніки та авторський підхід." data-az="Ustalığın ən yüksək səviyyəsi — ağacın sənətə çevrildiyi yer. Hər məmulatda əl işi, ənənəvi texnikalar və müəllif yanaşması var." data-ru="Высший уровень мастерства — там, где дерево превращается в искусство. В каждом изделии — ручная работа, традиционные техники и авторский подход." data-en="The highest level of craft — where wood turns into art. Every piece involves handwork, traditional techniques and a signature approach.">Ustalığın ən yüksək səviyyəsi — ağacın sənətə çevrildiyi yer. Hər məmulatda əl işi, ənənəvi texnikalar və müəllif yanaşması var.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Різьба по дереву" data-az="Ağac oyması" data-ru="Резьба по дереву" data-en="Wood carving">Ağac oyması</h3><p data-ua="Об’ємна та плоскорельєфна різьба для інтер’єрів і фасадів" data-az="İnteryer və fasadlar üçün həcmli və yastırelyef oyma" data-ru="Объёмная и плоскорельефная резьба для интерьеров и фасадов" data-en="Three-dimensional and low-relief carving for interiors and facades">İnteryer və fasadlar üçün həcmli və yastırelyef oyma</p></article>
+    <article><span class="no">02</span><h3 data-ua="Інкрустація та маркетрі" data-az="İnkrustasiya və marketri" data-ru="Инкрустация и маркетри" data-en="Inlay and marquetry">İnkrustasiya və marketri</h3><p data-ua="Оздоблення поверхонь вставками з цінних порід дерева" data-az="Səthlərin qiymətli ağac növlərindən qoyma ilə bəzədilməsi" data-ru="Украшение поверхностей вставками из ценных пород дерева" data-en="Decorating surfaces with inserts of precious wood species">Səthlərin qiymətli ağac növlərindən qoyma ilə bəzədilməsi</p></article>
+    <article><span class="no">03</span><h3 data-ua="Реставрація меблів" data-az="Mebel bərpası" data-ru="Реставрация мебели" data-en="Furniture restoration">Mebel bərpası</h3><p data-ua="Відновлення антикваріату зі збереженням історичного вигляду" data-az="Tarixi görünüşü qorunmaqla antikvarın bərpası" data-ru="Восстановление антиквариата с сохранением исторического облика" data-en="Restoring antiques while preserving their historic character">Tarixi görünüşü qorunmaqla antikvarın bərpası</p></article>
+    <article><span class="no">04</span><h3 data-ua="Твори мистецтва" data-az="Sənət əsərləri" data-ru="Произведения искусства" data-en="Works of art">Sənət əsərləri</h3><p data-ua="Релігійні вироби та авторські художні роботи" data-az="Dini məmulatlar və müəllif bədii işləri" data-ru="Религиозные изделия и авторские художественные работы" data-en="Religious pieces and signature artistic works">Dini məmulatlar və müəllif bədii işləri</p></article>
+  </div>
+  <div class="gal">
+    <figure><div class="shot"><img src="img/shelf-carved.webp" alt="Ağac oyması" width="1402" height="1122" loading="lazy" decoding="async"></div><figcaption data-ua="Різьба по дереву" data-az="Ağac oyması" data-ru="Резьба по дереву" data-en="Wood carving">Ağac oyması</figcaption></figure>
+    <figure><div class="shot"><img src="img/accessories-author.webp" alt="Aksesuarlar" width="946" height="1662" loading="lazy" decoding="async"></div><figcaption data-ua="Аксесуари" data-az="Aksesuarlar" data-ru="Аксессуары" data-en="Accessories">Aksesuarlar</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="6" data-ua="Заявка на художню роботу" data-az="Bədii iş üçün sifariş" data-ru="Заявка на художественную работу" data-en="Artistic work enquiry">Bədii iş üçün sifariş</a></div>
+</section>
+
+<section class="sect" id="s7">
+  <div class="opener ph op7">
+    <div class="in">
+      <div class="eyebrow" data-ua="Розділ 7" data-az="7-ci bölmə" data-ru="Раздел 7" data-en="Section 7">7-ci bölmə</div>
+      <h2 data-ua="Оздоблювальні матеріали" data-az="Üzlük materialları" data-ru="Отделочные материалы" data-en="Finishing materials">Üzlük materialları</h2>
+      <p class="lede" data-ua="Паркет, дошка, облицювання і листові матеріали — те, чим оздоблюють підлогу, стіни і фасад." data-az="Parket, taxta, üzlük və lövhə materialları — döşəməni, divarları və fasadı bəzəmək üçün." data-ru="Паркет, доска, облицовка и листовые материалы — то, чем отделывают пол, стены и фасад." data-en="Parquet, boards, cladding and sheet materials — what floors, walls and facades are finished with.">Parket, taxta, üzlük və lövhə materialları — döşəməni, divarları və fasadı bəzəmək üçün.</p>
+    </div>
+  </div>
+  <div class="items">
+    <article><span class="no">01</span><h3 data-ua="Паркет" data-az="Parket" data-ru="Паркет" data-en="Parquet">Parket</h3></article>
+    <article><span class="no">02</span><h3 data-ua="Дошка" data-az="Taxta" data-ru="Доска" data-en="Boards">Taxta</h3></article>
+    <article><span class="no">03</span><h3 data-ua="Облицювання" data-az="Üzlük" data-ru="Облицовка" data-en="Cladding">Üzlük</h3></article>
+    <article><span class="no">04</span><h3 data-ua="Листи" data-az="Lövhələr" data-ru="Листы" data-en="Sheet materials">Lövhələr</h3></article>
+  </div>
+  <div class="gal">
+    <figure><div class="shot"><img src="img/parkuet.webp" alt="Parket" width="667" height="1000" loading="lazy" decoding="async"></div><figcaption data-ua="Паркет" data-az="Parket" data-ru="Паркет" data-en="Parquet">Parket</figcaption></figure>
+    <figure><div class="shot"><img src="img/wood.webp" alt="Taxta" width="1000" height="667" loading="lazy" decoding="async"></div><figcaption data-ua="Дошка" data-az="Taxta" data-ru="Доска" data-en="Boards">Taxta</figcaption></figure>
+    <figure><div class="shot"><img src="img/bedroom-oak-panel.webp" alt="Divar panelləri" width="731" height="728" loading="lazy" decoding="async"></div><figcaption data-ua="Настінні панелі" data-az="Divar panelləri" data-ru="Настенные панели" data-en="Wall panels">Divar panelləri</figcaption></figure>
+    <figure><div class="shot"><img src="img/plyta.webp" alt="Lövhələr" width="1024" height="1536" loading="lazy" decoding="async"></div><figcaption data-ua="Листи" data-az="Lövhələr" data-ru="Листы" data-en="Sheet materials">Lövhələr</figcaption></figure>
+  </div>
+  <div class="sect-cta"><a href="#contact" data-dir="7" data-ua="Заявка на облицювання" data-az="Üzlük üçün sifariş" data-ru="Заявка на облицовку" data-en="Cladding enquiry">Üzlük üçün sifariş</a></div>
+</section>
+
+<section class="stats" id="about">
+  <h2 class="hd" data-ua="Чому нас обирають" data-az="Niyə bizi seçirlər" data-ru="Почему нас выбирают" data-en="Why clients choose us">Niyə bizi seçirlər</h2>
+  <div class="row">
+    <div>
+      <div class="v">22</div>
+      <div class="k" data-ua="роки на ринку" data-az="il bazarda" data-ru="года на рынке" data-en="years on the market">il bazarda</div>
+    </div>
+    <div>
+      <div class="v">100+</div>
+      <div class="k" data-ua="виконаних замовлень" data-az="yerinə yetirilmiş sifariş" data-ru="выполненных заказов" data-en="orders completed">yerinə yetirilmiş sifariş</div>
+    </div>
+    <div>
+      <div class="v">100%</div>
+      <div class="k" data-ua="задоволених клієнтів" data-az="məmnun müştəri" data-ru="довольных клиентов" data-en="satisfied clients">məmnun müştəri</div>
+    </div>
+  </div>
+  <p class="note" data-ua="Від дбайливої реставрації антикварних меблів до створення сучасної кухні з дуба — працюємо з деревом, зберігаючи його характер і втілюючи ваші побажання." data-az="Antikvar mebelin qayğıkeş bərpasından müasir palıd mətbəxinin yaradılmasına qədər — ağacla işləyirik, onun xarakterini qoruyaraq və istəklərinizi həyata keçirərək." data-ru="От бережной реставрации антикварной мебели до создания современной кухни из дуба — работаем с деревом, сохраняя его характер и воплощая ваши пожелания." data-en="From the careful restoration of antique furniture to building a contemporary oak kitchen — we work with wood, keeping its character and realising what you have in mind.">Antikvar mebelin qayğıkeş bərpasından müasir palıd mətbəxinin yaradılmasına qədər — ağacla işləyirik, onun xarakterini qoruyaraq və istəklərinizi həyata keçirərək.</p>
+</section>
+
+<section class="tsl">
+  <h2 class="sr-only" data-ua="Відгуки клієнтів" data-az="Müştəri rəyləri" data-ru="Отзывы клиентов" data-en="Client reviews">Müştəri rəyləri</h2>
+  <div class="tsl-rail">
+    <button type="button" id="tsl-next" data-ua="Наступний" data-az="Növbəti" data-ru="Следующий" data-en="Next">Növbəti</button>
+    <button type="button" id="tsl-prev" data-ua="Попередній" data-az="Əvvəlki" data-ru="Предыдущий" data-en="Previous">Əvvəlki</button>
+  </div>
+  <div class="tsl-stage" id="tsl-stage">
+    <div class="tsl-slide on" data-i="0">
+      <div class="tsl-photo" style="background-image:url(&quot;img/chair.webp&quot;)" aria-hidden="true"></div>
+      <div class="tsl-name"><h3 data-ua="Фатіма Джафарова" data-az="Fatimə Cəfərova" data-ru="Фатима Джафарова" data-en="Fatima Jafarova">Fatimə Cəfərova</h3></div>
+      <div class="tsl-quote">
+        <blockquote data-ua="Дуже задоволена банкеткою! Зроблена якісно й акуратно, з увагою до кожної деталі. Майстри врахували всі мої побажання, зокрема зробили сидіння, що відкривається, та місце для зберігання всередині. Вийшло красиво й практично — саме так, як я хотіла. Дякую за чудову роботу!" data-az="Banketkadan çox razıyam! Keyfiyyətli və səliqəli hazırlanıb, hər detala diqqət yetirilib. Ustalar bütün istəklərimi nəzərə aldılar, o cümlədən açılan oturacaq və içərisində saxlama yeri düzəltdilər. Gözəl və praktik alındı — məhz mən istədiyim kimi. Gözəl iş üçün təşəkkür edirəm!" data-ru="Очень довольна банкеткой! Сделана качественно и аккуратно, с вниманием к каждой детали. Мастера учли все мои пожелания, в частности сделали откидное сиденье и место для хранения внутри. Получилось красиво и практично — именно так, как я хотела. Спасибо за прекрасную работу!" data-en="Very happy with the banquette! It is made to a high standard and neatly, with attention to every detail. The craftsmen took all my wishes into account, including a lift-up seat and storage space inside. It came out beautiful and practical — exactly as I wanted. Thank you for the wonderful work!">Banketkadan çox razıyam! Keyfiyyətli və səliqəli hazırlanıb, hər detala diqqət yetirilib. Ustalar bütün istəklərimi nəzərə aldılar, o cümlədən açılan oturacaq və içərisində saxlama yeri düzəltdilər. Gözəl və praktik alındı — məhz mən istədiyim kimi. Gözəl iş üçün təşəkkür edirəm!</blockquote>
+        <span class="role" data-ua="Банкетка з місцем для зберігання" data-az="Saxlama yeri olan banketka" data-ru="Банкетка с местом для хранения" data-en="Banquette with storage">Saxlama yeri olan banketka</span>
+      </div>
+    </div>
+    <div class="tsl-slide" data-i="1">
+      <div class="tsl-photo" style="background-image:url(&quot;img/kitchen-dark-worktop.webp&quot;)" aria-hidden="true"></div>
+      <div class="tsl-name"><h3 data-ua="Рустам Гасанов" data-az="Rüstəm Həsənov" data-ru="Рустам Гасанов" data-en="Rustam Hasanov">Rüstəm Həsənov</h3></div>
+      <div class="tsl-quote">
+        <blockquote data-ua="Замовляв кухню з дуба за нестандартними розмірами — стеля 3,2 метра і скіс під сходами. Зробили точно за кресленням, переробок не було. Монтували своєю бригадою за один день." data-az="Qeyri-standart ölçülərdə palıd mətbəxi sifariş etmişdim — tavan 3,2 metr, pilləkən altında maili divar. Cizgiyə tam uyğun hazırladılar, yenidən işləmə olmadı. Quraşdırmanı öz briqadaları bir günə etdi." data-ru="Заказывал кухню из дуба по нестандартным размерам — потолок 3,2 метра и скос под лестницей. Сделали точно по чертежу, переделок не было. Монтировали своей бригадой за один день." data-en="I ordered an oak kitchen to non-standard dimensions — a 3.2 metre ceiling and a slope under the staircase. They built it exactly to the drawing, with no reworking. Their own crew installed it in a single day.">Qeyri-standart ölçülərdə palıd mətbəxi sifariş etmişdim — tavan 3,2 metr, pilləkən altında maili divar. Cizgiyə tam uyğun hazırladılar, yenidən işləmə olmadı. Quraşdırmanı öz briqadaları bir günə etdi.</blockquote>
+        <span class="role" data-ua="Кухня з масиву дуба" data-az="Palıd masivindən mətbəx" data-ru="Кухня из массива дуба" data-en="Solid oak kitchen">Palıd masivindən mətbəx</span>
+      </div>
+    </div>
+    <div class="tsl-slide" data-i="2">
+      <div class="tsl-photo" style="background-image:url(&quot;img/sideboard-carved.webp&quot;)" aria-hidden="true"></div>
+      <div class="tsl-name"><h3 data-ua="Ровшан Алієв" data-az="Rövşən Əliyev" data-ru="Ровшан Алиев" data-en="Rovshan Aliyev">Rövşən Əliyev</h3></div>
+      <div class="tsl-quote">
+        <blockquote data-ua="Віддавав дідів буфет — горіх, п’ятдесяті роки. Повернули з цілим шпоном і рідною фурнітурою, нічого не перефарбували. Виглядає як тоді, а не як новий." data-az="Babamın bufetini vermişdim — qoz, əllinci illər. Şponu bütöv, öz furniturası ilə qaytardılar, heç nəyi yenidən rəngləmədilər. Təzə kimi yox, o vaxtkı kimi görünür." data-ru="Отдавал дедовский буфет — орех, пятидесятые годы. Вернули с целым шпоном и родной фурнитурой, ничего не перекрасили. Выглядит как тогда, а не как новый." data-en="I brought in my grandfather&#39;s sideboard — walnut, from the fifties. They returned it with the veneer intact and the original hardware, nothing repainted. It looks the way it did then, not like something new.">Babamın bufetini vermişdim — qoz, əllinci illər. Şponu bütöv, öz furniturası ilə qaytardılar, heç nəyi yenidən rəngləmədilər. Təzə kimi yox, o vaxtkı kimi görünür.</blockquote>
+        <span class="role" data-ua="Реставрація буфета, 1950-ті" data-az="Bufetin bərpası, 1950-ci illər" data-ru="Реставрация буфета, 1950-е" data-en="Sideboard restoration, 1950s">Bufetin bərpası, 1950-ci illər</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta ph" id="contact">
+  <div class="in">
+    <div>
+      <h2 data-ua="Ми працюємо з приватними та комерційними клієнтами, дизайнерами і будівельниками" data-az="Fərdi sifarişçilər, interyer dizaynerləri, tikinticilər və kommersiya müştəriləri ilə işləyirik" data-ru="Мы работаем с частными заказчиками, интерьерными дизайнерами, строителями и коммерческими клиентами" data-en="We work with private clients, interior designers, builders and commercial customers">Fərdi sifarişçilər, interyer dizaynerləri, tikinticilər və kommersiya müştəriləri ilə işləyirik</h2>
+      <p class="lede" data-ua="— від одного виробу до комплексного оснащення об’єктів." data-az="— bir məmulatdan obyektlərin kompleks təchizatına qədər." data-ru="— от одного изделия до комплексного оснащения объектов." data-en="— from a single piece to the complete fit-out of a property.">— bir məmulatdan obyektlərin kompleks təchizatına qədər.</p>
+      <div class="cinfo">
+        <div><h3 data-ua="Телефон" data-az="Telefon" data-ru="Телефон" data-en="Phone">Telefon</h3><p>———</p></div>
+        <div><h3 data-ua="Пошта" data-az="E-poçt" data-ru="Почта" data-en="Email">E-poçt</h3><p>———</p></div>
+        <div><h3 data-ua="Адреса" data-az="Ünvan" data-ru="Адрес" data-en="Address">Ünvan</h3><p>———</p></div>
+        <div><h3 data-ua="Соцмережі" data-az="Sosial şəbəkələr" data-ru="Соцсети" data-en="Social">Sosial şəbəkələr</h3><p><a class="cinfo-link" href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener noreferrer">Instagram</a></p></div>
+      </div>
+    </div>
+
+    <div class="fcard">
+      <div id="form-wrap">
+        <h3 data-ua="Залишити заявку" data-az="Sifariş buraxın" data-ru="Оставить заявку" data-en="Request a quote">Sifariş buraxın</h3>
+        <!-- TODO (КРИТИЧНО): форма не має бекенду. Впиши адресу сервісу в data-endpoint, наприклад
+             Formspree: data-endpoint="https://formspree.io/f/XXXXXXXX". Поки поле порожнє, заявки
+             нікуди не відправляються, а відвідувач бачить підтвердження: це лише демо. -->
+        <form id="lead-form" method="post" action="" data-endpoint="">
+          <div class="row2">
+            <div class="field">
+              <label for="f-name" data-ua="Ім’я" data-az="Ad" data-ru="Имя" data-en="Name">Ad</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-phone" data-ua="Телефон" data-az="Telefon" data-ru="Телефон" data-en="Phone">Telefon</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-dir" data-ua="Напрямок" data-az="İstiqamət" data-ru="Направление" data-en="Production line">İstiqamət</label>
+            <select id="f-dir" name="direction" required>
+              <option value="" data-ua="—" data-az="—" data-ru="—" data-en="—">—</option>
+              <option value="1" data-ua="01 · Виробництво меблів" data-az="01 · Mebel istehsalı" data-ru="01 · Производство мебели" data-en="01 · Furniture production">01 · Mebel istehsalı</option>
+              <option value="2" data-ua="02 · Столярне виробництво" data-az="02 · Dülgərlik istehsalı" data-ru="02 · Столярное производство" data-en="02 · Joinery">02 · Dülgərlik istehsalı</option>
+              <option value="3" data-ua="03 · Інтер’єрні вироби" data-az="03 · İnteryer məmulatları" data-ru="03 · Интерьерные изделия" data-en="03 · Interior elements">03 · İnteryer məmulatları</option>
+              <option value="4" data-ua="04 · Будівництво та екстер’єр" data-az="04 · Tikinti və eksteryer" data-ru="04 · Строительство и экстерьер" data-en="04 · Construction and exteriors">04 · Tikinti və eksteryer</option>
+              <option value="5" data-ua="05 · Великогабаритні вироби з дерева" data-az="05 · Iri ölçülü ağac məmulatları" data-ru="05 · Крупногабаритные изделия из дерева" data-en="05 · Large-format wooden pieces">05 · Iri ölçülü ağac məmulatları</option>
+              <option value="6" data-ua="06 · Художня обробка" data-az="06 · Bədii emal" data-ru="06 · Художественная обработка" data-en="06 · Artistic woodwork">06 · Bədii emal</option>
+              <option value="7" data-ua="07 · Оздоблювальні матеріали" data-az="07 · Üzlük materialları" data-ru="07 · Отделочные материалы" data-en="07 · Finishing materials">07 · Üzlük materialları</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg" data-ua="Повідомлення" data-az="Mesaj" data-ru="Сообщение" data-en="Message">Mesaj</label>
+            <textarea id="f-msg" name="message"></textarea>
+          </div>
+          <button class="submit btn-slide" type="submit" data-ua="Надіслати" data-az="Göndər" data-ru="Отправить" data-en="Send">Göndər</button>
+          <p class="form-error" id="form-error" role="alert" hidden data-ua="Не вдалося надіслати заявку. Спробуйте ще раз." data-az="Sifariş göndərilmədi. Yenidən cəhd edin." data-ru="Не удалось отправить заявку. Попробуйте ещё раз." data-en="We could not send your request. Please try again."></p>
+        </form>
+      </div>
+      <div class="done" id="form-done" hidden>
+        <div class="tick" data-ua="Готово" data-az="Hazır" data-ru="Готово" data-en="Done">Hazır</div>
+        <h3 data-ua="Заявку отримали" data-az="Sifarişi aldıq" data-ru="Заявку получили" data-en="We have got your request">Sifarişi aldıq</h3>
+        <p data-ua="Зв’яжемося і уточнимо розміри та породу дерева." data-az="Əlaqə saxlayıb ölçüləri və ağac növünü dəqiqləşdirəcəyik." data-ru="Свяжемся и уточним размеры и породу дерева." data-en="We will be in touch to confirm dimensions and timber species.">Əlaqə saxlayıb ölçüləri və ağac növünü dəqiqləşdirəcəyik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ЗАГЛУШКА. Імена клієнтів справжні, але тексти відгуків і оцінки написані мною,
+     клієнти цих слів не казали. Публікувати в такому вигляді НЕ МОЖНА: це вигадані
+     відгуки від імені реальних людей. Перед запуском замінити на справжні цитати
+     (Google, Instagram, переписка) або отримати від цих людей письмову згоду.
+     Оцінка — атрибут data-rating на .stars плюс клас off на незафарбованих зірках.
+     Ініціали в куточку рахує скрипт з імені в <b class="who">, руками не чіпати. -->
+
+
+<!-- СТАРИЙ БЛОК ВІДГУКІВ, замінений на слайдер нижче. Лишаю на випадок повернення.
+
+-->
+
+<!-- ЗАГЛУШКА. Імена справжні, тексти відгуків і оцінки написані мною — клієнти
+     цих слів не казали. Публікувати в такому вигляді НЕ МОЖНА. Фото в лівій колонці
+     свідомо показують роботу, про яку йдеться, а не обличчя: портретів клієнтів
+     у нас немає, а ставити чуже обличчя під вигаданий відгук — підробка людини. -->
+
+
+
+
+<footer class="foot">
+  <img src="img/logo.webp" alt="" width="400" height="373" loading="lazy" decoding="async">
+  <nav class="foot-nav">
+    <a href="#directions" data-ua="Напрямки" data-az="İstiqamətlər" data-ru="Направления" data-en="Production lines">İstiqamətlər</a>
+    <a href="#about" data-ua="Чому нас обирають" data-az="Niyə bizi seçirlər" data-ru="Почему нас выбирают" data-en="Why clients choose us">Niyə bizi seçirlər</a>
+    <a href="#contact" data-ua="Контакти" data-az="Əlaqə" data-ru="Контакты" data-en="Contact">Əlaqə</a>
+  </nav>
+  <!-- ЗАГЛУШКА: Facebook і WhatsApp досі href="#" — постав реальні посилання або прибери ці дві іконки -->
+  <div class="foot-social">
+    <a href="https://www.instagram.com/avento_wood/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></a>
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8.5h-2c-.9 0-1.5.6-1.5 1.5v2h3.3l-.4 3h-2.9V21h-3v-6h-2v-3h2v-2.3C8.5 7.4 10 6 12.4 6H15v2.5z"></path></svg></a>
+    <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 17.5 4.5 20l2.6-.7A8 8 0 1 0 4 12a8 8 0 0 0 2.5 5.5Z"></path><path d="M9.2 9.8c.2 2 2.8 4.6 4.8 4.8.8.1 1.4-.5 1.4-1.2v-.6l-2-.9-.5.9c-1-.5-1.9-1.4-2.4-2.4l.9-.5-.9-2h-.6c-.7 0-1.3.6-1.2 1.4Z"></path></svg></a>
+  </div>
+  <div class="txt">
+    <span data-ua="Avento Wood — Furniture &amp; Interior" data-az="Avento Wood — Furniture &amp; Interior" data-ru="Avento Wood — Furniture &amp; Interior" data-en="Avento Wood — Furniture &amp; Interior">Avento Wood — Furniture &amp; Interior</span>
+  </div>
+</footer>
+
+<div class="dir-peek" id="dir-peek" aria-hidden="true"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+<button class="totop" id="totop" type="button" data-ua-lbl="Нагору" data-az-lbl="Yuxarı" data-ru-lbl="Наверх" data-en-lbl="Back to top" aria-label="Yuxarı">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19.5V4.5" fill="none"></path><path d="M5.5 11L12 4.5L18.5 11" fill="none"></path></svg>
+</button>
+
+<script>
+(function(){
+  var LANGS = { az: "az", en: "en", ua: "uk", ru: "ru" };
+  var nodes = document.querySelectorAll("[data-ru]");
+  var lblNodes = document.querySelectorAll("[data-ru-lbl]");
+  var btns = {
+    az: document.getElementById("btn-az"),
+    en: document.getElementById("btn-en"),
+    ua: document.getElementById("btn-ua"),
+    ru: document.getElementById("btn-ru")
+  };
+  var langToggle = document.getElementById("lang-toggle");
+  var langMenu = document.getElementById("lang-menu");
+  var langCurrent = document.getElementById("lang-current");
+  var LANG_KEY = "avento-lang";
+
+  function rememberLang(lang){
+    try { window.localStorage.setItem(LANG_KEY, lang); } catch (err) {}
+  }
+
+  function savedLang(){
+    try {
+      var v = window.localStorage.getItem(LANG_KEY);
+      return Object.prototype.hasOwnProperty.call(LANGS, v) ? v : null;
+    } catch (err) { return null; }
+  }
+
+  function closeLangs(){
+    if (langMenu) { langMenu.hidden = true; }
+    if (langToggle) { langToggle.setAttribute("aria-expanded", "false"); }
+  }
+
+  // Мобільне меню. Закриваємо функцією, а не через hidden: панель анімується класом .open.
+  function closeMenu(){
+    var b = document.getElementById("burger");
+    var m = document.getElementById("mmenu");
+    if (m) { m.classList.remove("open"); }
+    if (b) { b.setAttribute("aria-expanded", "false"); }
+  }
+  function initMenu(){
+    var b = document.getElementById("burger");
+    var m = document.getElementById("mmenu");
+    if (!b || !m) { return; }
+
+    b.addEventListener("click", function(e){
+      e.stopPropagation();
+      var opening = !m.classList.contains("open");
+      if (opening) { closeLangs(); }
+      m.classList.toggle("open", opening);
+      b.setAttribute("aria-expanded", String(opening));
+    });
+    m.addEventListener("click", function(e){
+      if (e.target.closest && e.target.closest("a")) { closeMenu(); }
+    });
+    document.addEventListener("click", function(e){
+      if (m.classList.contains("open") && !m.contains(e.target)) { closeMenu(); }
+    });
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape" && m.classList.contains("open")) { closeMenu(); b.focus(); }
+    });
+    // При переході на десктопну ширину меню мусить закритись, інакше лишиться відкритим.
+    var mq = window.matchMedia("(min-width: 941px)");
+    var onChange = function(ev){ if (ev.matches) { closeMenu(); } };
+    if (mq.addEventListener) { mq.addEventListener("change", onChange); }
+    else if (mq.addListener) { mq.addListener(onChange); }
+    // Перестраховка: у частині оточень matchMedia-подія при зміні розміру не приходить.
+    window.addEventListener("resize", function(){ if (window.innerWidth > 940) { closeMenu(); } }, { passive: true });
+  }
+
+  function syncAlt(){
+    var figs = document.querySelectorAll(".gal figure");
+    for (var i = 0; i < figs.length; i++){
+      var cap = figs[i].querySelector("figcaption");
+      var im = figs[i].querySelector("img");
+      if (cap && im) { im.alt = cap.textContent; }
+    }
+  }
+
+  // Карусель відгуків. Вмикається сама, коли карток більше, ніж уміщається в ряд:
+  // на десктопі це 4-та картка, на планшеті 3-тя, на телефоні 2-га. Скільки карток
+  // у ряду — задає змінна --per у CSS, тут вона не дублюється, а вимірюється.
+  function initReviews(){
+    var track = document.getElementById("rev-track");
+    var nav = document.getElementById("rev-nav");
+    var dots = document.getElementById("rev-dots");
+    var prev = document.getElementById("rev-prev");
+    var next = document.getElementById("rev-next");
+    if (!track || !nav || !dots || !prev || !next) { return; }
+
+    var cards = track.querySelectorAll(".review");
+    if (!cards.length) { return; }
+
+    function step(){
+      var w = cards[0].getBoundingClientRect().width;
+      return w > 0 ? w + 1 : 0;   // +1px на розділювальну лінію
+    }
+    function perView(){
+      var s = step();
+      return s > 0 ? Math.max(1, Math.round(track.clientWidth / s)) : 1;
+    }
+    function pages(){
+      return Math.max(1, Math.ceil(cards.length / perView()));
+    }
+
+    function buildDots(){
+      var n = pages();
+      if (dots.childElementCount === n) { return; }
+      dots.textContent = "";
+      for (var i = 0; i < n; i++){
+        (function(idx){
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", String(idx + 1));
+          b.addEventListener("click", function(){ goTo(idx); });
+          dots.appendChild(b);
+        })(i);
+      }
+    }
+
+    function current(){
+      var s = step() * perView();
+      return s > 0 ? Math.round(track.scrollLeft / s) : 0;
+    }
+
+    // Пряме присвоєння scrollLeft. НЕ ставити тут scrollTo({behavior:"smooth"})
+    // і НЕ додавати scroll-behavior:smooth на .reviews .row: разом зі scroll-snap
+    // прокрутка в частині рушіїв від'їжджає й одразу вертається на місце. Перевірено.
+    function goTo(i){
+      track.scrollLeft = i * step() * perView();
+      sync();   // не чекаємо на подію scroll: від програмної прокрутки вона летить не скрізь
+    }
+
+    function sync(){
+      var scrollable = track.scrollWidth - track.clientWidth > 2;
+      nav.hidden = !scrollable;
+      if (!scrollable) { return; }
+      buildDots();
+      var cur = current();
+      var kids = dots.children;
+      for (var i = 0; i < kids.length; i++){
+        kids[i].setAttribute("aria-current", String(i === cur));
+      }
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    }
+
+    prev.addEventListener("click", function(){ goTo(Math.max(0, current() - 1)); });
+    next.addEventListener("click", function(){ goTo(Math.min(pages() - 1, current() + 1)); });
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", function(){ dots.textContent = ""; sync(); }, { passive: true });
+    // Шрифти й фото можуть змінити висоту карток уже після першого заміру.
+    window.addEventListener("load", sync);
+    sync();
+  }
+
+  // Другий напис на кнопці — копія першого. Будуємо його щоразу після зміни мови,
+  // бо set() пише у кнопку простий текст і зносить попередню структуру.
+  // Проявник заголовків при скролі. Тільки заголовкові блоки — переліки позицій
+  // і галереї лишаються статичними. Заголовок отримує маску, надзаголовок і вступний
+  // абзац — просту прозорість: розфокус і маска на дрібному тексті читаються брудно.
+  // Лічильник цифр у блоці «Чому нас обирають». Суфікси на кшталт + і % відділяються
+  // від числа й лишаються на місці, рахується тільки числова частина. Кінцеве значення
+  // вже стоїть у розмітці, тож без JS і при зменшеній анімації воно просто видиме.
+  function initCounters(){
+    var nums = document.querySelectorAll(".stats .v");
+    if (!nums.length) { return; }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+    if (!("IntersectionObserver" in window) || !window.requestAnimationFrame) { return; }
+
+    var section = nums[0].closest(".stats");
+    if (!section) { return; }
+
+    var items = [];
+    for (var i = 0; i < nums.length; i++){
+      var m = /^(\d+)(.*)$/.exec((nums[i].textContent || "").trim());
+      if (!m) { continue; }
+      items.push({ el: nums[i], target: parseInt(m[1], 10), suffix: m[2] });
+    }
+    if (!items.length) { return; }
+
+    var started = false;
+    for (var j = 0; j < items.length; j++){
+      items[j].el.textContent = "0" + items[j].suffix;
+    }
+    // Якщо відлік так і не почався, повертаємо справжні числа: показувати нулі гірше,
+    // ніж показати підсумок без анімації.
+    setTimeout(function(){
+      if (started) { return; }
+      for (var f = 0; f < items.length; f++){
+        items[f].el.textContent = items[f].target + items[f].suffix;
+      }
+    }, 4000);
+
+    function run(item, delay){
+      var duration = 1400;
+      var started = null;
+      function step(now){
+        if (started === null) { started = now; }
+        var t = (now - started - delay) / duration;
+        if (t < 0) { requestAnimationFrame(step); return; }
+        if (t > 1) { t = 1; }
+        var eased = 1 - Math.pow(1 - t, 3);          // сповільнення до кінця
+        item.el.textContent = Math.round(item.target * eased) + item.suffix;
+        if (t < 1) { requestAnimationFrame(step); }
+      }
+      requestAnimationFrame(step);
+    }
+
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) { return; }
+        observer.unobserve(entry.target);
+        started = true;
+        for (var k = 0; k < items.length; k++){ run(items[k], k * 120); }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+  }
+
+  // Слайдер відгуків: показуємо по одному, кнопки гортають по колу.
+  function initTestimonials(){
+    var stage = document.getElementById("tsl-stage");
+    var prev = document.getElementById("tsl-prev");
+    var next = document.getElementById("tsl-next");
+    if (!stage || !prev || !next) { return; }
+
+    var slides = stage.querySelectorAll(".tsl-slide");
+    if (slides.length < 2) { return; }
+    var cur = 0;
+
+    function show(i){
+      cur = (i + slides.length) % slides.length;
+      for (var s = 0; s < slides.length; s++){
+        slides[s].classList.toggle("on", s === cur);
+      }
+    }
+
+    prev.addEventListener("click", function(){ show(cur - 1); });
+    next.addEventListener("click", function(){ show(cur + 1); });
+  }
+
+  function initReveal(){
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+    if (!("IntersectionObserver" in window)) { return; }
+
+    var groups = document.querySelectorAll(".intro, .summary, .stats, .reviews, .cta .in");
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) { return; }
+        // Вступ стартує з паузою, щоб не змагатися з відео в банері.
+        var base = entry.target.classList.contains("intro") ? 260 : 0;
+        var step = entry.target.__revStep || 130;
+        (entry.target.__revItems || []).forEach(function(el, i){
+          el.style.transitionDelay = (base + i * step) + "ms";
+          el.classList.add("in");
+        });
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    for (var g = 0; g < groups.length; g++){
+      var group = groups[g];
+      var isIntro = group.classList.contains("intro");
+      // Вступ під банером завжди в першому екрані, тож для нього поява грається
+      // одразу після завантаження. Решту, що вже видно, не ховаємо — блимнуло б.
+      if (!isIntro && group.getBoundingClientRect().top < window.innerHeight) { continue; }
+      // У вступі проявляємо кожен абзац окремо, а не текстову колонку цілком.
+      var items = isIntro
+        ? group.querySelectorAll(":scope > h2, :scope > .intro-text > p")
+        : group.querySelectorAll(":scope > .eyebrow, :scope > h2, :scope > .lede, :scope > .hd, :scope > .intro-text");
+      if (!items.length) { continue; }
+      var list = [];
+      for (var i = 0; i < items.length; i++){
+        // Заголовки розділів лишаємо нерухомими, а заголовок вступу проявляємо:
+        // тут це прозорість, яка нічого не ріже, на відміну від обрізання по рамці.
+        if (items[i].tagName === "H2" && !isIntro) { continue; }
+        items[i].classList.add("frev");
+        list.push(items[i]);
+      }
+      if (!list.length) { continue; }
+      group.__revItems = list;
+      observer.observe(group);
+    }
+
+    // Переліки позицій: картки виходять одна за одною зліва направо.
+    var grids = document.querySelectorAll(".items");
+    for (var n = 0; n < grids.length; n++){
+      var grid = grids[n];
+      if (grid.getBoundingClientRect().top < window.innerHeight) { continue; }
+      var cards = grid.querySelectorAll(":scope > article");
+      if (!cards.length) { continue; }
+      for (var c = 0; c < cards.length; c++){ cards[c].classList.add("irev"); }
+      grid.__revItems = Array.prototype.slice.call(cards);
+      grid.__revStep = 80;
+      observer.observe(grid);
+    }
+
+    // Рядки напрямків: та сама хвиля, що в картках, але швидша (60мс), бо це навігація.
+    // Тригером слугує перший рядок, а не вся секція: заголовок і вступ мають свою появу.
+    var dirRows = document.querySelectorAll(".summary > .dir-row");
+    if (dirRows.length && dirRows[0].getBoundingClientRect().top >= window.innerHeight){
+      for (var d = 0; d < dirRows.length; d++){ dirRows[d].classList.add("irev"); }
+      dirRows[0].__revItems = Array.prototype.slice.call(dirRows);
+      dirRows[0].__revStep = 60;
+      observer.observe(dirRows[0]);
+    }
+  }
+
+  function syncButtons(){
+    var list = document.querySelectorAll(".btn-slide");
+    for (var i = 0; i < list.length; i++){
+      var el = list[i];
+      var label = (el.textContent || "").trim();
+      if (!label) { continue; }
+      el.textContent = "";
+
+      var bg = document.createElement("span");
+      bg.className = "btn-bg";
+      bg.setAttribute("aria-hidden", "true");
+
+      var wrap = document.createElement("span");
+      wrap.className = "btn-wrap";
+
+      var first = document.createElement("span");
+      first.className = "btn-t";
+      first.textContent = label;
+
+      var second = document.createElement("span");
+      second.className = "btn-t2";
+      second.setAttribute("aria-hidden", "true");
+      second.textContent = label;
+
+      wrap.appendChild(first);
+      wrap.appendChild(second);
+      el.appendChild(bg);
+      el.appendChild(wrap);
+    }
+  }
+
+  // Ініціали в куточку картки відгуку рахуються з імені, тож міняються разом із мовою.
+  function syncInitials(){
+    var revs = document.querySelectorAll(".reviews .review");
+    for (var i = 0; i < revs.length; i++){
+      var who = revs[i].querySelector(".who");
+      var box = revs[i].querySelector(".initials");
+      if (!who || !box) { continue; }
+      var parts = who.textContent.replace(/\s+/g, " ").trim().split(" ");
+      var ini = "";
+      for (var p = 0; p < parts.length && ini.length < 2; p++){
+        if (parts[p]) { ini += parts[p].charAt(0); }
+      }
+      box.textContent = ini.toUpperCase();
+    }
+  }
+
+  function set(lang){
+    // Якщо для мови немає перекладу — лишаємо те, що є, а не стираємо текст на undefined.
+    for (var i = 0; i < nodes.length; i++){
+      var v = nodes[i].getAttribute("data-" + lang);
+      if (v !== null) { nodes[i].textContent = v; }
+    }
+    for (var k = 0; k < lblNodes.length; k++){
+      var lv = lblNodes[k].getAttribute("data-" + lang + "-lbl");
+      if (lv !== null) { lblNodes[k].setAttribute("aria-label", lv); }
+    }
+    document.documentElement.lang = LANGS[lang];
+    for (var code in btns) {
+      if (btns[code]) { btns[code].setAttribute("aria-pressed", String(code === lang)); }
+    }
+    if (langCurrent) { langCurrent.textContent = lang.toUpperCase(); }
+    rememberLang(lang);
+    closeLangs();
+    syncAlt();
+    syncInitials();
+    syncButtons();
+  }
+
+  for (var code in btns) {
+    (function(c){
+      if (btns[c]) { btns[c].addEventListener("click", function(){ set(c); }); }
+    })(code);
+  }
+  if (langToggle && langMenu) {
+    langToggle.addEventListener("click", function(e){
+      e.stopPropagation();
+      closeMenu();
+      var open = langMenu.hidden;
+      langMenu.hidden = !open;
+      langToggle.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", function(e){
+      if (!langMenu.hidden && !langMenu.contains(e.target)) { closeLangs(); }
+    });
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape" && !langMenu.hidden) { closeLangs(); langToggle.focus(); }
+    });
+  }
+  set(savedLang() || "az");
+  initReviews();
+  initReveal();
+  initMenu();
+  initTestimonials();
+  initCounters();
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var heroVideo = document.getElementById("hero-video");
+  if (heroVideo && reduceMotion) {
+    heroVideo.removeAttribute("autoplay");
+    heroVideo.pause();
+  }
+
+  var dirLinks = document.querySelectorAll(".sect-cta a[data-dir]");
+  var dirSelect = document.getElementById("f-dir");
+  for (var d = 0; d < dirLinks.length; d++){
+    (function(link){
+      link.addEventListener("click", function(){
+        if (dirSelect) { dirSelect.value = link.getAttribute("data-dir"); }
+      });
+    })(dirLinks[d]);
+  }
+
+  var peek = document.getElementById("dir-peek");
+  var peekImg = peek ? peek.querySelector("img") : null;
+  var peekRows = document.querySelectorAll(".dir-row[data-peek]");
+  if (peek && peekImg && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var place = function(e){
+      var w = peek.offsetWidth, h = peek.offsetHeight, pad = 14;
+      var x = e.clientX + 28, y = e.clientY - h / 2;
+      if (x + w > window.innerWidth - pad) { x = e.clientX - w - 28; }
+      if (y < pad) { y = pad; }
+      if (y + h > window.innerHeight - pad) { y = window.innerHeight - h - pad; }
+      peek.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+    };
+    for (var r = 0; r < peekRows.length; r++){
+      (function(row){
+        var src = row.getAttribute("data-peek");
+        new Image().src = src;
+        row.addEventListener("mouseenter", function(e){
+          if (peekImg.getAttribute("src") !== src) { peekImg.setAttribute("src", src); }
+          place(e);
+          peek.classList.add("on");
+        });
+        row.addEventListener("mousemove", place);
+        row.addEventListener("mouseleave", function(){ peek.classList.remove("on"); });
+      })(peekRows[r]);
+    }
+    window.addEventListener("scroll", function(){ peek.classList.remove("on"); }, { passive: true });
+  }
+
+  var totop = document.getElementById("totop");
+  if (totop) {
+    var toggle = function(){
+      // На головній стрілка потрібна лише коли розкрито довгий блок під банерами.
+      var moreOpen = document.getElementById("more");
+      var onHome = document.body.getAttribute("data-v") === "home";
+      var show = window.pageYOffset > 480;
+      if (onHome) { show = !!(moreOpen && moreOpen.classList.contains("open")) && window.pageYOffset > window.innerHeight * 7; }
+      if (show) { totop.classList.add("on"); }
+      else { totop.classList.remove("on"); }
+    };
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+    totop.addEventListener("click", function(){
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
+  // Відправка форми. Якщо в data-endpoint вписано адресу (наприклад Formspree), заявка
+  // летить туди через fetch; успіх показуємо лише коли сервер відповів 2xx, інакше
+  // виводимо помилку й лишаємо форму з уже введеними даними. Порожній data-endpoint:
+  // демо-режим (підтвердження без відправки) з попередженням у консолі.
+  var form = document.getElementById("lead-form");
+  if (form) {
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var wrap = document.getElementById("form-wrap");
+      var done = document.getElementById("form-done");
+      var err = document.getElementById("form-error");
+      var btn = form.querySelector('button[type="submit"]');
+      if (!wrap || !done) { return; }
+      if (err) { err.hidden = true; }
+
+      function showDone(){
+        wrap.hidden = true;
+        done.hidden = false;
+        done.setAttribute("tabindex", "-1");
+        done.focus();
+      }
+
+      var endpoint = (form.getAttribute("data-endpoint") || "").trim();
+      if (!endpoint) {
+        if (window.console && console.warn) { console.warn("[Avento] data-endpoint порожній: заявка НЕ відправлена (демо)."); }
+        showDone();
+        return;
+      }
+
+      if (btn) { btn.disabled = true; form.setAttribute("aria-busy", "true"); }
+      fetch(endpoint, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+        .then(function(res){
+          if (!res.ok) { throw new Error("HTTP " + res.status); }
+          form.reset();
+          showDone();
+        })
+        .catch(function(){
+          if (err) { err.hidden = false; }
+        })
+        .then(function(){
+          if (btn) { btn.disabled = false; form.removeAttribute("aria-busy"); }
+        });
+    });
+  }
+})();
+  (function(){
+    var bar = document.querySelector(".bar");
+    var doc = document.documentElement;
+    var body = document.body;
+    var prev = "";
+    if ("scrollRestoration" in window.history) { window.history.scrollRestoration = "manual"; }
+    var MAP = { "": "home", top: "home", home: "home", directions: "home", about: "home", intro: "home", reviews: "home", contact: "home" };
+    function viewFor(h){
+      if (Object.prototype.hasOwnProperty.call(MAP, h)) { return MAP[h]; }
+      if (/^s[1-7]$/.test(h)) { return "home"; }
+      return "home";
+    }
+    function header(){
+      if (!bar) { return; }
+      var v = body.getAttribute("data-v") || "home";
+      var y = window.scrollY, vh = window.innerHeight, solid;
+      if (v === "home") {
+        solid = y > 7 * vh + 40;
+      } else if (/^s[1-7]$/.test(v)) { solid = y > vh * 0.72 - 80; }
+      else if (v === "contact") { solid = y > vh - 80; }
+      else { solid = true; }
+      bar.classList.toggle("solid", solid);
+    }
+    var moreEl = document.getElementById("more");
+    var dropIO = null;
+    function initDropAnim(){
+      var grids = document.querySelectorAll(".more .items");
+      if (dropIO || !grids.length || !("IntersectionObserver" in window)) { return; }
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+      dropIO = new IntersectionObserver(function(entries){
+        for (var q = 0; q < entries.length; q++) {
+          if (!entries[q].isIntersecting) { continue; }
+          var cards = entries[q].target.querySelectorAll(":scope > article");
+          for (var c = 0; c < cards.length; c++) { cards[c].classList.add("in"); }
+          dropIO.unobserve(entries[q].target);
+        }
+      }, { threshold: 0.2 });
+      for (var g = 0; g < grids.length; g++) {
+        var cards2 = grids[g].querySelectorAll(":scope > article");
+        for (var k = 0; k < cards2.length; k++) { cards2[k].style.setProperty("--i", k); cards2[k].classList.add("drop"); }
+        grids[g].classList.add("drop-on");
+        dropIO.observe(grids[g]);
+      }
+    }
+    var dirIO = null;
+    function initDirAnim(){
+      var rows = document.querySelectorAll(".summary .dir-row");
+      if (dirIO || !rows.length || !("IntersectionObserver" in window)) { return; }
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+      document.querySelector(".summary").classList.add("anim");
+      dirIO = new IntersectionObserver(function(entries){
+        for (var q = 0; q < entries.length; q++) {
+          if (entries[q].isIntersecting) { entries[q].target.classList.add("in"); dirIO.unobserve(entries[q].target); }
+        }
+      }, { threshold: 0.25 });
+      for (var r = 0; r < rows.length; r++) {
+        rows[r].style.setProperty("--i", r);
+        rows[r].classList.add("rv");
+        dirIO.observe(rows[r]);
+      }
+    }
+    function revealMore(){
+      initDirAnim();
+      initDropAnim();
+      window.dispatchEvent(new Event("resize"));
+      window.setTimeout(function(){
+        // Текст «про нас»: заголовок і абзаци вспливають по черзі.
+        var intro = moreEl.querySelectorAll(".intro .frev");
+        for (var n = 0; n < intro.length; n++) { intro[n].style.transitionDelay = (350 + n * 190) + "ms"; intro[n].classList.add("in"); }
+        var hid = moreEl.querySelectorAll(".frev, .irev");
+        for (var k = 0; k < hid.length; k++) { hid[k].classList.add("in"); }
+      }, 60);
+    }
+    function openMore(){
+      if (!moreEl) { return; }
+      moreEl.classList.add("open");
+      revealMore();
+      window.scrollTo({ top: (document.querySelectorAll(".banner").length + 1) * window.innerHeight, behavior: "smooth" });
+    }
+    function route(){
+      var h = window.location.hash.replace(/^#/, "");
+      var v = viewFor(h);
+      var bn = /^b([1-7])$/.exec(h);
+      var target = bn ? (+bn[1]) * window.innerHeight : null;
+      var smooth = target && prev === "home";
+      body.setAttribute("data-v", v);
+      if ((/^s[1-7]$/.test(h) || h === "about" || h === "contact") && moreEl) {
+        moreEl.classList.add("open");
+        var sec = document.getElementById(h);
+        target = moreEl.offsetTop + sec.offsetTop - 56;
+        smooth = prev === "home";
+        revealMore();
+      }
+      if (h === "directions" && moreEl) {
+        moreEl.classList.add("open");
+        revealMore();
+        target = (document.querySelectorAll(".banner").length + 1) * window.innerHeight;
+        smooth = prev === "home";
+      }
+      prev = v;
+      if (smooth) { window.scrollTo({ top: target, behavior: "smooth" }); }
+      else {
+        doc.style.scrollBehavior = "auto";
+        window.scrollTo(0, target || 0);
+        window.requestAnimationFrame(function(){ doc.style.scrollBehavior = ""; });
+      }
+      header();
+      window.dispatchEvent(new Event("resize"));
+      // Анімація появи спрацювала, поки вид був прихований, тож проявляємо вручну.
+      window.setTimeout(function(){
+        var hid = document.querySelectorAll('[data-view="' + v + '"] .frev, [data-view="' + v + '"] .irev, [data-view="' + v + '"].frev, [data-view="' + v + '"].irev');
+        for (var k = 0; k < hid.length; k++) {
+          // Усередині закритого блоку «про нас» не проявляємо: він зіграє свою появу, коли його розкриють.
+          if (moreEl && hid[k].closest("#more") && !moreEl.classList.contains("open")) { continue; }
+          hid[k].classList.add("in");
+        }
+      }, 60);
+    }
+    var cornerEl = document.getElementById("corner");
+    if (cornerEl) {
+      cornerEl.addEventListener("click", function(e){
+        if (cornerEl.classList.contains("is-ready")) { e.preventDefault(); e.stopPropagation(); openMore(); }
+        else if (moreEl && moreEl.classList.contains("open")) { e.preventDefault(); e.stopPropagation(); window.scrollBy({ top: window.innerHeight * 0.85, behavior: "smooth" }); }
+      });
+    }
+    window.addEventListener("hashchange", route);
+    window.addEventListener("scroll", header, { passive: true });
+    document.addEventListener("click", function(e){
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a && a.getAttribute("href") === (window.location.hash || "#top")) { e.preventDefault(); route(); }
+    });
+    // Оновлення сторінки завжди починається з першого екрана: хеш із попереднього перегляду скидаємо.
+    if (window.location.hash && window.history.replaceState) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    route();
+  })();
+  (function(){
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+    var hero = document.querySelector(".hero");
+    var banners = document.querySelectorAll(".banner");
+    var openers = document.querySelectorAll(".sect .opener");
+    var dirDescs = document.querySelectorAll(".summary .dir-row .d");
+    var shots = document.querySelectorAll(".gal .shot");
+    var corner = document.getElementById("corner");
+    var stack = [hero];
+    for (var q = 0; q < banners.length; q++) { stack.push(banners[q]); }
+    var foot = document.querySelector(".foot");
+    var moreBox = document.getElementById("more");
+    function endEl(){ return moreBox && moreBox.classList.contains("open") ? moreBox : null; }
+    var ticking = false;
+    function clamp(v){ return Math.max(-1, Math.min(1, v)); }
+    function layer(el, kb, kt){
+      var r = el.getBoundingClientRect(), vh = window.innerHeight;
+      if (r.bottom < -300 || r.top > vh + 300) { return; }
+      var d = r.top + r.height / 2 - vh / 2;
+      el.style.setProperty("--py", (-d * kb).toFixed(1) + "px");
+      el.style.setProperty("--ty", (-d * kt).toFixed(1) + "px");
+    }
+    function setCorner(i, vh){
+      if (!corner || document.body.getAttribute("data-v") !== "home") { return; }
+      var opened = moreBox && moreBox.classList.contains("open");
+      var m = opened ? moreBox.getBoundingClientRect().top : null;
+      // Кнопка не зникає: над світлим блоком і футером вона лише темнішає.
+      var light = m !== null && m < vh * 0.92;
+      if (light) {
+        var ops = document.querySelectorAll(".sect .opener, .cta");
+        for (var q2 = 0; q2 < ops.length; q2++) {
+          var orc = ops[q2].getBoundingClientRect();
+          if (orc.top <= vh - 45 && orc.bottom >= vh - 45) { light = false; break; }
+        }
+      }
+      corner.classList.toggle("on-light", light);
+      // Блок розкрито: гортати вже нічого, лишається тільки стрілка «нагору».
+      corner.classList.toggle("off", !!opened);
+      var info = document.getElementById("corner-info");
+      if (info) { info.classList.toggle("off", !!opened); }
+      corner.classList.toggle("is-ready", i >= banners.length && !opened);
+      corner.setAttribute("href", opened ? "#more" : (i >= banners.length ? "#directions" : "#b" + (i + 1)));
+    }
+    var lastY = window.scrollY;
+    function frame(){
+      ticking = false;
+      var vh = window.innerHeight;
+      // Повернулись вгору до банерів: ховаємо блок знову, тож на останньому банері прокрутка зупиняється.
+      var yNow = window.scrollY;
+      if (moreBox && moreBox.classList.contains("open") && yNow < lastY && yNow < (banners.length - 0.5) * vh) {
+        moreBox.classList.remove("open");
+      }
+      lastY = yNow;
+      if (document.body.getAttribute("data-v") === "home") {
+        var cur = 0;
+        for (var i = 0; i < stack.length; i++) {
+          var own = Math.max(0, stack[i].getBoundingClientRect().top);
+          var nxt = i + 1 < stack.length ? stack[i + 1].getBoundingClientRect().top : (endEl() ? endEl().getBoundingClientRect().top : vh);
+          var cover = Math.max(0, Math.min(1, 1 - nxt / vh));
+          stack[i].style.setProperty("--py", (-own * .4 - cover * .25 * vh).toFixed(1) + "px");
+          stack[i].style.setProperty("--ty", (-own * .15 - cover * .1 * vh).toFixed(1) + "px");
+          if (stack[i].getBoundingClientRect().top <= vh * 0.5) { cur = i; }
+        }
+        setCorner(cur, vh);
+      }
+      for (var k = 0; k < openers.length; k++) { layer(openers[k], .45, .2); }
+      if (dirDescs && moreBox && moreBox.classList.contains("open")) {
+        for (var w = 0; w < dirDescs.length; w++) {
+          var dr = dirDescs[w].parentElement.getBoundingClientRect();
+          if (dr.bottom < -50 || dr.top > vh + 50) { continue; }
+          var dd = clamp((dr.top + dr.height / 2 - vh / 2) / (vh / 2));
+          dirDescs[w].style.setProperty("--dx", (dd * -14).toFixed(1) + "px");
+        }
+      }
+      for (var j = 0; j < shots.length; j++) {
+        var r = shots[j].getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) { continue; }
+        var p = clamp((r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2));
+        shots[j].style.setProperty("--py", (-p * 5).toFixed(2) + "%");
+      }
+    }
+    function req(){ if (!ticking) { ticking = true; window.requestAnimationFrame(frame); } }
+    window.addEventListener("scroll", req, { passive: true });
+    window.addEventListener("resize", req);
+    frame();
+    if (corner) { corner.addEventListener("click", frame, true); }
+  })();
+  (function(){
+    var row = document.querySelector(".mm-langs");
+    if (!row) { return; }
+    function mark(){
+      var cur = (document.getElementById("lang-current") || {}).textContent || "AZ";
+      var bs = row.querySelectorAll("button");
+      for (var i = 0; i < bs.length; i++) { bs[i].setAttribute("aria-current", String(bs[i].textContent.trim() === cur.trim())); }
+    }
+    row.addEventListener("click", function(e){
+      var b = e.target.closest && e.target.closest("button");
+      if (!b) { return; }
+      var src = document.getElementById("btn-" + b.getAttribute("data-l"));
+      if (src) { src.click(); }
+      mark();
+    });
+    mark();
+  })();
+  (function(){
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) { return; }
+    var dot = document.createElement("div");
+    dot.className = "cursor-dot";
+    dot.setAttribute("aria-hidden", "true");
+    document.body.appendChild(dot);
+    var tx = -100, ty = -100, x = -100, y = -100, running = false;
+    function loop(){
+      x += (tx - x) * 0.2;
+      y += (ty - y) * 0.2;
+      dot.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0)";
+      if (Math.abs(tx - x) > 0.3 || Math.abs(ty - y) > 0.3) { window.requestAnimationFrame(loop); }
+      else { running = false; }
+    }
+    document.addEventListener("mousemove", function(e){
+      tx = e.clientX; ty = e.clientY;
+      dot.classList.add("on");
+      var t = e.target;
+      dot.classList.toggle("big", !!(t && t.closest && t.closest("a, button, summary, select, label, input, textarea, .dir-row")));
+      if (!running) { running = true; window.requestAnimationFrame(loop); }
+    }, { passive: true });
+    document.addEventListener("mouseleave", function(){ dot.classList.remove("on"); });
+    document.addEventListener("mouseenter", function(){ dot.classList.add("on"); });
+  })();
+  (function(){
+    var tsl = document.querySelector(".tsl");
+    if (!tsl) { return; }
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { tsl.classList.add("seen"); return; }
+    var io = new IntersectionObserver(function(es){
+      for (var i = 0; i < es.length; i++) {
+        if (es[i].isIntersecting) { tsl.classList.add("seen"); io.disconnect(); }
+      }
+    }, { threshold: 0.3 });
+    io.observe(tsl);
+  })();
+</script>
+</body>
+</html>
