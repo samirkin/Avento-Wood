@@ -31,10 +31,11 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Avento Wood", "description": "Avento Wood: ağacdan, DSP-dən və digər materiallardan sifarişlə mebel. Mətbəx, şkaf, masa, stul, divan. Eskizdən montaja qədər, 2 il zəmanət.", "telephone": "+994502453344", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "20:00"}], "sameAs": ["https://www.instagram.com/avento_wood/"], "knowsAbout": ["sifarişlə mebel", "ağac mebel", "mətbəx mebeli", "qarderob və şkaf", "vanna otağı mebeli", "dülgərlik məmulatları"], "url": "https://avento-wood-furniture-and-joinery.vercel.app/", "image": "https://avento-wood-furniture-and-joinery.vercel.app/img/og-image.jpg"}</script>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preload" as="image" href="img/chair-studio.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&family=Onest:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Manrope:wght@400;500;600&family=Onest:wght@300;400;500&display=swap">
 <style>
 :root{
   --ink:#141210; --panel:#1B1713;
@@ -498,7 +499,14 @@ img{max-width:100%;display:block}
 .contact-grid{margin-top:clamp(22px,3.4vw,48px)}
 /* Футер як окремий розділ: тонка лінія зверху, від неї починається темна зона з жилками; над лінією ~100px від форми */
 .site-foot{border-top:1px solid var(--line)}
+/* Лайтбокс: стрілки по центру власних колонок із запасом від краю екрана (раніше стояли за 12px від краю) */
+.lb[open]{grid-template-columns:96px minmax(0,1fr) 96px}
+.lb .lb-p,.lb .lb-n{width:100%;height:96px;padding:0;font-size:30px;display:grid;place-items:center;align-self:center}
+@media(max-width:1024px){.lb[open]{grid-template-columns:72px minmax(0,1fr) 72px}.lb .lb-p,.lb .lb-n{height:72px}}
+@media(max-width:520px){.lb[open]{grid-template-columns:48px minmax(0,1fr) 48px}.lb .lb-p,.lb .lb-n{height:48px;font-size:24px}}
 </style>
+<!-- GA4: вставити тег тут -->
+<!-- Meta Pixel: вставити тут -->
 </head>
 <body>
 
@@ -543,7 +551,7 @@ img{max-width:100%;display:block}
 <main>
 <section class="hero" id="top">
   <h1 class="sr-only" data-az="Avento Wood: sifarişlə mebel və dülgərlik məmulatları" data-en="Avento Wood: custom furniture and joinery" data-ua="Avento Wood: меблі та столярні вироби на замовлення" data-ru="Avento Wood: мебель и столярные изделия на заказ">Avento Wood: sifarişlə mebel və dülgərlik məmulatları</h1>
-  <div class="chair" id="chair" aria-hidden="true"><img src="img/chair-studio.webp" width="1504" height="1034" alt=""></div>
+  <div class="chair" id="chair" aria-hidden="true"><img src="img/chair-studio.webp" width="1504" height="1034" alt="Avento Wood: skamya, kök ağacından əl işi" data-alt-en="Avento Wood: hand-made bench from a tree root" data-alt-ua="Avento Wood: лава з кореня дерева ручної роботи" data-alt-ru="Avento Wood: скамья из корня дерева ручной работы"></div>
   <p class="side"><b data-az="Sifarişlə fərdi <em>mebel</em><br>və dülgərlik<br>məmulatları" data-en="Custom <em>furniture</em><br>and joinery<br>made to order" data-ua="Індивідуальні <em>меблі</em><br>та столярні вироби<br>на замовлення" data-ru="Индивидуальная <em>мебель</em><br>и столярные изделия<br>на заказ">Sifarişlə fərdi <em>mebel</em><br>və dülgərlik<br>məmulatları</b><span data-az="Ağac, DSP və digər materiallar: ölçülərinizə&nbsp;və&nbsp;büdcənizə uyğun seçəcəyik. Eskizdən montaja qədər." data-en="Wood, chipboard and other materials, chosen to fit your dimensions&nbsp;and&nbsp;budget. From sketch to installation." data-ua="Дерево, ДСП та інші матеріали: підберемо під ваші розміри&nbsp;й&nbsp;бюджет. Від ескіза до монтажу." data-ru="Дерево, ДСП и другие материалы: подберём под ваши размеры&nbsp;и&nbsp;бюджет. От эскиза до монтажа.">Ağac, DSP və digər materiallar: ölçülərinizə&nbsp;və&nbsp;büdcənizə uyğun seçəcəyik. Eskizdən montaja qədər.</span></p>
   <div class="hero-bottom">
     <p class="word" aria-hidden="true">avento<i>.</i></p>
@@ -570,9 +578,9 @@ img{max-width:100%;display:block}
     <span class="about-no" aria-hidden="true">/ 01</span>
   </div>
   <div class="about-body">
-    <figure class="about-ph about-ph-a rev"><img src="img/about-1.webp" width="600" height="800" loading="lazy" alt=""></figure>
-    <figure class="about-ph about-ph-b rev"><img src="img/about-2.webp" width="675" height="900" loading="lazy" alt=""></figure>
-    <figure class="about-ph about-ph-c rev"><img src="img/about-3.webp" width="600" height="800" loading="lazy" alt=""></figure>
+    <figure class="about-ph about-ph-a rev"><img src="img/about-1.webp" width="600" height="800" loading="lazy" alt="Kapitone divan" data-alt-en="Tufted sofa" data-alt-ua="Диван із капітоне" data-alt-ru="Диван с капитоне"></figure>
+    <figure class="about-ph about-ph-b rev"><img src="img/about-2.webp" width="675" height="900" loading="lazy" alt="Kapitone stul" data-alt-en="Tufted chair" data-alt-ua="Стілець із капітоне" data-alt-ru="Стул с капитоне"></figure>
+    <figure class="about-ph about-ph-c rev"><img src="img/about-3.webp" width="600" height="800" loading="lazy" alt="Güzgülü konsol" data-alt-en="Console with mirror" data-alt-ua="Консоль із дзеркалом" data-alt-ru="Консоль с зеркалом"></figure>
     <p class="about-statement rev" data-az="Avento Wood — sizin məkanınız üçün yaradılmış <strong>mebel və dülgərlik məmulatları</strong>." data-en="Avento Wood: <strong>furniture and joinery</strong> made for your space." data-ua="Avento Wood — <strong>меблі та столярні вироби</strong>, створені для вашого простору." data-ru="Avento Wood — <strong>мебель и столярные изделия</strong>, созданные для вашего пространства.">Avento Wood — sizin məkanınız üçün yaradılmış <strong>mebel və dülgərlik məmulatları</strong>.</p>
     <p class="about-text rev" data-az="14 ildir ki, fərdi layihələri həyata keçiririk: tək bir masadan bütöv obyektin kompleks abadlaşdırılmasına qədər. Xüsusi ustalığımız təbii ağacla işdir: masiv, oyma və qeyri-standart formalar. Həmçinin DSP və digər materiallarla işləyir, onları ideyaya və məmulatın təyinatına uyğun seçirik.<br><br>Sifarişin bütün mərhələlərini bir komanda aparır: eskiz və hesablamadan istehsala və montaja qədər. Bu, ideyanı hər detalda qorumağa və yekun nəticəyə cavabdeh olmağa kömək edir.<br><br>Bizim üçün iş o zaman tamamlanır ki, hər şey düşünülmüş, dəqiq hazırlanmış və səliqə ilə quraşdırılmış olsun. Bütün işlərə zəmanət: 2 il." data-en="For 14 years we have been bringing individual projects to life, from a single table to the complete fit-out of an entire property. Our particular craft is working with natural wood: solid timber, carving and non-standard forms. We also work with chipboard and other materials, choosing them to suit the concept and purpose of each piece.<br><br>One team leads every stage of an order, from sketch and estimate to production and installation. This helps us keep the concept intact in every detail and answer for the final result.<br><br>For us, a job is finished when everything has been thought through, precisely made and neatly installed. Guarantee on all work: 2 years." data-ua="Уже 14 років ми втілюємо індивідуальні проєкти — від одного столу до комплексного облаштування всього об’єкта. Наша особлива майстерність — робота з натуральним деревом: масивом, різьбленням і нестандартними формами. Також працюємо з ДСП та іншими матеріалами, добираючи їх відповідно до задуму й призначення виробу.<br><br>Усі етапи замовлення веде одна команда: від ескізу та розрахунку до виготовлення й монтажу. Це допомагає нам зберегти задум у кожній деталі та відповідати за кінцевий результат.<br><br>Для нас робота завершена, коли все продумано, точно виготовлено й акуратно встановлено. Гарантія на всі роботи — 2 роки." data-ru="Уже 14 лет мы воплощаем индивидуальные проекты — от одного стола до комплексного оснащения всего объекта. Наше особое мастерство — работа с натуральным деревом: массивом, резьбой и нестандартными формами. Также работаем с ДСП и другими материалами, подбирая их в соответствии с замыслом и назначением изделия.<br><br>Все этапы заказа ведёт одна команда: от эскиза и расчёта до изготовления и монтажа. Это помогает нам сохранить замысел в каждой детали и отвечать за конечный результат.<br><br>Для нас работа завершена, когда всё продумано, точно изготовлено и аккуратно установлено. Гарантия на все работы — 2 года.">14 ildir ki, fərdi layihələri həyata keçiririk: tək bir masadan bütöv obyektin kompleks abadlaşdırılmasına qədər. Xüsusi ustalığımız təbii ağacla işdir: masiv, oyma və qeyri-standart formalar. Həmçinin DSP və digər materiallarla işləyir, onları ideyaya və məmulatın təyinatına uyğun seçirik.<br><br>Sifarişin bütün mərhələlərini bir komanda aparır: eskiz və hesablamadan istehsala və montaja qədər. Bu, ideyanı hər detalda qorumağa və yekun nəticəyə cavabdeh olmağa kömək edir.<br><br>Bizim üçün iş o zaman tamamlanır ki, hər şey düşünülmüş, dəqiq hazırlanmış və səliqə ilə quraşdırılmış olsun. Bütün işlərə zəmanət: 2 il.</p>
   </div>
@@ -661,10 +669,10 @@ img{max-width:100%;display:block}
     </div>
   </div>
   <dialog class="lb" id="lb" aria-label="Layihələrimiz">
-    <button type="button" class="lb-x" aria-label="Bağla">&times;</button>
-    <button type="button" class="lb-p" aria-label="&larr;">&larr;</button>
+    <button type="button" class="lb-x" aria-label="Bağla" data-aria-az="Bağla" data-aria-en="Close" data-aria-ua="Закрити" data-aria-ru="Закрыть">&times;</button>
+    <button type="button" class="lb-p" aria-label="Əvvəlki foto" data-aria-az="Əvvəlki foto" data-aria-en="Previous photo" data-aria-ua="Попереднє фото" data-aria-ru="Предыдущее фото">&larr;</button>
     <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption><button type="button" class="lb-want" id="lb-want" data-az="Buna oxşar istəyirəm" data-en="I want something similar" data-ua="Хочу схоже" data-ru="Хочу похожее">Buna oxşar istəyirəm</button></figure>
-    <button type="button" class="lb-n" aria-label="&rarr;">&rarr;</button>
+    <button type="button" class="lb-n" aria-label="Növbəti foto" data-aria-az="Növbəti foto" data-aria-en="Next photo" data-aria-ua="Наступне фото" data-aria-ru="Следующее фото">&rarr;</button>
   </dialog>
 </section>
 
@@ -826,6 +834,7 @@ img{max-width:100%;display:block}
     document.querySelectorAll('[data-'+l+']').forEach(function(el){el.innerHTML=el.getAttribute('data-'+l)});
     syncRoll();
     document.querySelectorAll('[data-alt-'+l+']').forEach(function(el){el.alt=el.getAttribute('data-alt-'+l)});
+    document.querySelectorAll('[data-aria-'+l+']').forEach(function(el){el.setAttribute('aria-label',el.getAttribute('data-aria-'+l))});
     document.querySelectorAll('[data-ph-'+l+']').forEach(function(el){el.placeholder=el.getAttribute('data-ph-'+l)});
     cur.textContent=l.toUpperCase();
     var mbn=document.getElementById('menu-btn');if(mbn)mbn.textContent=labels[l][document.getElementById('mmenu').classList.contains('open')?1:0];
