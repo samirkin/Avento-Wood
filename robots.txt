@@ -1,3 +1,4 @@
-# Демо-версія для замовника: індексацію вимкнено. Перед запуском повернути вміст із _backup/robots.before-demo-mode.txt
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://avento-wood-furniture-and-joinery.vercel.app/sitemap.xml
