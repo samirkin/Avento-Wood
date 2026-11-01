@@ -1064,9 +1064,23 @@ img{max-width:100%;display:block}
     btn.disabled=true; form.setAttribute('aria-busy','true');
     var fd=new FormData(form);
     var att=fd.getAll('attachment').filter(function(x){return x&&x.size>0});   // порожнє поле файлу без вибору не відправляємо
-    fd.delete('attachment'); att.forEach(function(x){fd.append('attachment',x)});
+    fd.delete('attachment');
     fd.append('Мова сайту',document.documentElement.lang);
     fd.append('Сторінка',location.href.split('#')[0]);
+    if(att.length){
+      // FormSubmit не пересилає файли з AJAX-запиту, тому з фото відправляємо звичайною формою (multipart) у прихований iframe, без перезавантаження сторінки.
+      // Кожен файл у своєму полі: attachment, attachment2, ...  Відповідь сервісу з iframe прочитати не можна, тому успіхом вважаємо завершення завантаження.
+      var fr=document.createElement('iframe'), tf=document.createElement('form'), fin=false;
+      fr.name='lead-frame'; fr.style.display='none'; fr.setAttribute('aria-hidden','true'); document.body.appendChild(fr);
+      tf.method='post'; tf.enctype='multipart/form-data'; tf.target='lead-frame'; tf.action=endpoint.replace('/ajax/','/'); tf.style.display='none';
+      fd.forEach(function(v,k){var h=document.createElement('input');h.type='hidden';h.name=k;h.value=v;tf.appendChild(h)});
+      att.forEach(function(x,i){var fi=document.createElement('input'),dt=new DataTransfer();dt.items.add(x);fi.type='file';fi.name=i?'attachment'+(i+1):'attachment';fi.files=dt.files;tf.appendChild(fi)});
+      document.body.appendChild(tf);
+      function end(ok){if(fin)return;fin=true;if(ok){form.reset();var fl=document.getElementById('file-list');if(fl)fl.innerHTML='';showDone()}else err.hidden=false;btn.disabled=false;form.removeAttribute('aria-busy');setTimeout(function(){tf.remove();fr.remove()},500)}
+      fr.addEventListener('load',function(){var blank=false;try{blank=fr.contentWindow.location.href==='about:blank'}catch(x){} if(!blank)end(true)});
+      setTimeout(function(){end(false)},90000);
+      tf.submit(); return;
+    }
     fetch(endpoint,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
       .then(function(r){return r.json().catch(function(){return {}}).then(function(d){
         if(!r.ok||d.success===false||d.success==='false')throw new Error(d.message||('HTTP '+r.status));
